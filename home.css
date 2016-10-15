@@ -50,7 +50,12 @@ body, html {
 
 .pageNum {
  color: white;
- font-size: 15px;
+ font-size: 10px;
  position: absolute;
  margin-top: 25px;
+}
+
+.pageNumSide {
+ color: white;
+ font-size: 10px;
 }
