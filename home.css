@@ -39,9 +39,11 @@ body, html {
 .page {
  top: 0px;
  left: 0px;
+ position: fixed;
 }
 
 .page2 {
  top: 0px;
  right: 0px;
+ position: fixed;
 }
