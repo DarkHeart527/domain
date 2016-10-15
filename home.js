@@ -7,6 +7,7 @@ function checkNav() {
  else {
   pageEmpty();
  }
+ document.getElementById('pageNum').innerHTML = pageNum;
 }
 
 function addOne() {
