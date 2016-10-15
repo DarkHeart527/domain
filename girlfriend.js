@@ -1,6 +1,7 @@
 setInterval( function() { movePic() }, 200);
 
 function movePic() {
- setTimeout( function() { document.getElementById('background').src = 'https://darkheart527.github.io/domain-storage/Heart.png';}, 100);
- setTimeout( function() { document.getElementById('background').src = 'https://darkheart527.github.io/domain-storage/Heart2.png';}, 200);
+ //setTimeout( function() { document.getElementById('background').src = 'https://darkheart527.github.io/domain-storage/Heart.png';}, 100);
+ //setTimeout( function() { document.getElementById('background').src = 'https://darkheart527.github.io/domain-storage/Heart2.png';}, 200);
+ setTimeout( function() { document.getElementById('test').style = "test: hey;"}, 100);
 }
