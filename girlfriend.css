@@ -15,3 +15,14 @@ body, html {
  transition: 1.5s;
  background-color: purple;
 }
+
+.backToCodark {
+ color: white;
+ font-size: 35px;
+ transition: 1s;
+}
+
+.backToCodark:hover {
+ color: blue;
+ transition: 2s;
+}
