@@ -1,7 +1,32 @@
 body, html {
  margin: 0px;
+ background-color: black;
 }
 
 * {
  text-decoration: none;
+ color: yellow;
+}
+
+.linkSelection {
+ color: grey;
+ font-size: 30px;
+ transition: 0.75s;
+}
+
+.linkSelection:hover {
+ color: white;
+ transition: 1.5s;
+}
+
+.page {
+ color: white;
+ font-size: 30px;
+ transition: 1.5s;
+}
+
+.page:hover {
+ color: black;
+ background-color: grey;
+ transition: 3s;
 }
