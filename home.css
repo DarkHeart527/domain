@@ -5,7 +5,7 @@ body, html {
 .section {
  width: 10%;
  height: 5%;
- display: inline;
+ display: inline-block;
  margin: 0px;
  background-color: yellow;
 }
