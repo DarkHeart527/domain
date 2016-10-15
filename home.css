@@ -11,6 +11,8 @@ body, html {
 .linkSelection {
  color: grey;
  font-size: 30px;
+ margin-left: 5px;
+ margin-right: 5px;
  transition: 0.75s;
 }
 
