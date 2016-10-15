@@ -25,13 +25,23 @@ body, html {
  content: ' / ';
 }
 
-.page {
+.page, .page2 {
  color: white;
  font-size: 30px;
  transition: 0.75s;
 }
 
-.page:hover {
+.page:hover, .page2:hover {
  color: darkgrey;
  transition: 1.5s;
+}
+
+.page {
+ top: 0px;
+ left: 0px;
+}
+
+.page2 {
+ top: 0px;
+ right: 0px;
 }
