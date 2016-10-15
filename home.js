@@ -14,5 +14,5 @@ function pageEmpty() {
 }
 
 function page1() {
- document.getElementById('navHeader').innerHTML = '<a href="#">"<<"</a>';
+ document.getElementById('navHeader').innerHTML = '<a href="#" onclick=""><<</a><a href="http://projects.codark.com">Projects</a><a href="#" onclick="addOne()">>></a>
 }
