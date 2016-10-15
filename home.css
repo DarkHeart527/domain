@@ -19,6 +19,10 @@ body, html {
  transition: 1.5s;
 }
 
+.linkSelection::after {
+ content: '/';
+}
+
 .page {
  color: white;
  font-size: 30px;
