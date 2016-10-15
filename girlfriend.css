@@ -22,6 +22,7 @@ body, html {
  transition: 1s;
  position: fixed;
  text-decoration: none;
+ background-color: white;
 }
 
 .backToCodark:hover {
