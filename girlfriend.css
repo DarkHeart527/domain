@@ -5,4 +5,11 @@ body, html {
 .text {
  background-color: white;
  opacity: 1;
+ font-size: 50px;
+ transition: 0.75s;
+}
+
+.text:hover {
+ color: pink;
+ transition: 1.5s;
 }
