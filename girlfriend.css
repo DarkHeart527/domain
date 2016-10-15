@@ -1,5 +1,5 @@
 body, html {
- background: url("https://darkheart527.github.io/domain-storage/Heart.png") repeat fixed;
+ margin: 0px;
 }
 
 .text {
@@ -23,8 +23,8 @@ body, html {
  position: fixed;
  text-decoration: none;
  background-color: purple;
- margin-left: -8px;
- margin-top: -7px;
+ margin-left: 0px;
+ margin-top: 0px;
  padding: 3px;
 }
 
