@@ -15,5 +15,5 @@ function pageEmpty() {
 }
 
 function page1() {
- sec1 + .innerHtml = "Hey";
+ sec1 + ".innerHtml" = "Hey";
 }
