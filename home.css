@@ -6,6 +6,6 @@ body, html {
  width: 10%;
  height: 5%;
  display: inline-block;
- margin: 0px;
+ margin: -2px;
  background-color: yellow;
 }
