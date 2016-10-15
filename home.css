@@ -2,7 +2,7 @@ body, html {
  margin: 0px;
 }
 
-.section1, .section2, .section3, .section4, .section5, .section6, .section7, .section8, .section9, .section10 {
+.section {
  width: 10%;
  height: 5%;
  background-color: yellow;
