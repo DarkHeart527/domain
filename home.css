@@ -2,10 +2,6 @@ body, html {
  margin: 0px;
 }
 
-.section {
- width: 10%;
- height: 5%;
- display: inline-block;
- margin: -2px;
- background-color: yellow;
+* {
+ text-decoration: none;
 }
