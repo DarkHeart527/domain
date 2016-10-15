@@ -20,6 +20,7 @@ body, html {
  color: white;
  font-size: 35px;
  transition: 1s;
+ position: fixed;
 }
 
 .backToCodark:hover {
