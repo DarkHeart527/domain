@@ -22,7 +22,9 @@ body, html {
  transition: 1s;
  position: fixed;
  text-decoration: none;
- background-color: white;
+ background-color: purple;
+ margin-left: -5px;
+ margin-top: -5px;
 }
 
 .backToCodark:hover {
