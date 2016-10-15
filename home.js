@@ -1,5 +1,5 @@
 var pageNum = 1;
-var sec1 = document.getElementById('section1');
+var sec1 = document.getElementById('section1').innerHtml;
 
 function checkNav() {
  if (pageNum == 1) {
@@ -15,5 +15,5 @@ function pageEmpty() {
 }
 
 function page1() {
- sec1 + ".innerHtml" = "Hey";
+ document.getElementById('section1').innerHtml = "Hey";
 }
