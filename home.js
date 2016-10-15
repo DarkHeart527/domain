@@ -9,8 +9,18 @@ function checkNav() {
  }
 }
 
-function pageEmpty() {
+function addOne() {
+ pageNum = Number(pageNum + 1);
+ checkNav();
+}
 
+function deleteOne() {
+ pageNum = Number(pageNum - 1);
+ checkNav();
+}
+
+function pageEmpty() {
+ document.getElementById('navHeader').innerHTML = '<a href="#" onclick="deleteOne()" class="page"><<</a><a href="#" class="page" onclick="addOne()">>></a>'
 }
 
 function page1() {
