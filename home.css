@@ -51,7 +51,8 @@ body, html {
 .pageNum {
  color: white;
  font-size: 10px;
- position: absolute;
+ position: fixed;
+ text-align: center;
  margin-top: 25px;
 }
 
