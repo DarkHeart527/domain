@@ -47,3 +47,10 @@ body, html {
  right: 0px;
  position: fixed;
 }
+
+.pageNum {
+ color: white;
+ font-size: 15px;
+ position: absolute;
+ margin-top: 25px;
+}
