@@ -14,5 +14,5 @@ function pageEmpty() {
 }
 
 function page1() {
- document.getElementById('navHeader').innerHTML = "Hey";
+ document.getElementById('navHeader').innerHTML = '<a href="#">"<<"</a>';
 }
