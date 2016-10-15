@@ -13,6 +13,6 @@ function pageEmpty() {
 
 }
 
-funciton page1() {
+function page1() {
 
 }
