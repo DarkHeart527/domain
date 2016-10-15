@@ -26,11 +26,10 @@ body, html {
 .page {
  color: white;
  font-size: 30px;
- transition: 1.5s;
+ transition: 0.75s;
 }
 
 .page:hover {
- color: black;
- background-color: grey;
- transition: 3s;
+ color: darkgrey;
+ transition: 1.5s;
 }
