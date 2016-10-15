@@ -21,9 +21,11 @@ body, html {
  font-size: 35px;
  transition: 1s;
  position: fixed;
+ text-decoration: none;
 }
 
 .backToCodark:hover {
  color: blue;
  transition: 2s;
+ text-decoration: underline;
 }
