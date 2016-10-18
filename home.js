@@ -39,8 +39,8 @@ function page1() {
 function page2() {
  document.getElementById('navHeader').innerHTML =
   '<center>' +
-  '<a href="#" style="visibility: visible;" onclick="" class="page"><<</a>' +
-  '<a href="http://allowance.codark.com">Allowance Saver</a><a href="http://musicplayer.codark.com">Music Player</a>' + //Code Area
+  '<a href="#" style="visibility: visible;" onclick="deleteOne()" class="page"><<</a>' +
+  '<a href="http://allowance.codark.com" class="linkSelection">Allowance Saver</a><a href="http://musicplayer.codark.com" class="linkSelection">Music Player</a>' + //Code Area
   '<a href="#" class="page2" onclick="addOne()">>></a>' +
   '</center>';
 }
