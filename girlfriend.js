@@ -9,7 +9,7 @@ function checkPerms() {
  if (globalCode == 2639301) {
   document.getElementById('loadVideo').src = "https://darkheart527.github.io/domain-storage/XiaoYing - James.mp4";
  } else {
-  document.getElementById('gCArea').remove();
+  document.getElementById('gCArea').style.visibility = true;
   alert('Your Gc is incorrect');
  }
 }
