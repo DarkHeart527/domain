@@ -18,5 +18,6 @@ function checkPerms() {
 }
 
 function loadGlobal() {
- document.getElementById('gCArea').value = Number(localStorage.globalCode001)
+ document.getElementById('gCArea').value = localStorage.globalCode001;
+ checkPerms();
 }
