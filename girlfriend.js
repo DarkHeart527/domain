@@ -18,6 +18,6 @@ function checkPerms() {
 }
 
 function loadGlobal() {
- document.getElementById('gCBox').value = localStorage.globalCode001;
+ document.getElementById('gcBox').value = localStorage.globalCode001;
  checkPerms();
 }
