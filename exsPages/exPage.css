@@ -12,9 +12,9 @@ body, html {
 }
 
 .text:hover {
- color: black;
+ color: grey;
  transition: 1.5s;
- background-color: grey;
+ background-color: black;
 }
 
 .backToCodark {
