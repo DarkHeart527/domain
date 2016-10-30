@@ -1,28 +1,29 @@
 body, html {
  margin: 0px;
+ background-color: black;
 }
 
 .text {
- background-color: pink;
+ background-color: blue;
  opacity: 1;
  font-size: 50px;
  transition: 0.75s;
- color: purple;
+ color: black;
 }
 
 .text:hover {
- color: pink;
+ color: blue;
  transition: 1.5s;
- background-color: purple;
+ background-color: black;
 }
 
 .backToCodark {
- color: white;
+ color: black;
  font-size: 35px;
  transition: 1s;
  position: fixed;
  text-decoration: none;
- background-color: purple;
+ background-color: blue;
  margin-left: 0px;
  margin-top: 0px;
  padding: 3px;
