@@ -1,0 +1,46 @@
+\Version 3.0.1
+- Minor Bug Fixes That Includes: =Pause Disabled Changing The Time=
+- Added New Music
+- Cannot Change Time When Paused And When Disabled Is Active **It Must Be Unpaused And Enabled To Use**
+- Ability To Disabled And Enable The Bar
+**Owner Help**
+- Created ~15 New Slots Ready To Be Used
+/
+
+\Version 3.0.0
+**YET ANOTHER HUGE UPDATE**
+- Use A Range Input To Control Speed
+- Join Skype Group To Recommend Songs Or Upload A mp3 File
+- Change The Time Area
+- Progress Bar Changed Into An Input
+- Animated Info Area
+- Nicely Styled The Progress Bar
+**Owner Help**
+- Shortcuts...Music Can Now Easily Be Put In The Dropdowns Using A Variable **mId[1] For Cutthroat.**
+/
+
+\Version - 2.0.0
+- Styling Has Been Added
+- Info Area Changes Box Shadow Colors
+/
+
+\Version - 1.0.1
+- Updated Randomize Ability
+- Started Selecting Certains
+- Added New Music Including Up To 15 New Songs
+- Control Volume With The Volume Bar
+- More On Selecting Certains
+- Selecting Certain Updated And Working
+/
+
+\Version - 1.0.0
+- Randomize Music Ability
+- iFrame Version Created
+- Mute And UnMute Buttons Added
+- Pause And UnPause Buttons Added
+- Progress Bar Shows Time
+- Added Time In Seconds
+- Shows Authors And Songs
+- Select Songs Using A Selector With Options
+- Connected To DarkStyling
+/
