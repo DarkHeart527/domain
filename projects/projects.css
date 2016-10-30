@@ -1,0 +1,18 @@
+body, html {
+  background-color: black;
+  margin: 0px;
+}
+
+.backToCodark {
+ color: white;
+ font-size: 35px;
+ transition: 1s;
+ position: fixed;
+ text-decoration: none;
+}
+
+.backToCodark:hover {
+ color: grey;
+ transition: 2s;
+ text-decoration: underline;
+}
