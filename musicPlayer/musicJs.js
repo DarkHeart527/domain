@@ -56,7 +56,7 @@ var mId = {
  37: '<option class="option" value="37">1Night</option>',
  38: '<option class="option" value="38">2016 XXL Freshmen Cypher</option>',
  39: '<option class="option" value="39">THat Part ft. Kanye West</option>',
- 40: '<option class="option" value="40">OOOUUU</option>',
+ 40: '<option class="option" value="40">OOOUUU (Remix)</option>',
  41: '<option class="option" value="41">Guap</option>',
  42: '<option class="option" value="42">NONE</option>',
  43: '<option class="option" value="43">NONE</option>',
