@@ -56,8 +56,8 @@ var mId = {
  37: '<option class="option" value="37">1Night</option>',
  38: '<option class="option" value="38">2016 XXL Freshmen Cypher</option>',
  39: '<option class="option" value="39">THat Part ft. Kanye West</option>',
- 40: '<option class="option" value="40">NONE</option>',
- 41: '<option class="option" value="41">NONE</option>',
+ 40: '<option class="option" value="40"></option>',
+ 41: '<option class="option" value="41"></option>',
  42: '<option class="option" value="42">NONE</option>',
  43: '<option class="option" value="43">NONE</option>',
  44: '<option class="option" value="44">NONE</option>',
@@ -416,16 +416,16 @@ secondChecker = '0';
   author = "ScHoolboy Q";
  } 
  
-   else if (musicId == NaN) {
-  document.getElementById('musicNum').src = link + "";
-  title = "";
-  author = "";
+   else if (musicId == 40) {
+  document.getElementById('musicNum').src = link + "Young M.A Ft. 50 Cent - OOOUUU (Remix).mp3";
+  title = "OOOUUU (Remix) ft. 50 cent";
+  author = "Young M.A.";
  } 
  
-   else if (musicId == NaN) {
-  document.getElementById('musicNum').src = link + "";
-  title = "";
-  author = "";
+   else if (musicId == 41) {
+  document.getElementById('musicNum').src = link + "Lil Yachty x 21 Savage - Guap.mp3";
+  title = "Guap";
+  author = "Lil Yachty & 21 Savage";
  } 
  
    else if (musicId == NaN) {
@@ -552,7 +552,9 @@ if (document.getElementById('type').value == "all") {
 			mId[36] +
 			mId[37] +
 			mId[38] +
-			mId[39];
+			mId[39] +
+			mId[40] +
+			mId[41];
 		 }
 }
 
