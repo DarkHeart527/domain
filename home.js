@@ -40,7 +40,7 @@ function page2() {
  document.getElementById('navHeader').innerHTML =
   '<center>' +
   '<a href="#" style="visibility: visible;" onclick="deleteOne()" class="page"><<</a>' +
-  '<a href="http://allowance.codark.com" class="linkSelection">Allowance Saver</a><a href="http://musicplayer.codark.com" class="linkSelection">Music Player</a>' + //Code Area
+  '<a href="http://allowance.codark.com" class="linkSelection">Allowance Saver</a><a href="musicPlayer/Music%20Player.html" class="linkSelection">Music Player</a>' + //Code Area
   '<a href="#" class="page2" onclick="addOne()">>></a>' +
   '</center>';
 }
