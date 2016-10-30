@@ -31,7 +31,7 @@ function page1() {
  document.getElementById('navHeader').innerHTML =
   '<center>' +
   '<a href="#" style="visibility: hidden;" onclick="" class="page"><<</a>' +
-  '<a class="linkSelection" href="http://colorclock.codark.com">Color Clock</a><a class="linkSelection" href="http://girlfriend.codark.com">Ex&#39;s Page</a><a class="linkSelection" href="http://projects.codark.com">Projects</a><a class="linkSelection" href="http://deathClicker.codark.com">Death Clicker</a>' +
+  '<a class="linkSelection" href="http://colorclock.codark.com">Color Clock</a><a class="linkSelection" href="exPage.html">Ex&#39;s Page</a><a class="linkSelection" href="http://projects.codark.com">Projects</a><a class="linkSelection" href="http://deathClicker.codark.com">Death Clicker</a>' +
   '<a href="#" class="page2" onclick="addOne()">>></a>' +
   '</center>';
 }
