@@ -16,67 +16,67 @@ var afterVolume = 0;
 var checkIfDisable = null;
 
 var mId = {
- 0: '<option class="option" value="0" selected>Random</option>',
- 1: '<option class="option" value="1">Cut Throat</option>',
- 2: '<option class="option" value="2">Contrast</option>',
- 3: '<option class="option" value="3">Trap Challenge</option>',
- 4: '<option class="option" value="4">TrapShitFreeBeat2</option>',
- 5: '<option class="option" value="5">Gladius</option>',
- 6: '<option class="option" value="6">Samurai</option>',
- 7: '<option class="option" value="7">THE TRAPPER</option>',
- 8: '<option class="option" value="8">T.H.O.T. (Clarice Diss)</option>',
- 9: '<option class="option" value="9">Chiraq Instrumental</option>',
- 10: '<option class="option" value="10">Skrilla Instrumental</option>',
- 11: '<option class="option" value="11">Killa</option>',
- 12: '<option class="option" value="12">Saintz</option>',
- 13: '<option class="option" value="13">Beast</option>',
- 14: '<option class="option" value="14">FRNDZN</option>',
- 15: '<option class="option" value="15">10 Bands</option>',
- 16: '<option class="option" value="16">TWITCH</option>',
- 17: '<option class="option" value="17">Picky</option>',
- 18: '<option class="option" value="18">Adding Fuel To Fire</option>',
- 19: '<option class="option" value="19">Thanatus</option>',
- 20: '<option class="option" value="20">1. Exordium</option>',
- 21: '<option class="option" value="21">Angels And Demons,</option>',
- 22: '<option class="option" value="22">ATL Yuletide</option>',
- 23: '<option class="option" value="23">Dark Night,</option>',
- 24: '<option class="option" value="24">Bad Karma</option>',
- 25: '<option class="option" value="25">Plastik</option>',
- 26: '<option class="option" value="26">Headlines</option>',
- 27: '<option class="option" value="27">She Tatted Up</option>',
- 28: '<option class="option" value="28">eXtincTioN Prophe(Y</option>',
- 29: '<option class="option" value="29">Viaje.profundo</option>',
- 30: '<option class="option" value="30">Love&hustle.</option>',
- 31: '<option class="option" value="31">X ft Future</option>',
- 32: '<option class="option" value="32">Break In!</option>',
- 33: '<option class="option" value="33">Denzel Curry - Ultimate</option>',
- 34: '<option class="option" value="34">Dip Dip</option>',
- 35: '<option class="option" value="35">Red Opps</option>',
- 36: '<option class="option" value="36">No Heart</option>',
- 37: '<option class="option" value="37">1Night</option>',
- 38: '<option class="option" value="38">2016 XXL Freshmen Cypher</option>',
- 39: '<option class="option" value="39">THat Part ft. Kanye West</option>',
- 40: '<option class="option" value="40">OOOUUU (Remix)</option>',
- 41: '<option class="option" value="41">Guap</option>',
- 42: '<option class="option" value="42">NONE</option>',
- 43: '<option class="option" value="43">NONE</option>',
- 44: '<option class="option" value="44">NONE</option>',
- 45: '<option class="option" value="45">NONE</option>',
- 46: '<option class="option" value="46">NONE</option>',
- 47: '<option class="option" value="47">NONE</option>',
- 48: '<option class="option" value="48">NONE</option>',
- 49: '<option class="option" value="49">NONE</option>',
- 50: '<option class="option" value="50">NONE</option>',
- 51: '<option class="option" value="51">NONE</option>',
- 52: '<option class="option" value="52">NONE</option>',
- 53: '<option class="option" value="53">NONE</option>',
- 54: '<option class="option" value="54">NONE</option>',
- 55: '<option class="option" value="55">NONE</option>',
+  0: '<option class="option" title="All Songs" 					value="0" selected>Random</option>',
+  1: '<option class="option" title="Iwey" 						value="1">Cut Throat</option>',
+  2: '<option class="option" title="" 							value="2">Contrast</option>',
+  3: '<option class="option" title="" 							value="3">Trap Challenge</option>',
+  4: '<option class="option" title="" 							value="4">TrapShitFreeBeat2</option>',
+  5: '<option class="option" title="" 							value="5">Gladius</option>',
+  6: '<option class="option" title="" 							value="6">Samurai</option>',
+  7: '<option class="option" title="" 							value="7">THE TRAPPER</option>',
+  8: '<option class="option" title="The Remix" 					value="8">T.H.O.T. (Clarice Diss)</option>',
+  9: '<option class="option" title="" 							value="9">Chiraq Instrumental</option>',
+ 10: '<option class="option" title="Kodak Black" 				value="10">Skrilla Instrumental</option>',
+ 11: '<option class="option" title="" 							value="11">Killa</option>',
+ 12: '<option class="option" title="" 							value="12">Saintz</option>',
+ 13: '<option class="option" title="" 							value="13">Beast</option>',
+ 14: '<option class="option" title="" 							value="14">FRNDZN</option>',
+ 15: '<option class="option" title="Drake" 						value="15">10 Bands</option>',
+ 16: '<option class="option" title="" 							value="16">TWITCH</option>',
+ 17: '<option class="option" title=""							value="17">Picky</option>',
+ 18: '<option class="option" title="" 							value="18">Adding Fuel To Fire</option>',
+ 19: '<option class="option" title="" 							value="19">Thanatus</option>',
+ 20: '<option class="option" title="Accept17" 					value="20">1. Exordium</option>',
+ 21: '<option class="option" title="" 							value="21">Angels And Demons,</option>',
+ 22: '<option class="option" title="" 							value="22">ATL Yuletide</option>',
+ 23: '<option class="option" title="" 							value="23">Dark Night,</option>',
+ 24: '<option class="option" title="" 							value="24">Bad Karma</option>',
+ 25: '<option class="option" title="" 							value="25">Plastik</option>',
+ 26: '<option class="option" title="Drake"     					value="26">Headlines</option>',
+ 27: '<option class="option" title="" 		   					value="27">She Tatted Up</option>',
+ 28: '<option class="option" title=""		   					value="28">eXtincTioN Prophe(Y</option>',
+ 29: '<option class="option" title="" 		   					value="29">Viaje.profundo</option>',
+ 30: '<option class="option" title=""          					value="30">Love&hustle.</option>',
+ 31: '<option class="option" title=""         		 			value="31">X ft Future</option>',
+ 32: '<option class="option" title="DarkHeart527 & Loafy"       value="32">Break In!</option>',
+ 33: '<option class="option" title="Denzel Curry" 			 	value="33">Ultimate</option>',
+ 34: '<option class="option" title="21 Savage" 					value="34">Dip Dip</option>',
+ 35: '<option class="option" title="21 Savage" 					value="35">Red Opps</option>',
+ 36: '<option class="option" title="21 Savage & Metro Boomin"   value="36">No Heart</option>',
+ 37: '<option class="option" title="Lil Yachty" 				value="37">1Night</option>',
+ 38: '<option class="option" title="" 		   					value="38">2016 XXL Freshmen Cypher</option>',
+ 39: '<option class="option" title="" 		   					value="39">THat Part ft. Kanye West</option>',
+ 40: '<option class="option" title="" 							value="40">OOOUUU (Remix)</option>',
+ 41: '<option class="option" title="" 							value="41">Guap</option>',
+ 42: '<option class="option" title="Ricegum"				    value="42">Creepy Clowns Diss Track</option>',
+ 43: '<option class="option" title="Drake" 						value="43">Energy</option>',
+ 44: '<option class="option" title="" 							value="44"></option>',
+ 45: '<option class="option" title="" 							value="45"></option>',
+ 46: '<option class="option" title="" 							value="46"></option>',
+ 47: '<option class="option" title="" 							value="47"></option>',
+ 48: '<option class="option" title="" 							value="48"></option>',
+ 49: '<option class="option" title="" 							value="49"></option>',
+ 50: '<option class="option" title="" 							value="50"></option>',
+ 51: '<option class="option" title="" 							value="51"></option>',
+ 52: '<option class="option" title="" 							value="52"></option>',
+ 53: '<option class="option" title="" 							value="53"></option>',
+ 54: '<option class="option" title="" 							value="54"></option>',
+ 55: '<option class="option" title="" 							value="55"></option>',
  }
 
 
 function change0() {
- musicId = Math.floor( Math.random() * 39 + 1);
+ musicId = Math.floor( Math.random() * 55 + 1);
 }
 
 function autoUpdater() {
@@ -384,8 +384,6 @@ secondChecker = '0';
   title = "Dip Dip";
   author = "21 Savage";
  } 
- 
- /*-------------------------------------------------------------------------------------------------------------*/  
 
    else if (musicId == 35) {
   document.getElementById('musicNum').src = link + "21 Savage - Red Opps.mp3";
@@ -426,6 +424,342 @@ secondChecker = '0';
   document.getElementById('musicNum').src = link + "Lil Yachty x 21 Savage - Guap.mp3";
   title = "Guap";
   author = "Lil Yachty & 21 Savage";
+ } 
+ 
+   else if (musicId == 42) {
+  document.getElementById('musicNum').src = link + "Creepy Clowns Diss Track-Ricegum.mp3";
+  title = "Creepy Clowns Diss Track";
+  author = "Ricegum";
+ } 
+ 
+   else if (musicId == 43) {
+  document.getElementById('musicNum').src = link + "Drake - Energy.mp3";
+  title = "Energy";
+  author = "Drake";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
+ } 
+ 
+   else if (musicId == NaN) {
+  document.getElementById('musicNum').src = link + "";
+  title = "";
+  author = "";
  } 
  
    else if (musicId == NaN) {
@@ -554,7 +888,9 @@ if (document.getElementById('type').value == "all") {
 			mId[38] +
 			mId[39] +
 			mId[40] +
-			mId[41];
+			mId[41] +
+			mId[42] +
+			mId[43];
 		 }
 }
 
@@ -624,13 +960,31 @@ function checkiP() {
   musicId = 26;	 
  } else if (musicId == "iP4") {
   musicId = 34;
+ } else if (musicId == "iP5") {
+  musicId = 35;
+ } else if (musicId == "iP6") {
+  musicId = 36;	 
+ } else if (musicId == "iP7") {
+  musicId = 37;
+ } else if (musicId == "iP8") {
+  musicId = 38;
+ } else if (musicId == "iP9") {
+  musicId = 39;	 
+ } else if (musicId == "iP10") {
+  musicId = 40;
+ } else if (musicId == "iP11") {
+  musicId = 41;
+ } else if (musicId == "iP12") {
+  musicId = 42;
+ } else if (musicId == "iP13") {
+  musicId = 43;
  }
  checkAndPlay();
 }
 
 function randomize() {
  random = Math.floor(Math.random() * 16 + 1);
- random2 = Math.floor(Math.random() * 9 + 1);
+ random2 = Math.floor(Math.random() * 13 + 1);
 }
 
 function colorChanger() {
