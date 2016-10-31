@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<title>
+			Music Player
+		</title>
+		<link href="musicplayerSchool.css" rel="stylesheet" type="text/css" id="stylingLink" />
+		<script src="musicJs.js" id="jsOne" type="text/javascript">
+		</script>
+		<script src="musicJsButtons.js" id="jsTwo" type="text/javascript">
+		</script>
+		<script>
+		//Developer Tools **RELOADS ONLY CSS AND FRAMES**\\
+			function reloadAssets() {
+			 console.clear()
+			 console.info('Reloading Assets');
+			 document.getElementById('stylingLink').href = '';
+			 console.info('Assets Deleted Waiting 1.5 Seconds');
+			 setTimeout( function() { loadAssets(); }, 1500);
+			}
+			
+			function loadAssets() {
+			 document.getElementById('stylingLink').href = 'musicplayer.css';
+			 console.info('Reload Complete');
+			}
+
+		</script>
+	</head>
+	<body onload="colorChanger();changeSongs();firstLoad();setInterval( function() {volumeChanger()});setInterval( function() {speedRate()});">
+		<a href="http://codark.com" class="linkBTC">Back To Codark</a>
+		<center>
+			<p class="useGc">FOR <b class="useGcB">BEST</b> RESULTS PLEASE USE GOOGLE CHROME</p>
+		</center>
+		<center>
+			<div class="info" id="info">
+				<p class="nowPlaying"><b class="nowPlaying">Now Playing: </b><span class="nowPlaying" id="title"></span></p>
+				<p class="author"><b class="author">Author: </b><span class="author" id="author"></span></p>
+			</div>
+			<p class="timeDisplay" id="timeDisplayArea">0:00:00</p>
+		</center>
+			<p><input type="range" onmouseover="document.getElementById('musicNum').pause();" onmouseout="document.getElementById('musicNum').play();" onchange="document.getElementById('musicNum').currentTime = document.getElementById('progressTime').value" class="progressBar" id="progressTime" value="0" max="0" min="0" name="Done Time"></p>
+		<audio src="" id="musicNum" autoplay></audio>
+		<center>
+			<p>
+				<button onClick="enableBar()" id="enaBtn" class="buttonType-1" disabled>Enable</button>
+				<button onclick="disableBar()" id="disBtn" class="buttonType-1">Disable</button>
+			</p>
+			<select id="selector" class="selector" onchange="changeEle();">
+			</select>
+			<select id="type" class="typeSelector" onchange="changeSongs();songPlayChecker();checkAndPlay();">
+				<option class="option2" value="all">All</option>
+				<option class="option2" value="pocketband">Pocket Band</option>
+				<option class="option2" value="isaiahsPlaylist">The Remix's Playlist</option>
+			</select>
+			<p>
+				<button onclick="nextSong()" class="buttonType-2">Next Song</button>
+				<button onclick="restartSong()" class="buttonType-2">Restart Song</button>
+			</p>
+			<p class="text">Sound: <button onClick="mute()" class="buttonType-1" id="mute">Mute</button><button class="buttonType-1" onClick="unMute()" id="unMute" disabled>UnMute</button></p>
+			<p class="text"><button class="buttonType-1" onClick="pausea()" id="pause">Pause</button><button class="buttonType-1" onClick="unPausea()" id="unPause" disabled>UnPause</button></p>
+			<p class="text">Volume: <span id="volumeDisplay" class="text">100.0</span></p>
+			<input class="inputSlider" type="range" name="volume" id="volume" value="0" min="0" max="10000" />
+			<p class="text">Speed: <span id="speedArea">1.00</span></p>
+			<input class="inputSlider2" name="speed" type="range" id="speedD" min="50" value="100" max="400" />
+			<p>Upload An mp3 File Or Text One Here On Skype</p>
+			<a href="https://join.skype.com/CLBZ0eBvKHFt" target="_blank">Join Skype Group - Codark.com</a>
+		</center>
+	</body>
+</html>
