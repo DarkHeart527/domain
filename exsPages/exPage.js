@@ -11,6 +11,9 @@ function checkPerms() {
 }
 
 function loadGlobal() {
+ if (localStorage.globalCode001 == null) {
+  alert('There Is A Global On This Page');
+ } else
  document.getElementById('gcBox').value = Number(localStorage.globalCode001)
  globalCode = Number(localStorage.globalCode001);
  checkPerms();
