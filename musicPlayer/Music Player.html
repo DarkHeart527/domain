@@ -48,8 +48,14 @@
 			</select>
 			<select id="type" class="typeSelector" onchange="changeSongs();songPlayChecker();checkAndPlay();">
 				<option class="option2" value="all">All</option>
-				<option class="option2" value="pocketband">Pocket Band</option>
-				<option class="option2" value="isaiahsPlaylist">The Remix's Playlist</option>
+			</select>
+			<select onchange="changeType();songPlayChecker();checkAndPlay();changeSongs();" id="type2">
+				<option value="all" selected>All</option>
+				<option value="author">Author</option>
+				<option value="year">Year</option>
+				<option value="source">Source</option>
+				<option value="playlist">Playlist</option>
+				<option value="album">Album</option>
 			</select>
 			<p>
 				<button onclick="nextSong()" class="buttonType-2">Next Song</button>
@@ -62,7 +68,7 @@
 			<p class="text">Speed: <span id="speedArea">1.00</span></p>
 			<input class="inputSlider2" name="speed" type="range" id="speedD" min="50" value="100" max="400" />
 			<p>Upload An mp3 File Or Text One Here On Skype</p>
-			<a href="https://join.skype.com/CLBZ0eBvKHFt" target="_blank">Join Skype Group - Codark.com</a>
+			<a href="https://join.skype.com/ur3jQ61lC6Ql" target="_blank">Join Skype Group - Codark.com</a>
 		</center>
 	</body>
 </html>
