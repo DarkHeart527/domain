@@ -34,14 +34,14 @@ var mId = {
  15: '<option class="option" title="Drake" 						value="15">10 Bands</option>',
  16: '<option class="option" title="" 							value="16">TWITCH</option>',
  17: '<option class="option" title=""							value="17">Picky</option>',
- 18: '<option class="option" title="" 							value="18">Adding Fuel To Fire</option>',
+ 18: '<option class="option" title="Riskit0" 					value="18">Adding Fuel To Fire</option>',
  19: '<option class="option" title="" 							value="19">Thanatus</option>',
  20: '<option class="option" title="Accept17" 					value="20">1. Exordium</option>',
- 21: '<option class="option" title="" 							value="21">Angels And Demons,</option>',
- 22: '<option class="option" title="" 							value="22">ATL Yuletide</option>',
- 23: '<option class="option" title="" 							value="23">Dark Night,</option>',
- 24: '<option class="option" title="" 							value="24">Bad Karma</option>',
- 25: '<option class="option" title="" 							value="25">Plastik</option>',
+ 21: '<option class="option" title="TripleMT" 					value="21">Angels And Demons,</option>',
+ 22: '<option class="option" title="cjnoll" 					value="22">ATL Yuletide</option>',
+ 23: '<option class="option" title="TripleMT" 					value="23">Dark Night,</option>',
+ 24: '<option class="option" title="Axel Thesleff & Trap Nation"value="24">Bad Karma</option>',
+ 25: '<option class="option" title="Jed*" 						value="25">Plastik</option>',
  26: '<option class="option" title="Drake"     					value="26">Headlines</option>',
  27: '<option class="option" title="" 		   					value="27">She Tatted Up</option>',
  28: '<option class="option" title=""		   					value="28">eXtincTioN Prophe(Y</option>',
@@ -76,7 +76,7 @@ var mId = {
 
 
 function change0() {
- musicId = Math.floor( Math.random() * 55 + 1);
+ musicId = Math.floor( Math.random() * 1000 + 1);
 }
 
 function autoUpdater() {
@@ -119,6 +119,9 @@ function autoUpdater() {
    musicId = document.getElementById('selector').value;
    checkAndPlay();
   } else if (document.getElementById('type').value == "isaiahsPlaylist") {
+   musicId = document.getElementById('selector').value;
+   checkAndPlay();
+  } else if (document.getElementById('type').value == "author_Drake") {
    musicId = document.getElementById('selector').value;
    checkAndPlay();
   }
@@ -175,6 +178,10 @@ secondChecker = '0';
    randomize();
    musicId = 'iP' + random2;
    checkiP();
+  } else if (document.getElementById('type').value == "author_Drake") {
+   randomize();
+   musicId = 'authDrake' + random3;
+   auth_drake();
   } else {
    change0();
    checkAndPlay();
@@ -777,6 +784,10 @@ secondChecker = '0';
    randomize();
    musicId = 'iP' + random2;
    checkiP();
+  } else if (document.getElementById('type').value == "author_Drake") {
+   randomize();
+   musicId = 'authDrake' + random3;
+   auth_drake();
   } else {
    change0();
    checkAndPlay();
@@ -784,14 +795,6 @@ secondChecker = '0';
  } 
  document.getElementById('musicNum').onloadeddata = function() {
  document.getElementById('progressTime').max = Number(Math.floor(document.getElementById('musicNum').duration));
- }
-}
-
-function checkType() {
- if (document.getElementById('type').value == "all") {
-  changeToAll();
- } else if (document.getElementById('type').value == "artist") {
-  changeToArtist();
  }
 }
 
@@ -892,6 +895,13 @@ if (document.getElementById('type').value == "all") {
 			mId[42] +
 			mId[43];
 		 }
+		  else if (document.getElementById('type').value == "author_Drake") {
+		   document.getElementById('selector').innerHTML =
+		   mId[0] +
+		   mId[26] +
+		   mId[15] +
+		   mId[43];
+		  }
 }
 
 function songPlayChecker() {
@@ -899,6 +909,8 @@ function songPlayChecker() {
  PocketBand();
  } else if (document.getElementById('type').value == "isaiahsPlaylist") {
   isaiahsPlaylist();	 
+ } else if (document.getElementById('type').value == "author_Drake") {
+  author_drakeRun();
  }
 }
 
@@ -906,6 +918,12 @@ function PocketBand() {
   randomize();
   musicId = 'pb' + random;
   checkPb();
+}
+
+function author_drakeRun() {
+  randomize();
+  musicId = 'authDrake' + random3;
+  auth_drake();
 }
 
 function isaiahsPlaylist() {
@@ -982,9 +1000,21 @@ function checkiP() {
  checkAndPlay();
 }
 
+function auth_drake() {
+ if (musicId == "authDrake1") {
+  musicId = 26;
+ } else if (musicId == "authDrake2") {
+  musicId = 43;
+ } else if (musicId == "authDrake3") {
+  musicId = 15;
+ }
+ checkAndPlay();
+}
+
 function randomize() {
  random = Math.floor(Math.random() * 16 + 1);
  random2 = Math.floor(Math.random() * 13 + 1);
+ random3 = Math.floor(Math.random() * 3 + 1);
 }
 
 function colorChanger() {
@@ -1010,4 +1040,18 @@ tran = "transition: 3s;";
  setTimeout( function() { document.getElementById('info').style = "box-shadow: 0px 0px 20px yellow;" + tran; }, 36000);
  setTimeout( function() { document.getElementById('info').style = "box-shadow: 0px 0px 20px orange;" + tran; }, 38000);
  setTimeout( function() { colorChanger(); }, 40000);
+}
+
+function changeType() {
+ if (document.getElementById('type2').value == "playlist") {
+  document.getElementById('type').innerHTML = 
+  '<option value="pocketband">Pocket Band</option>' +
+  '<option value="isaiahsPlaylist">The Remix&#39;s Playlist</option>';  
+ } else if (document.getElementById('type2').value == "author") {
+  document.getElementById('type').innerHTML =
+  '<option value="author_Drake">Drake</option>' +
+  '';
+ } else if (document.getElementById('type2').value == "all") {
+  document.getElementById('type').innerHTML = '<option class="option" value="all" selected>All</option>';
+ }
 }
