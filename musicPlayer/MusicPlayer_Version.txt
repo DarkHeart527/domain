@@ -1,3 +1,9 @@
+\Version 3.1.0
+- Added Two Songs
+- Asset Reloader
+- Added Extra Input For Higher Sorting
+/
+
 \Version 3.0.1
 - Minor Bug Fixes That Includes: =Pause Disabled Changing The Time=
 - Added New Music
