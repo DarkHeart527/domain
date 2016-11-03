@@ -6,6 +6,8 @@ function checkNav() {
  }
  else if (pageNum == 2) {
   page2();
+ } else if (pageNum == 3) {
+  page3();
  }
  else {
   pageEmpty();
@@ -41,6 +43,15 @@ function page2() {
   '<center>' +
   '<a href="#" style="visibility: visible;" onclick="deleteOne()" class="page"><<</a>' +
   '<a href="musicPlayer/Music%20Player.html" class="linkSelection">Music Player</a>' + //Code Area
+  '<a href="#" class="page2" onclick="addOne()">>></a>' +
+  '</center>';
+}
+
+function page3() {
+  document.getElementById('navHeader').innerHTML =
+  '<center>' +
+  '<a href="#" style="visibility: visible;" onclick="deleteOne()" class="page"><<</a>' +
+  '<a href="" class="linkSelection"></a>' + //Code Area
   '<a href="#" class="page2" onclick="addOne()">>></a>' +
   '</center>';
 }
