@@ -136,7 +136,7 @@ function autoUpdater() {
 function canWait() {
    document.getElementById('title').innerHTML = title;
    document.getElementById('author').innerHTML = author;
-   document.getElementById('progressTime').value = document.getElementById('musicNum').currentTime * 50;
+   setTimeout( function() { document.getElementById('progressTime').value = document.getElementById('musicNum').currentTime * 50; }, 1000);
 }
 
 function autoUpdater_iframe() {
