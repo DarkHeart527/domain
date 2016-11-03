@@ -124,6 +124,9 @@ function autoUpdater() {
   } else if (document.getElementById('type').value == "author_Drake") {
    musicId = document.getElementById('selector').value;
    checkAndPlay();
+  } else if (document.getElementById('type').value == "author_21Savage") {
+   musicId = document.getElementById('selector').value;
+   checkAndPlay();
   }
  } else if (document.getElementById('musicNum').ended == false) {
   
@@ -133,7 +136,7 @@ function autoUpdater() {
 function canWait() {
    document.getElementById('title').innerHTML = title;
    document.getElementById('author').innerHTML = author;
-   document.getElementById('progressTime').value = document.getElementById('musicNum').currentTime;
+   document.getElementById('progressTime').value = document.getElementById('musicNum').currentTime * 50;
 }
 
 function autoUpdater_iframe() {
@@ -155,7 +158,7 @@ function firstLoad() {
  change0();
  checkAndPlay();
  setInterval( function() { autoUpdater(); }, 50);
- setInterval( function() { canWait(); }, 500);
+ setInterval( function() { canWait(); });
 }
 
 function firstLoad_iframe() {
@@ -182,6 +185,10 @@ secondChecker = '0';
    randomize();
    musicId = 'authDrake' + random3;
    auth_drake();
+  } else if (document.getElementById('type').value == "author_21Savage") {
+   randomize();
+   musicId = 'auth21Savage' + random4;
+   auth_21Savage();
   } else {
    change0();
    checkAndPlay();
@@ -788,120 +795,18 @@ secondChecker = '0';
    randomize();
    musicId = 'authDrake' + random3;
    auth_drake();
+  } else if (document.getElementById('type').value == "author_21Savage") {
+   randomize();
+   musicId = 'auth21Savage' + random4;
+   auth_21Savage();
   } else {
    change0();
    checkAndPlay();
  }
  } 
  document.getElementById('musicNum').onloadeddata = function() {
- document.getElementById('progressTime').max = Number(Math.floor(document.getElementById('musicNum').duration));
+ document.getElementById('progressTime').max = Number(Math.floor(document.getElementById('musicNum').duration) * 50);
  }
-}
-
-function changeSongs() {
-if (document.getElementById('type').value == "all") {
- document.getElementById('selector').innerHTML = 
-		    mId[0] +
-		    mId[1] +
-			mId[2] +
-			mId[3] +
-			mId[4] +
-			mId[5] +
-			mId[6] +
-			mId[7] +
-			mId[8] +
-			mId[9] +
-			mId[10] +
-			mId[11] +
-			mId[12] +
-			mId[13] +
-			mId[14] +
-			mId[15] +
-			mId[16] +
-			mId[17] +
-			mId[18] +
-			mId[19] +
-			mId[20] +
-			mId[21] +
-			mId[22] +
-			mId[23] +
-			mId[24] +
-			mId[25] +
-			mId[26] +
-			mId[27] +
-			mId[28] +
-			mId[29] +
-			mId[30] +
-			mId[31] +
-			mId[32] +
-			mId[33] +
-			mId[34] +
-			mId[35] +
-			mId[36] +
-			mId[37] +
-			mId[38] +
-			mId[39] +
-			mId[40] +
-			mId[41] +
-			mId[42] +
-			mId[43] +
-			mId[44] +
-			mId[45] +
-			mId[46] +
-			mId[47] +
-			mId[48] +
-			mId[49] +
-			mId[50] +
-			mId[51] +
-			mId[52] +
-			mId[53] +
-			mId[54] +
-			mId[55];
-			}
-	else if (document.getElementById('type').value == "pocketband") {
-	 document.getElementById('selector').innerHTML = 		    
-			mId[0] +
-		    mId[1] +
-			mId[3] +
-			mId[4] +
-			mId[7] +
-			mId[18] +
-			mId[19] +
-			mId[20] +
-			mId[21] +
-			mId[22] +
-			mId[23] +
-			mId[25] +
-			mId[27] +
-			mId[28] +
-			mId[29] +
-			mId[30] +
-			mId[32];
-	} 
-	else if (document.getElementById('type').value == "isaiahsPlaylist") {
-	document.getElementById('selector').innerHTML = 
-			mId[0] +
-			mId[33] +
-			mId[31] +
-			mId[26] +
-			mId[34] +
-			mId[35] +
-			mId[36] +
-			mId[37] +
-			mId[38] +
-			mId[39] +
-			mId[40] +
-			mId[41] +
-			mId[42] +
-			mId[43];
-		 }
-		  else if (document.getElementById('type').value == "author_Drake") {
-		   document.getElementById('selector').innerHTML =
-		   mId[0] +
-		   mId[26] +
-		   mId[15] +
-		   mId[43];
-		  }
 }
 
 function songPlayChecker() {
@@ -911,6 +816,8 @@ function songPlayChecker() {
   isaiahsPlaylist();	 
  } else if (document.getElementById('type').value == "author_Drake") {
   author_drakeRun();
+ } else if (document.getElementById('type').value == "author_21Savage") {
+  author_21savageRun();
  }
 }
 
@@ -924,6 +831,12 @@ function author_drakeRun() {
   randomize();
   musicId = 'authDrake' + random3;
   auth_drake();
+}
+
+function author_21savageRun() {
+  randomize();
+  musicId = 'authSavage' + random4;
+  auth_21Savage();
 }
 
 function isaiahsPlaylist() {
@@ -1011,10 +924,26 @@ function auth_drake() {
  checkAndPlay();
 }
 
+function auth_21Savage() {
+ if (musicId == "auth21Savage1") {
+  musicId = 35;
+ } else if (musicId == "auth21Savage2") {
+  musicId = 36;
+ } else if (musicId == "auth21Savage3") {
+  musicId = 38;
+ } else if (musicId == "auth21Savage4") {
+  musicId = 34;
+ } else if (musicId == "auth21Savage5") {
+  musicId = 41;
+ }
+ checkAndPlay();
+}
+
 function randomize() {
  random = Math.floor(Math.random() * 16 + 1);
  random2 = Math.floor(Math.random() * 13 + 1);
  random3 = Math.floor(Math.random() * 3 + 1);
+ random4 = Math.floor(Math.random() * 4 + 1);
 }
 
 function colorChanger() {
@@ -1047,11 +976,15 @@ function changeType() {
   document.getElementById('type').innerHTML = 
   '<option value="pocketband">Pocket Band</option>' +
   '<option value="isaiahsPlaylist">The Remix&#39;s Playlist</option>';  
- } else if (document.getElementById('type2').value == "author") {
+ } 
+ 
+ else if (document.getElementById('type2').value == "author") {
   document.getElementById('type').innerHTML =
   '<option value="author_Drake">Drake</option>' +
-  '';
- } else if (document.getElementById('type2').value == "all") {
+  '<option value="author_21Savage">21 Savage</option>';
+ } 
+ 
+ else if (document.getElementById('type2').value == "all") {
   document.getElementById('type').innerHTML = '<option class="option" value="all" selected>All</option>';
  }
 }
