@@ -4,6 +4,10 @@
  outline: none;
 }
 
+*:focus {
+ outline: 1px red;
+}
+
 *::-webkit-slider-thumb, *::-webkit-slider-runnable-track {
  -webkit-appearance: none;
  appearance: none;
@@ -81,12 +85,6 @@ body, html {
  transition: 1.5s;
 }
 
-.inputSlider::-webkit-slider-runnable-track:disabled, .inputSlider::-webkit-slider-runnable-track:hover:disabled {
- background-color: grey;
- box-shadow: none;
- transition: 0s;
-}
-
 .inputSlider::-webkit-slider-thumb {
  -webkit-appearance: none;
  width: 25px;
@@ -99,19 +97,11 @@ body, html {
  box-shadow: 0px 0px 20px red;
 }
 
-.inputSlider::-webkit-slider-thumb:disabled, .inputSlider::-webkit-slider-thumb:hover:disabled {
- -webkit-appearance: none;
- border: solid 3px lightgrey;
- background-color: lightgrey;
- transition: 0s;
- box-shadow: none;
-}
-
 .inputSlider::-webkit-slider-thumb:hover {
  cursor: pointer;
  transition: 1.5s;
  border: solid 3px red;
- background-color: red;
+ background-color: blue;
  box-shadow: 0px 0px 20px blue;
 }
 
@@ -184,8 +174,8 @@ body, html {
  -webkit-appearance: none;
  margin-top: 10px;
  border: solid rgb(0, 255, 14) 2px;
- width: 1000px;
- height: 35px;
+ width: 80%;
+ height: 8%;
  margin-left: 10%;
  transition: 1s;
  border-radius: 200px;
@@ -195,7 +185,7 @@ body, html {
  background-color: transparent;
 }
 
-.progressBar::-webkit-slider-thumb {
+.progressBar::-webkit-slider-thumb/* VALID PSEUDO CLASS*/ {
   -webkit-appearance: none;
   height: 15px;
   width: 15px;
@@ -210,7 +200,7 @@ body, html {
 
 .progressBar::-webkit-slider-runnable-track {
  border-radius: 20px;
- width: 990px;
+ width: 100%;
  height: 10px;
  margin-top: 7.5px;
  margin-left: 5px;
@@ -261,6 +251,41 @@ body, html {
 }
 
 .inputSlider2 {
- background-color: white;
+ -webkit-appearance: none;
+ background-color: transparent;
+ width: 50%;
+ margin-left: 0px;
+ height: 10px;
 }
 
+.inputSlider2:disabled {
+ opacity: .3;
+}
+
+.inputSlider2::-webkit-slider-runnable-track {
+ -webkit-appearance: none;
+ height: 10px;
+ width: 50%;
+ background-color: yellow;
+ border-radius: 200px;
+ box-shadow: 0px 0px 15px yellow;
+ transition: 1.5s;
+}
+
+.inputSlider2::-webkit-slider-thumb {
+ -webkit-appearance: none;
+ width: 25px;
+ height: 25px;
+ margin-top: -7.5px;
+ border-radius: 20px;
+ border: solid 3px orange;
+ background-color: orange;
+ transition: 1.5s;
+ box-shadow: 0px 0px 20px yellow;
+}
+
+.inputSlider2::-webkit-slider-thumb:hover {
+ cursor: pointer;
+ transition: 1.5s;
+ background-color: red;
+}
