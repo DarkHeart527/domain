@@ -1,5 +1,5 @@
 function themeSchool() {
- document.getElementById('stylingLink').href = "musicplayerSchool.css";
+ document.getElementById('stylingLink').href = "musicplayer.css";
 }
 
 function themeOriginal() {
