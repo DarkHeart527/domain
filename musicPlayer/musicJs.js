@@ -65,7 +65,7 @@ var mId = {
  43: '<option class="option" title="Drake" 																value="43">Energy</option>',
  44: '<option class="option" title="Kodak Black" 														value="44">No Flockin</option>',
  45: '<option class="option" title="DJ O.T.C" 															value="45">Lost Boi Redemption</option>',
- 46: '<option class="option" title="" 																	value="46"></option>',
+ 46: '<option class="option" title="Kodak Black" 														value="46">Hollyhood</option>',
  47: '<option class="option" title="" 																	value="47"></option>',
  48: '<option class="option" title="" 																	value="48"></option>',
  49: '<option class="option" title="" 																	value="49"></option>',
@@ -623,10 +623,10 @@ secondChecker = '0';
   author = "DJ O.T.C";
  } 
  
-   else if (musicId == NaN) {
-  document.getElementById('musicNum').src = link + "";
-  title = "";
-  author = "";
+   else if (musicId == 46) {
+  document.getElementById('musicNum').src = link + "Hollyhood - Kodak Black.mp3";
+  title = "Hollyhood";
+  author = "Kodak Black";
  } 
  
    else if (musicId == NaN) {
@@ -1072,6 +1072,10 @@ function checkiP() {
   musicId = 42;
  } else if (musicId == "iP13") {
   musicId = 43;
+ } else if (musicId == "iP14") {
+  musicId = 46;
+ } else if (musicId == "iP15") {
+  musicId = 44;
  }
  checkAndPlay();
 }
@@ -1104,7 +1108,7 @@ function auth_21Savage() {
 
 function randomize() {
  random = Math.floor(Math.random() * 16 + 1);
- random2 = Math.floor(Math.random() * 13 + 1);
+ random2 = Math.floor(Math.random() * 15 + 1);
  random3 = Math.floor(Math.random() * 3 + 1);
  random4 = Math.floor(Math.random() * 5 + 1);
 }
