@@ -14,12 +14,3 @@
 .linkBTC {
  position: fixed;
 }
-
-html, body {
- animation: changer 5s ease-in-out 1;
-}
-
-@keyframes changer {
- 0% {transform: rotate(7200deg);};
- 100% {transform: rotate(7200deg);};
-}
