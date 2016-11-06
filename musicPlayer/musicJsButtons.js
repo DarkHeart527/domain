@@ -100,3 +100,7 @@ function checkIfDisableFunction() {
   document.getElementById('progressTime').disabled = true;
  }
 }
+
+function changeTheme() {
+ document.getElementById('stylingLink').href = 'styling/musicplayer' + document.getElementById('styleInput').value + '.css';
+}
