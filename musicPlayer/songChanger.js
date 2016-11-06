@@ -1,3 +1,16 @@
+
+/*
+
+		    mId[0] +
+			mId[18] +
+			mId[21] + 
+			mId[22] +
+			mId[24] +
+			mId[13] +
+			mId[32]
+
+*/
+
 function changeSongs() {
 if (document.getElementById('type').value == "all") {
  document.getElementById('selector').innerHTML = 
@@ -76,7 +89,8 @@ if (document.getElementById('type').value == "all") {
 			mId[28] +
 			mId[29] +
 			mId[30] +
-			mId[32];
+			mId[32] +
+			mId[45];
 	} 
 	else if (document.getElementById('type').value == "isaiahsPlaylist") {
 	document.getElementById('selector').innerHTML = 
@@ -93,7 +107,8 @@ if (document.getElementById('type').value == "all") {
 			mId[40] +
 			mId[41] +
 			mId[42] +
-			mId[43];
+			mId[43] +
+			mId[44];
 		 }
 		  else if (document.getElementById('type').value == "author_Drake") {
 		   document.getElementById('selector').innerHTML =
