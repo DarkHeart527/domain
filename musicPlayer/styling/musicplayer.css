@@ -1,11 +1,5 @@
 * {
  color: red;
- margin-left: 10px;
- outline: none;
-}
-
-*:focus {
- outline: 1px red;
 }
 
 *::-webkit-slider-thumb, *::-webkit-slider-runnable-track {
@@ -13,17 +7,18 @@
  appearance: none;
 }
 
-body, html {
- background-color: black;
- margin: 0px;
- margin-top: 10px;
- animation: moveSideToSideBodyMode 10s infinite;
- overflow-x: hidden;
-}
-
 .selector {
  background-color: white;
  color: black;
+}
+
+body {
+ background-color: black;
+}
+
+.allContent {
+ background-color: black;
+ animation: moveSideToSideBodyMode 10s infinite;
 }
 
 .option {
@@ -45,10 +40,6 @@ body, html {
  background-color: transparent;
  color: darkgrey;
  font-size: 35px;
-}
-
-.nowPlaying::after, .option::after, .option2::after, .typeSelector::after, html::after, body::after, .selector::after, .typeSelector::after, .author::after {
- content: '';
 }
 
 .author {
@@ -114,9 +105,10 @@ body, html {
  color: grey;
  background-color: transparent;
  text-decoration: none;
- transition: color 1s;
- margin-top: 5px;
+ transition: border-right 2.5s, border-left 2.5s, color 1s;
+ margin: 0px;
  position: fixed;
+ z-index: 1;
 }
 
 .linkBTC:hover {
@@ -161,7 +153,6 @@ body, html {
  border-width: 3px;
  border-radius: 5px;
  font-size: 17.5px;
- transition: box-shadow .6s;
 }
 
 .buttonType-2:hover {
@@ -236,9 +227,9 @@ body, html {
 }
 
 @keyframes moveSideToSideBodyMode {
-   0% {transform: rotate(-.25deg)}
-   50% {transform: rotate(.25deg)}
-   100% {transform: rotate(-.25deg)}
+   0% {transform: rotate(-.35deg)}
+   50% {transform: rotate(.35deg)}
+   100% {transform: rotate(-.35deg)}
 }
 
 .info {
