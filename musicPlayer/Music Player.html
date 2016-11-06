@@ -50,13 +50,13 @@
 			<select id="type" class="typeSelector" onchange="changeSongs();songPlayChecker();checkAndPlay();">
 				<option class="option2" value="all">All</option>
 			</select>
-			<select onchange="changeType();songPlayChecker();checkAndPlay();changeSongs();" id="type2">
-				<option value="all" selected>All</option>
-				<option value="author">Author</option>
-				<option value="year">Year</option>
-				<option value="source">Source</option>
-				<option value="playlist">Playlist</option>
-				<option value="album">Album</option>
+			<select onchange="changeType();songPlayChecker();checkAndPlay();changeSongs();" class="typeSelector" id="type2">
+				<option value="all" class="option" selected>All</option>
+				<option value="author" class="option">Author</option>
+				<option value="year" class="option">Year</option>
+				<option value="source" class="option">Source</option>
+				<option value="playlist" class="option">Playlist</option>
+				<option value="album" class="option">Album</option>
 			</select>
 			<p>
 				<button onclick="nextSong()" class="buttonType-2">Next Song</button>
@@ -66,16 +66,16 @@
 			<p class="text"><button class="buttonType-1" onClick="pausea()" id="pause">Pause</button><button class="buttonType-1" onClick="unPausea()" id="unPause" disabled>UnPause</button></p>
 			<p class="text">Volume: <span id="volumeDisplay" class="text">100.0</span></p>
 			<input class="inputSlider" type="range" name="volume" id="volume" value="2500" min="0" max="10000" />
-			<p class="text">Speed: <span id="speedArea">1.00</span></p>
+			<p class="text">Speed: <span id="speedArea" class="text">1.00</span></p>
 			<input class="inputSlider2" name="speed" type="range" id="speedD" min="50" value="100" max="400" />
 			<p class="text">Theme</p>
-			<select onchange="changeTheme()" id="styleInput">
-				<option value="" selected>Original</option>
-				<option value="School">School</option>
-				<option value="None">None</option>
+			<select onchange="changeTheme()" class="typeSelector" id="styleInput">
+				<option value="" class="option" selected>Original</option>
+				<option value="School" class="option">School</option>
+				<option value="None" class="option">None</option>
 			</select>
-			<p>Upload An mp3 File Or Text One Here On Skype</p>
-			<a href="https://join.skype.com/ur3jQ61lC6Ql" target="_blank">Join Skype Group - Codark.com</a>
+			<p class="text">Upload An mp3 File Or Text One Here On Skype</p>
+			<a class="text" href="https://join.skype.com/ur3jQ61lC6Ql" target="_blank">Join Skype Group - Codark.com</a>
 		</center>
 	</body>
 </html>
