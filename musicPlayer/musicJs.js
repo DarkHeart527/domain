@@ -969,7 +969,6 @@ secondChecker = '0';
 }
 
 function songPlayChecker() {
-if (document.getElementById('realVersion').value == "yes") {
  if (document.getElementById('type').value == "pocketband") {
  PocketBand();
  } else if (document.getElementById('type').value == "isaiahsPlaylist") {
@@ -979,9 +978,6 @@ if (document.getElementById('realVersion').value == "yes") {
  } else if (document.getElementById('type').value == "author_21Savage") {
   author_21savageRun();
  }
-} else {
- 
-}
 }
 
 function PocketBand() {
