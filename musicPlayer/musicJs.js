@@ -277,10 +277,10 @@ if(adTimeLeft == 0) {
   
  }
  document.getElementById('notificationTextTimer').innerHTML = 'Time Left: ' + adTimeLeft; 
- document.getElementById('progressTime').value = document.getElementById('musicNum').currentTime * 50;
 }
 
 function canWait() {
+   document.getElementById('progressTime').value = document.getElementById('musicNum').currentTime * 50;
    document.getElementById('title').innerHTML = title;
    document.getElementById('author').innerHTML = author;
    adTimeKeeper = adTimeKeeper - 1;
@@ -1081,9 +1081,7 @@ function auth_drake() {
   musicId = 26;
  } else if (musicId == "authDrake2") {
   musicId = 43;
- } else if (musicId == "authDrake3") {
-  musicId = 15;
- }
+ } 
  checkAndPlay();
 }
 
@@ -1105,7 +1103,7 @@ function auth_21Savage() {
 function randomize() {
  random = Math.floor(Math.random() * 16 + 1);
  random2 = Math.floor(Math.random() * 15 + 1);
- random3 = Math.floor(Math.random() * 3 + 1);
+ random3 = Math.floor(Math.random() * 2 + 1);
  random4 = Math.floor(Math.random() * 5 + 1);
 }
 
