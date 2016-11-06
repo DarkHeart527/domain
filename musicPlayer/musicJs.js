@@ -14,7 +14,10 @@ var secondChecker = 0;
 timeAudio = null;
 var afterVolume = 0;
 var checkIfDisable = null;
-
+var saveLast = '';
+var fS = 1;
+var adTimeLeft = 10;
+var adTimeKeeper = 30;
 var mId = {
   0: '<option class="option" title="All Songs" 															value="0" selected>Random</option>',
   1: '<option class="option" title="Iwey" 																value="1">Cut Throat</option>',
@@ -73,14 +76,156 @@ var mId = {
  54: '<option class="option" title="" 																	value="54"></option>',
  55: '<option class="option" title="" 																	value="55"></option>',
  }
+ 
+ function engageAdText() {
+  adType = Number(Math.floor(Math.random() * 1 + 1));
+  if (adType == 1) {
+   adNumber = Math.floor(Math.random() * 1 + 1);
+   if (adNumber == 1) {
+	document.getElementById('notificationText').innerHTML = "<a href='http://pocketband.net' class='gChrome'>Pocket Band</a><br />Want to make some great music?<br />Download this app now, but I must warn you I'ts very hard to make great music so ask others for help";
+   } else {
+	document.getElementById('notificationText').innerHTML = 'No ad available <br />Ad Number: ' + adNumber;
+   }
+  } else {
+   document.getElementById('notificationText').innerHTML = '<span style="color: red">AD TYPE DOES NOT EXIST</b><br /><b style="color: red">Ad Type: ' + adType;
+  }
+  notiOnReg();
+ }
 
+function mute() {
+ afterVolume = document.getElementById('volume').value;
+ document.getElementById('musicNum').volume = 0;
+ document.getElementById('mute').disabled = true;
+ document.getElementById('unMute').disabled = false;
+ document.getElementById('volume').value = 0;
+ document.getElementById('volume').disabled = true;
+}
 
+function unMute() {
+ document.getElementById('volume').value = afterVolume;
+ document.getElementById('mute').disabled = false;
+ document.getElementById('unMute').disabled = true;
+ document.getElementById('volume').disabled = false;
+}
+
+function pausea() {
+ checkIfDisable = checkIfDisable + 1;
+ document.getElementById('musicNum').pause();
+ document.getElementById('pause').disabled = true;
+ document.getElementById('unPause').disabled = false;
+ checkIfDisableFunction();
+}
+
+function unPausea() {
+ checkIfDisable = checkIfDisable - 1;
+ document.getElementById('musicNum').play();
+ document.getElementById('pause').disabled = false;
+ document.getElementById('unPause').disabled = true;
+ checkIfDisableFunction();
+}
+function volumeChanger() {
+ document.getElementById('musicNum').volume = document.getElementById('volume').value / 10000;
+ document.getElementById('volumeDisplay').innerHTML = document.getElementById('volume').value/100;
+}
+
+function mute_iframe() {
+ document.getElementById('musicNum').volume = 0;
+ document.getElementById('mute').disabled = true;
+ document.getElementById('unMute').disabled = false;
+}
+
+function unMute_iframe() {
+ document.getElementById('mute').disabled = false;
+ document.getElementById('unMute').disabled = true;
+ document.getElementById('musicNum').volume = 1;
+}
+
+function pausea_iframe() {
+ document.getElementById('musicNum').pause();
+ document.getElementById('pause').disabled = true;
+ document.getElementById('unPause').disabled = false;
+}
+
+function unPausea_iframe() {
+ document.getElementById('musicNum').play();
+ document.getElementById('pause').disabled = false;
+ document.getElementById('unPause').disabled = true;
+}
+
+function nextSong() {
+ document.getElementById('musicNum').currentTime = document.getElementById('musicNum').duration;
+}
+
+function restartSong() {
+ document.getElementById('musicNum').currentTime = 0;
+ minutes = 0;
+ hours = 0;
+ secondChecker = '0';
+ minuteChecker = '0';
+}
+
+function speedRate() {
+fS = Number(Math.floor(document.getElementById('speedD').value));
+fS2 = fS / 100;
+document.getElementById('musicNum').playbackRate = fS2;
+document.getElementById('speedArea').innerHTML = fS2;
+}
+
+function enableBar() {
+ checkIfDisable = checkIfDisable - 1;
+ document.getElementById('enaBtn').disabled = true;
+ document.getElementById('disBtn').disabled = false;
+ checkIfDisableFunction();
+}
+
+function disableBar() {
+ checkIfDisable = checkIfDisable + 1;
+ document.getElementById('enaBtn').disabled = false;
+ document.getElementById('disBtn').disabled = true;
+ checkIfDisableFunction();
+}
+
+function checkIfDisableFunction() {
+ if (checkIfDisable == 0) {
+   document.getElementById('progressTime').disabled = false;
+ } else {
+  document.getElementById('progressTime').disabled = true;
+ }
+}
+
+function changeTheme() {
+ document.getElementById('stylingLink').href = 'styling/musicplayer' + document.getElementById('styleInput').value + '.css';
+}
+
+ 
+function notiOnReg() {
+ document.getElementById('notification').style = 'margin-top: 50px;';
+}
+ 
 function change0() {
  musicId = Math.floor( Math.random() * 1000 + 1);
 }
 
-function autoUpdater() {
+function reloadAssets() {
+ saveLast = document.getElementById('stylingLink').href;
+ console.clear()
+ console.info('Reloading Assets');
+ document.getElementById('stylingLink').href = '';
+ console.info('Assets Deleted Waiting 1.5 Seconds');
+ setTimeout( function() { loadAssets(); }, 500);
+}
 
+function loadAssets() {
+ document.getElementById('stylingLink').href = saveLast;
+ console.info('Reload Complete');
+ document.getElementById('notificationText').innerHTML = 'Successfully Reloaded Assets!';
+ notiOnReg();
+}
+
+function autoUpdater() {
+if(adTimeLeft == 0) {
+ document.getElementById('notification').style = 'margin-top: -500px;"';
+}
    seconds = Math.floor(timeAudio) + 1 - minutes*60;
    if (seconds > 59) {
     seconds = 0;
@@ -131,12 +276,24 @@ function autoUpdater() {
  } else if (document.getElementById('musicNum').ended == false) {
   
  }
+ document.getElementById('notificationTextTimer').innerHTML = 'Time Left: ' + adTimeLeft; 
+ document.getElementById('progressTime').value = document.getElementById('musicNum').currentTime * 50;
 }
 
 function canWait() {
    document.getElementById('title').innerHTML = title;
    document.getElementById('author').innerHTML = author;
-   document.getElementById('progressTime').value = document.getElementById('musicNum').currentTime * 50;
+   adTimeKeeper = adTimeKeeper - 1;
+   if (adTimeKeeper == 0) {
+	adTimeLeft = 30;
+	adTimeKeeper = 150;
+	engageAdText();
+   }
+   if (adTimeLeft > 0) {
+	adTimeLeft = adTimeLeft - 1;
+   } else {
+	
+   }
 }
 
 function autoUpdater_iframe() {
@@ -155,6 +312,8 @@ function changeEle() {
 }
 
 function firstLoad() {
+ document.getElementById('notificationText').innerHTML = 'Welcome, for the<b class="bestR"> BEST </b>results please use <a class="gChrome" href="https://chrome.google.com">google chrome</a>, thank you.<br />Tell me how my notification bar is! Is it good, bad, excellent, horrible, if not what is it?';
+ notiOnReg();
  change0();
  checkAndPlay();
  setInterval( function() { autoUpdater(); }, 50);
@@ -810,6 +969,7 @@ secondChecker = '0';
 }
 
 function songPlayChecker() {
+if (document.getElementById('realVersion').value == "yes") {
  if (document.getElementById('type').value == "pocketband") {
  PocketBand();
  } else if (document.getElementById('type').value == "isaiahsPlaylist") {
@@ -819,6 +979,9 @@ function songPlayChecker() {
  } else if (document.getElementById('type').value == "author_21Savage") {
   author_21savageRun();
  }
+} else {
+ 
+}
 }
 
 function PocketBand() {
