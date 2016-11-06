@@ -1,0 +1,91 @@
+* {
+ cursor: default;
+ margin-left: 10px;
+ outline: none;
+ transition: border-right 2.5s, border-left 2.5s;
+ border-left: solid 0px red;
+ border-right: solid 0px red;
+}
+
+.buttonType-2 {
+ transition: box-shadow .6s, border-right 2.5s, border-left 2.5s;
+}
+
+.buttonType-1 {
+ transition: box-shadow .6s, border-right 2.5s, border-left 2.5s;
+}
+
+*:focus, *:focus:hover {
+ border-left: solid 20px yellow;
+ border-right: solid 20px yellow;
+ transition: 1s;
+}
+ 
+.notificationBox {
+ width: 35%;
+ height: 23.5%;
+ position: fixed;
+ background-color: grey;
+ border: solid 2px grey;
+ box-shadow: 0px 0px 50px white;
+ border-radius: 15px;
+ transition: 5s;
+ box-align: center;
+ z-index: 1;
+ left: 32%;
+ opacity: .9;
+ overflow-y: auto;
+}
+
+a, select, option {
+ cursor: pointer;
+}
+
+.notificationText {
+ color: black;
+ font-size: 20px;
+ margin-top: -.1%;
+}
+
+.notificationTextTimer {
+ color: red;
+ font-size: 15px;
+ margin-top: -.1%;
+}
+
+.gChrome {
+ color: green;
+ margin: 0px;
+ transition: border-right 2.5s, border-left 2.5s, color .25s;
+}
+
+.gChrome:hover {
+ color: blue;
+ transition: border-right 1s, border-left 1s, color .25s;
+}
+
+.bestR {
+ color: green;
+ margin: 0px;
+}
+
+body {
+ margin: 0px;
+ overflow-x: hidden;
+}
+
+.allContent {
+ margin: 0px;
+ overflow: hidden;
+}
+
+.spacer {
+ font-size: 1px;
+ visibility: hidden;
+ margin-top: 10%;
+}
+
+.footer {
+ height: 150px;
+ visibility: hidden;
+}
