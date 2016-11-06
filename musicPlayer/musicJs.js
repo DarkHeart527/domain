@@ -1,5 +1,3 @@
-alert();
-
 var musicId = null;
 var docId = document.getElementById;
 var author = "";
