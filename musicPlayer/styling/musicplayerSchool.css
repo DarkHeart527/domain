@@ -1,12 +1,5 @@
 * {
  color: red;
- margin-left: 10px;
- outline: none;
- cursor: default;
-}
-
-*:focus {
- outline: 1px red;
 }
 
 *::-webkit-slider-thumb, *::-webkit-slider-runnable-track {
@@ -14,16 +7,17 @@
  appearance: none;
 }
 
-body, html {
- background-color: black;
- margin: 0px;
- margin-top: 10px;
- overflow-x: hidden;
-}
-
 .selector {
  background-color: white;
  color: black;
+}
+
+body {
+ background-color: black;
+}
+
+.allContent {
+ background-color: black;
 }
 
 .option {
@@ -75,6 +69,12 @@ body, html {
  transition: 1.5s;
 }
 
+.inputSlider::-webkit-slider-runnable-track:hover {
+ background-color: blue;
+ box-shadow: 0px 0px 15px red;
+ transition: 1.5s;
+}
+
 .inputSlider::-webkit-slider-thumb {
  -webkit-appearance: none;
  width: 25px;
@@ -85,7 +85,14 @@ body, html {
  background-color: blue;
  transition: 1.5s;
  box-shadow: 0px 0px 20px red;
+}
+
+.inputSlider::-webkit-slider-thumb:hover {
  cursor: pointer;
+ transition: 1.5s;
+ border: solid 3px red;
+ background-color: blue;
+ box-shadow: 0px 0px 20px blue;
 }
 
 .text {
@@ -97,10 +104,10 @@ body, html {
  color: grey;
  background-color: transparent;
  text-decoration: none;
- transition: color 1s;
- margin-top: 5px;
+ transition: border-right 2.5s, border-left 2.5s, color 1s;
+ margin: 0px;
  position: fixed;
- cursor: pointer;
+ z-index: 1;
 }
 
 .linkBTC:hover {
@@ -116,6 +123,11 @@ body, html {
  border-radius: 5px;
  border: default;
  transition: box-shadow .6s;
+}
+
+.buttonType-1:hover {
+ box-shadow: 0px 0px 25px white;
+ transition: box-shadow .3s;
  cursor: pointer;
 }
 
@@ -124,7 +136,13 @@ body, html {
  background-color: black;
  border-color: darkgrey;
  transition: color .25s;
+}
+
+.buttonType-1:disabled:hover {
  cursor: default;
+ box-shadow: 0px 0px 0px transparent;
+ color: red;
+ transition: color .5s;
 }
 
 .buttonType-2 {
@@ -134,7 +152,11 @@ body, html {
  border-width: 3px;
  border-radius: 5px;
  font-size: 17.5px;
- transition: box-shadow .6s;
+}
+
+.buttonType-2:hover {
+ transition: box-shadow .3s;
+ box-shadow: 0px 0px 25px darkgrey;
  cursor: pointer;
 }
 
@@ -237,5 +259,10 @@ body, html {
  background-color: orange;
  transition: 1.5s;
  box-shadow: 0px 0px 20px yellow;
+}
+
+.inputSlider2::-webkit-slider-thumb:hover {
  cursor: pointer;
+ transition: 1.5s;
+ background-color: red;
 }
