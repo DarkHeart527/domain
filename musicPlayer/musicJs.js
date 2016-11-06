@@ -441,7 +441,7 @@ secondChecker = '0';
   else if (musicId == 15) {
   document.getElementById('musicNum').src = link + "10 Bands - Drake.mp3";
   title = "10 Bands";
-  author = "Drake";
+  author = "Humble The Poet";
  } 
  
   else if (musicId == 16) {
