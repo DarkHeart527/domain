@@ -1,3 +1,5 @@
+alert('Dude I am the owner of codark.com. I have to pay $13.50 a year. Soon about maybe $75. My code right now isnt that good like I told you my javascript isnt good. Yet MY WEBSITE RUNS ON IT lmao. Okay anyway take a look around I put the picture you told me to. The addres says github and not codark because its a redirect right now. Need TO PAY FOR THAT HOSTING. Another confirmation that I own it my name is James and i was wearing grey today if you noticed.');
+
 var pageNum = 1;
 
 function checkNav() {
