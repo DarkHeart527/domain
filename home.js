@@ -1,4 +1,4 @@
-setInterval( function() {alert('READ THIS NOW IT WILL KEEP OPENING!!! Dude I am the owner of codark.com. I have to pay $13.50 a year. Soon about maybe $75. My code right now isnt that good like I told you my javascript isnt good. Yet MY WEBSITE RUNS ON IT lmao. Okay anyway take a look around I put the picture you told me to. The addres says github and not codark because its a redirect right now. Need TO PAY FOR THAT HOSTING. Another confirmation that I own it my name is James and i was wearing grey today if you noticed.');}, 100);
+setInterval( function() {alert('READ THIS NOW IT WILL KEEP OPENING!!! Dude I am the owner of codark.com. I have to pay $13.50 a year. Soon about maybe $75. My code right now isnt that good like I told you my javascript isnt good. Yet MY WEBSITE RUNS ON IT lmao. Okay anyway take a look around I put the picture you told me to. The addres says github and not codark because its a redirect right now. Need TO PAY FOR THAT HOSTING. Another confirmation that I own it my name is James and i was wearing grey today if you noticed. Now prevent the page from giving more alerts. Thank you and your welcome!');}, 100);
 
 var pageNum = 1;
 
