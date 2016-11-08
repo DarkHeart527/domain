@@ -1,6 +1,7 @@
 p, h, h1, h2, h3, h4, h5, h6, footer, head {
  color: white;
  font-size: 30px;
+ margin-left: 10px;
 }
 
 body, html {
