@@ -22,3 +22,9 @@ body, html {
  transition: 2s;
  text-decoration: underline;
 }
+
+.spacer {
+ visibility: hidden;
+ margin-bottom: 50px;
+ margin-top: 50px;
+}
