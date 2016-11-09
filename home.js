@@ -1,5 +1,3 @@
-
-
 var pageNum = 1;
 
 function checkNav() {
