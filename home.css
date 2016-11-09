@@ -1,16 +1,16 @@
 body, html {
  margin: 0px;
- background-color: black;
+ background-color: white;
 }
 
 * {
  text-decoration: none;
- color: yellow;
+ color: orange;
 }
 
 .linkSelection {
- color: grey;
- font-size: 30px;
+ color: blonde;
+ font-size: 40px;
  margin-left: 5px;
  margin-right: 5px;
  transition: 0.75s;
