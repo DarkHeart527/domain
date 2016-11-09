@@ -1,4 +1,4 @@
-#Alejandro If That's How It's Spelled Notify Me Before You Change Or Add To My Pages
+#Please Make Changes To The -Update- Branch As Others Will Not Be Accepted And WILL Be Deleted Thank You Collaborators
 
 #My Online Project http://codark.com
 
