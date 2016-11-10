@@ -2,6 +2,9 @@
 - Added Four Songs -
 - Asset Reloader -
 - Added Extra Input For Higher Sorting -
+- Notification Bar Instead Of Alert -
+- Ability To See Your Focus -
+- Fixed Css For Progress Bar -
 /
 
 \Version 3.0.1
