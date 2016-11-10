@@ -7,6 +7,8 @@
 		<link href="styling/cannotReload.css" rel="stylesheet" type="text/css" id="stylingLink" />
 		<script src="musicJs.js" type="text/javascript">
 		</script>
+		<script src="variables.js" type="text/javascript">
+		</script>
 		<script src="songChanger.js" type="text/javascript">
 		</script>
 	</head>
@@ -43,10 +45,10 @@
 				</p>
 				<select id="selector" class="typeSelector" onchange="changeEle();">
 				</select>
-				<select id="type" class="typeSelector" onchange="changeSongs();songPlayChecker();checkAndPlay();">
+				<select id="type" class="typeSelector" onchange="changeSongs();checkForMusic();checkAndPlay();">
 					<option class="option2" value="all">All</option>
 				</select>
-				<select onchange="changeType();songPlayChecker();checkAndPlay();changeSongs();" class="typeSelector" id="type2">
+				<select onchange="changeType();checkForMusic();checkAndPlay();changeSongs();" class="typeSelector" id="type2">
 					<option value="all" class="option" selected>All</option>
 					<option value="author" class="option">Author</option>
 					<option value="year" class="option">Year</option>
@@ -71,8 +73,7 @@
 					<option value="None" class="option">None</option>
 				</select>
 				<p class="text">Upload An mp3 File Or Text One Here On Skype</p>
-				<a class="text" href="https://join.skype.com/ur3jQ61lC6Ql" target="_blank">Join Skype Group - Codark.com</a>
-				<a class="text" href="https://twitter.com/darkheart527">Give It To My Twitter</a>
+				<p><a class="text" href="https://join.skype.com/ur3jQ61lC6Ql" target="_blank">Join Skype Group - Codark.com</a></p>
 			<footer class="footer">Actually its a spacer. You know, for the end.</footer>
 			</center>
 		</div>
