@@ -863,26 +863,7 @@ secondChecker = '0';
  } 
  
   else {
-  if (document.getElementById('type').value == "pocketband") {
-   randomize();
-   musicId = 'pb' + random;
-   checkPb();
-  } else if (document.getElementById('type').value == "isaiahsPlaylist") {
-   randomize();
-   musicId = 'iP' + random2;
-   checkiP();
-  } else if (document.getElementById('type').value == "author_Drake") {
-   randomize();
-   musicId = 'authDrake' + random3;
-   auth_drake();
-  } else if (document.getElementById('type').value == "author_21Savage") {
-   randomize();
-   musicId = 'auth21Savage' + random4;
-   auth_21Savage();
-  } else {
-   change0();
-   checkAndPlay();
- }
+  checkForMusic();
  } 
  document.getElementById('musicNum').onloadeddata = function() {
  document.getElementById('progressTime').max = Number(Math.floor(document.getElementById('musicNum').duration) * 50);
@@ -903,6 +884,9 @@ function checkForMusic() {
  } else if (document.getElementById('type').value == "author_21Savage") {
   musicId = 'auth21Savage' + random4;
   auth_21Savage();
+ } else {
+  change0();
+  checkAndPlay();
  }
 }
 
