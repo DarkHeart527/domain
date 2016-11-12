@@ -1,4 +1,12 @@
+function musicIdFetch() {
+  adTimeLeft = 5;
+  document.getElementById('notificationText').innerHTML = "Music Id: " + musicId;
+  notiOnReg();
+ }
+ 
  function engageAdText() {
+  document.getElementById('musicIdFetcher').innerHTML = '';
+  setTimeout(function () { document.getElementById('musicIdFetcher').innerHTML = '<button onclick="musicIdFetch()" class="fetcher">Get Music Id</button>' }, 30000);
   adType = Number(Math.floor(Math.random() * 1 + 1));
   if (adType == 1) {
    adNumber = Math.floor(Math.random() * 1 + 1);
@@ -140,13 +148,11 @@ function loadAssets() {
  document.getElementById('stylingLink').href = saveLast;
  console.info('Reload Complete');
  document.getElementById('notificationText').innerHTML = 'Successfully Reloaded Assets!';
+ adTimeLeft = 5;
  notiOnReg();
 }
 
 function autoUpdater() {
-if(adTimeLeft == 0) {
- document.getElementById('notification').style = 'margin-top: -500px;"';
-}
    seconds = Math.floor(timeAudio) + 1 - minutes*60;
    if (seconds > 59) {
     seconds = 0;
@@ -178,32 +184,20 @@ if(adTimeLeft == 0) {
    document.getElementById('timeDisplayArea').innerHTML = timeDisplay;
    timeAudio = document.getElementById('musicNum').currentTime;
  if (document.getElementById('musicNum').ended == true) {
- if (document.getElementById('type').value == "all") {
   musicId = document.getElementById('selector').value;
   checkAndPlay();
-  } else if (document.getElementById('type').value == "pocketband") {
-   musicId = document.getElementById('selector').value;
-   checkAndPlay();
-  } else if (document.getElementById('type').value == "isaiahsPlaylist") {
-   musicId = document.getElementById('selector').value;
-   checkAndPlay();
-  } else if (document.getElementById('type').value == "author_Drake") {
-   musicId = document.getElementById('selector').value;
-   checkAndPlay();
-  } else if (document.getElementById('type').value == "author_21Savage") {
-   musicId = document.getElementById('selector').value;
-   checkAndPlay();
-  }
- } else if (document.getElementById('musicNum').ended == false) {
-  
  }
  document.getElementById('notificationTextTimer').innerHTML = 'Time Left: ' + adTimeLeft; 
 }
 
 function canWait() {
+	if(adTimeLeft == 0) {
+ document.getElementById('notification').style = 'margin-top: -500px;"';
+}
+if (document.getElementById('musicNumByStand').value == "on") {
    document.getElementById('progressTime').value = document.getElementById('musicNum').currentTime * 50;
-   document.getElementById('title').innerHTML = title;
-   document.getElementById('author').innerHTML = author;
+   }
+   
    adTimeKeeper = adTimeKeeper - 1;
    if (adTimeKeeper == 0) {
 	adTimeLeft = 30;
@@ -212,8 +206,6 @@ function canWait() {
    }
    if (adTimeLeft > 0) {
 	adTimeLeft = adTimeLeft - 1;
-   } else {
-	
    }
 }
 
@@ -224,6 +216,10 @@ function autoUpdater_iframe() {
  } else if (document.getElementById('musicNum').ended == false) {
   
  }
+}
+
+function changeTime() {
+ document.getElementById('musicNum').currentTime = document.getElementById('progressTime').value / 50;
 }
 
 function changeEle() {
@@ -237,6 +233,7 @@ function firstLoad() {
  notiOnReg();
  change0();
  checkAndPlay();
+ document.getElementById('musicNumByStand').value = "on";
  setInterval( function() { autoUpdater(); }, 50);
  setInterval( function() { canWait(); }, 1000);
 }
@@ -253,26 +250,7 @@ hours = 0;
 minuteChecker = '0';
 secondChecker = '0';
  if (musicId == 0) {
-  if (document.getElementById('type').value == "pocketband") {
-   randomize();
-   musicId = 'pb' + random;
-   checkPb();
-  } else if (document.getElementById('type').value == "isaiahsPlaylist") {
-   randomize();
-   musicId = 'iP' + random2;
-   checkiP();
-  } else if (document.getElementById('type').value == "author_Drake") {
-   randomize();
-   musicId = 'authDrake' + random3;
-   auth_drake();
-  } else if (document.getElementById('type').value == "author_21Savage") {
-   randomize();
-   musicId = 'auth21Savage' + random4;
-   auth_21Savage();
-  } else {
-   change0();
-   checkAndPlay();
-  }
+  checkForMusic();
  }
 
  else if (musicId == 1) {
@@ -550,34 +528,34 @@ secondChecker = '0';
   author = "Kodak Black";
  } 
  
-   else if (musicId == NaN) {
-  document.getElementById('musicNum').src = link + "";
-  title = "";
-  author = "";
+   else if (musicId == 47) {
+  document.getElementById('musicNum').src = link + "Dark Death.mp3";
+  title = "Dark Death";
+  author = "DarkHeart527";
  } 
  
-   else if (musicId == NaN) {
-  document.getElementById('musicNum').src = link + "";
-  title = "";
-  author = "";
+   else if (musicId == 48) {
+  document.getElementById('musicNum').src = link + "TDFW(Remix).mp3";
+  title = "Turn Down For What (Remix)";
+  author = "Trap City, DJ Snake, & Lil Jon";
  } 
  
-   else if (musicId == NaN) {
-  document.getElementById('musicNum').src = link + "";
-  title = "";
-  author = "";
+   else if (musicId == 49) {
+  document.getElementById('musicNum').src = link + "Iwey - System 7..mp3";
+  title = "System 7.";
+  author = "Iwey";
  } 
  
-   else if (musicId == NaN) {
-  document.getElementById('musicNum').src = link + "";
-  title = "";
-  author = "";
+   else if (musicId == 50) {
+  document.getElementById('musicNum').src = link + "Meek Mill - R.I.C.O. Feat. Drake.mp3";
+  title = "R.I.C.O. Feat. Drake";
+  author = "Meek Mill";
  } 
  
-   else if (musicId == NaN) {
-  document.getElementById('musicNum').src = link + "";
-  title = "";
-  author = "";
+   else if (musicId == 51) {
+  document.getElementById('musicNum').src = link + "White Zombie - More Human Than Human.mp3";
+  title = "More Human Than Human";
+  author = "White Zombie";
  } 
  
    else if (musicId == NaN) {
@@ -867,30 +845,53 @@ secondChecker = '0';
  } 
  document.getElementById('musicNum').onloadeddata = function() {
  document.getElementById('progressTime').max = Number(Math.floor(document.getElementById('musicNum').duration) * 50);
+ document.getElementById('title').innerHTML = title;
+ document.getElementById('author').innerHTML = author;
  }
 }
 
 function checkForMusic() {
  randomize();
  if (document.getElementById('type').value == "pocketband") {
-  musicId = 'pb' + random;
-  checkPb();
+  musicId = 'pb' + random18;
+  cIAP();
  } else if (document.getElementById('type').value == "isaiahsPlaylist") {
-  musicId = 'iP' + random2;
-  checkiP();
+  musicId = 'iP' + random16;
+  cIAP();
  } else if (document.getElementById('type').value == "author_Drake") {
-  musicId = 'authDrake' + random3;
-  auth_drake();
+  musicId = 'authDrake' + random2;
+  cIAP();
  } else if (document.getElementById('type').value == "author_21Savage") {
-  musicId = 'auth21Savage' + random4;
-  auth_21Savage();
+  musicId = 'auth21Savage' + random5;
+  cIAP();
+ } else if (document.getElementById('type').value == "author_Ricegum") {
+  musicId = 'authRicegum' + random1;
+  cIAP();
+ } else if (document.getElementById('type').value == "") {
+  musicId = '' + random;
+  cIAP();
+ } else if (document.getElementById('type').value == "") {
+  musicId = '' + random;
+  cIAP();
+ } else if (document.getElementById('type').value == "") {
+  musicId = '' + random;
+  cIAP();
+ } else if (document.getElementById('type').value == "") {
+  musicId = '' + random;
+  cIAP();
+ } else if (document.getElementById('type').value == "") {
+  musicId = '' + random;
+  cIAP();
  } else {
   change0();
   checkAndPlay();
  }
 }
 
-function checkPb() {
+function cIAP() {
+	
+ //Pocket Band - pb
+	
  if (musicId == "pb1") {
   musicId = 1;
  } else if (musicId ==  "pb2") {
@@ -923,11 +924,14 @@ function checkPb() {
   musicId = 29;
  } else if (musicId == "pb16") {
   musicId = 30;
- }
- checkAndPlay();
-}
-
-function checkiP() {
+ } else if (musicId == "pb17") {
+  musicId = 47;
+ } else if (musicId == "pb18") {
+  musicId = 49;
+ } 
+ 
+ //Isaiahs Playlist - iP
+ 
  if (musicId == "iP1") {
   musicId = 33;
  } else if (musicId == "iP2") {
@@ -958,20 +962,12 @@ function checkiP() {
   musicId = 46;
  } else if (musicId == "iP15") {
   musicId = 44;
+ } else if (musicId == "iP16") {
+  musicId = 50;
  }
- checkAndPlay();
-}
-
-function auth_drake() {
- if (musicId == "authDrake1") {
-  musicId = 26;
- } else if (musicId == "authDrake2") {
-  musicId = 43;
- } 
- checkAndPlay();
-}
-
-function auth_21Savage() {
+ 
+ //Author--21 Savage - auth21Savage
+ 
  if (musicId == "auth21Savage1") {
   musicId = 35;
  } else if (musicId == "auth21Savage2") {
@@ -983,14 +979,36 @@ function auth_21Savage() {
  } else if (musicId == "auth21Savage5") {
   musicId = 41;
  }
+ 
+ //Author--Drake - authDrake
+ 
+ if (musicId == "authDrake1") {
+  musicId = 26;
+ } else if (musicId == "authDrake2") {
+  musicId = 43;
+ }
+ 
+ //Author--Ricegum - authRicegum
+ 
+ if (musicId == "authRicegum1") {
+  musicId = 42;
+ }
+ 
+ //Check And Play
+ 
  checkAndPlay();
 }
 
 function randomize() {
- random = Math.floor(Math.random() * 16 + 1);
- random2 = Math.floor(Math.random() * 15 + 1);
- random3 = Math.floor(Math.random() * 2 + 1);
- random4 = Math.floor(Math.random() * 5 + 1);
+ random1 = 1;
+ random2 = Math.floor(Math.random() * 2 + 1);
+ random3 = Math.floor(Math.random() * 3 + 1);
+ random4 = Math.floor(Math.random() * 4 + 1);
+ random5 = Math.floor(Math.random() * 5 + 1);
+ random6 = Math.floor(Math.random() * 6 + 1);
+ random10 = Math.floor(Math.random() * 10 + 1);
+ random16 = Math.floor(Math.random() * 16 + 1);
+ random18 = Math.floor(Math.random() * 18 + 1);
 }
 
 function colorChanger() {
@@ -1032,10 +1050,22 @@ function changeType() {
  else if (document.getElementById('type2').value == "author") {
   document.getElementById('type').innerHTML =
   '<option value="author_Drake">Drake</option>' +
-  '<option value="author_21Savage">21 Savage</option>';
+  '<option value="author_21Savage">21 Savage</option>' +
+  '<option value="author_Ricegum">Ricegum</option>';
  } 
  
  else if (document.getElementById('type2').value == "all") {
   document.getElementById('type').innerHTML = '<option class="option" value="all" selected>All</option>';
  }
 }
+
+
+
+
+
+
+
+
+
+
+
