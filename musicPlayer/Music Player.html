@@ -36,7 +36,8 @@
 				</div>
 				<p class="timeDisplay" id="timeDisplayArea">0:00:00</p>
 			</center>
-				<p><input type="range" onmouseover="document.getElementById('musicNum').pause();" onmouseout="document.getElementById('musicNum').play();" onchange="document.getElementById('musicNum').currentTime = document.getElementById('progressTime').value / 50" class="progressBar" id="progressTime" max="0" min="0" name="Done Time"></p>
+				<p id="musicNumByStand"></p>
+				<p><input type="range" onmouseover='document.getElementById("musicNumByStand").value = "off";' onmousedown='intVar = setInterval( function() { changeTime() }, 200);' onmouseup="clearInterval(intVar)" onmouseout="document.getElementById('musicNumByStand').value = 'on';" onchange="changeTime()" onclick="changeTime()" class="progressBar" id="progressTime" max="0" min="0" name="Done Time"></p>
 			<audio src="" id="musicNum" autoplay></audio>
 			<center>
 				<p>
@@ -72,9 +73,10 @@
 					<option value="School" class="option">School</option>
 					<option value="None" class="option">None</option>
 				</select>
+				<p id="musicIdFetcher"><button onclick="musicIdFetch()" class="fetcher">Get Music Id</button></p>
 				<p class="text">Upload An mp3 File Or Text One Here On Skype</p>
 				<p><a class="text" href="https://join.skype.com/ur3jQ61lC6Ql" target="_blank">Join Skype Group - Codark.com</a></p>
-			<footer class="footer">Actually its a spacer. You know, for the end.</footer>
+			<br />
 			</center>
 		</div>
 	</body>
