@@ -90,7 +90,9 @@ if (document.getElementById('type').value == "all") {
 			mId[29] +
 			mId[30] +
 			mId[32] +
-			mId[45];
+			mId[45] +
+			mId[47] +
+			mId[49];
 	} 
 	else if (document.getElementById('type').value == "isaiahsPlaylist") {
 	document.getElementById('selector').innerHTML = 
@@ -108,13 +110,13 @@ if (document.getElementById('type').value == "all") {
 			mId[41] +
 			mId[42] +
 			mId[43] +
-			mId[44];
+			mId[44] +
+			mId[50];
 		 }
 		  else if (document.getElementById('type').value == "author_Drake") {
 		   document.getElementById('selector').innerHTML =
 		   mId[0] +
 		   mId[26] +
-		   mId[15] +
 		   mId[43];
 		  }
 		  
@@ -127,5 +129,12 @@ if (document.getElementById('type').value == "all") {
 		  mId[36] +
 		  mId[38] +
 		  mId[41];
+		  }
+		  
+		  else if (document.getElementById('type').value == "author_Ricegum") {
+		  
+		  document.getElementById('selector').innerHTML =
+		  mId[0] +
+		  mId[42];
 		  }
 }
