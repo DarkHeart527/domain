@@ -5,6 +5,7 @@ var link = "music/";
 var change = '';
 var random = null;
 var random2 = null;
+var intVar = null;
 var timeDisplay = null;
 var minutes = 0;
 var hours = 0;
@@ -12,11 +13,11 @@ var minuteChecker = 0;
 var secondChecker = 0;
 var timeAudio = null;
 var afterVolume = 0;
-var checkIfDisable = null;
+var checkIfDisable = 1;
 var saveLast = '';
 var fS = 1;
 var adTimeLeft = 10;
-var adTimeKeeper = 30;
+var adTimeKeeper = 60;
 var mId = {
   0: '<option class="option" title="All Songs" 															value="0" selected>Random</option>',
   1: '<option class="option" title="Iwey" 																value="1">Cut Throat</option>',
@@ -65,11 +66,11 @@ var mId = {
  44: '<option class="option" title="Kodak Black" 														value="44">No Flockin</option>',
  45: '<option class="option" title="DJ O.T.C" 															value="45">Lost Boi Redemption</option>',
  46: '<option class="option" title="Kodak Black" 														value="46">Hollyhood</option>',
- 47: '<option class="option" title="" 																	value="47"></option>',
- 48: '<option class="option" title="" 																	value="48"></option>',
- 49: '<option class="option" title="" 																	value="49"></option>',
- 50: '<option class="option" title="" 																	value="50"></option>',
- 51: '<option class="option" title="" 																	value="51"></option>',
+ 47: '<option class="option" title="DarkHeart527" 														value="47">Dark Death</option>',
+ 48: '<option class="option" title="Trap City, DJ Snake, & Lil Jon" 									value="48">Turn Down For What (Remix)</option>',
+ 49: '<option class="option" title="Iwey" 																value="49">System 7.</option>',
+ 50: '<option class="option" title="Meek Mill" 															value="50">R.I.C.O. Feat. Drake</option>',
+ 51: '<option class="option" title="White Zombie" 														value="51">More Human Than Human</option>',
  52: '<option class="option" title="" 																	value="52"></option>',
  53: '<option class="option" title="" 																	value="53"></option>',
  54: '<option class="option" title="" 																	value="54"></option>',
