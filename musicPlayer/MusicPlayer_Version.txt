@@ -1,8 +1,15 @@
-\Version 3.1.0
-- Added Four Songs -
+\Version 4.0.0
+- Added Eight Songs -
 - Asset Reloader -
 - Added Extra Input For Higher Sorting -
+- Major Bug Fixes That Includes:
+> Plays Wrong Song In A Playlist
+> Plays Same Song
+> Notification Bar Drops At Wrong Times
+> Ads Show At Random Times
+> Can't See Greeting -
 - Notification Bar Instead Of Alert -
+- Press Button To See Music Id -
 - Ability To See Your Focus -
 - Fixed Css For Progress Bar -
 /
