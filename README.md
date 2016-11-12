@@ -1,3 +1,5 @@
+#[Creative Commons Attribution-NoDerivatives 4.0 International License.](https://creativecommons.org/licenses/by-nd/4.0/)
+
 #Please Make Changes To The -Update- Branch As Others Will Not Be Accepted And WILL Be Deleted Thank You Collaborators
 #After go to gh-pages then press pull request
 #My Online Project http://codark.com
