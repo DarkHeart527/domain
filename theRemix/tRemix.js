@@ -3,16 +3,16 @@ var savedNumber = 0;
 
 function nextTrack() {
  trackNumber = Number(trackNumber + 1);
- savedNumber = trackNumber;
  updateStuff();
  checkMusic();
+ savedNumber = trackNumber;
 }
 
 function previousTrack() {
  trackNumber = Number(trackNumber - 1);
- savedNumber = trackNumber;
  updateStuff();
  checkMusic();
+ savedNumber = trackNumber;
 }
 
 function checkMusic() {
