@@ -11,3 +11,7 @@ function previousTrack() {
 function checkMusic() {
  
 }
+
+function updateStuff() {
+ document.getElementById('trackNum').innerHTML = trackNumber;
+}
