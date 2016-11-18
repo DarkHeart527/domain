@@ -5,12 +5,14 @@ function nextTrack() {
  trackNumber = Number(trackNumber + 1);
  savedNumber = trackNumber;
  updateStuff();
+ checkMusic();
 }
 
 function previousTrack() {
  trackNumber = Number(trackNumber - 1);
  savedNumber = trackNumber;
  updateStuff();
+ checkMusic();
 }
 
 function checkMusic() {
