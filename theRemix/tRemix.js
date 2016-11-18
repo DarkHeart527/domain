@@ -1,12 +1,12 @@
 var trackNumber = 0;
 
 function nextTrack() {
- trackNumber = trackNumber + 1;
+ trackNumber = Number(trackNumber + 1);
  updateStuff();
 }
 
 function previousTrack() {
- trackNumber = trackNumber - 1;
+ trackNumber = Number(trackNumber - 1);
  updateStuff();
 }
 
