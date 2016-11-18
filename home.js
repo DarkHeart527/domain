@@ -26,14 +26,19 @@ function deleteOne() {
 }
 
 function pageEmpty() {
- document.getElementById('navHeader').innerHTML = '<a href="#" onclick="deleteOne()" class="page"><<</a><a href="#" class="page2" onclick="addOne()">>></a>'
+ document.getElementById('navHeader').innerHTML = 
+ '<a href="#" onclick="deleteOne()" class="page"><<</a>' +
+ '<a href="#" class="page2" onclick="addOne()">>></a>';
 }
 
 function page1() {
  document.getElementById('navHeader').innerHTML =
   '<center>' +
   '<a href="#" style="visibility: hidden;" onclick="" class="page"><<</a>' +
-  '<a class="linkSelection" href="http://colorclock.codark.com">Color Clock</a><a class="linkSelection" href="exsPages/exPage.html">Ex&#39;s Page</a><a class="linkSelection" href="projects/Unnamed.html">Unnamed</a><a class="linkSelection" href="http://deathClicker.codark.com">Death Clicker</a>' +
+  '<a class="linkSelection" href="http://colorclock.codark.com">Color Clock</a>' +
+  '<a class="linkSelection" href="exsPages/exPage.html">Ex&#39;s Page - Coming Down</a>' +
+  '<a class="linkSelection" href="projects/Unnamed.html">Unnamed</a>' +
+  '<a class="linkSelection" href="http://deathClicker.codark.com">Death Clicker</a>' +
   '<a href="#" class="page2" onclick="addOne()">>></a>' +
   '</center>';
 }
@@ -42,7 +47,8 @@ function page2() {
  document.getElementById('navHeader').innerHTML =
   '<center>' +
   '<a href="#" style="visibility: visible;" onclick="deleteOne()" class="page"><<</a>' +
-  '<a href="musicPlayer/Music%20Player.html" class="linkSelection">Music Player</a>' + //Code Area
+  '<a href="musicPlayer/Music%20Player.html" class="linkSelection">Music Player</a>' +
+  '<a href="theRemix/home.html" class="linkSelection">The Remix</a>' +
   '<a href="#" class="page2" onclick="addOne()">>></a>' +
   '</center>';
 }
