@@ -33,6 +33,7 @@ function checkMusic() {
   trackNumber = savedNumber;
   updateStuff();
  }
+ updateText();
 }
 
 function updateStuff() {
