@@ -34,7 +34,6 @@ function checkMusic() {
   updateStuff();
  }
 }
-
 function updateStuff() {
  document.getElementById('trackNum').innerHTML = trackNumber;
  document.getElementById('title').innerHTML = title;
