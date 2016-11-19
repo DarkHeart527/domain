@@ -1,7 +1,6 @@
 var trackNumber = 0;
 var savedNumber = 0;
 var link = 'music/';
-var title = document.getElementById('title');
 
 function nextTrack() {
  trackNumber = Number(trackNumber + 1);
@@ -22,13 +21,13 @@ function checkMusic() {
   document.getElementById('audioFile').src = '';
  } else if (trackNumber == 1) {
   document.getElementById('audioFile').src = link + 'Right Now.mp3';
-  title.innerHTML = "Right Now";
+  document.getElementById('title').innerHTML = "Right Now";
  } else if (trackNumber == 2) {
   document.getElementById('audioFile').src = link + 'Alright.mp3';
-  title.innerHTML = "Alright";
+  document.getElementById('title').innerHTML = "Alright";
  } else if (trackNumber == 3) {
   document.getElementById('audioFile').src = link + 'Like Me.mp3';
-  title.innerHTML = "Like Me";
+  document.getElementById('title').innerHTML = "Like Me";
  } else {
   trackNumber = savedNumber;
   updateStuff();
