@@ -20,6 +20,7 @@ function previousTrack() {
 function checkMusic() {
  if (trackNumber == 0) {
   document.getElementById('audioFile').src = '';
+  title = 'No Song Selected';
  } else if (trackNumber == 1) {
   document.getElementById('audioFile').src = link + 'Right Now.mp3';
   title = "Right Now";
