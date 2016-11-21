@@ -7,13 +7,14 @@
     </script>
     <link href="tRemix.css" type="text/css" rel="stylesheet" />
   </head>
-  <body>
+  <body onload="loader()">
     <p class="header">The Remix<span class="headerSub">Better Than Fire</span></p>
     <audio src="" type="audio/mp3" id="audioFile" autoplay="true">
     </audio>
     <div class="changer">
 	    <center>
 	       <p id="title">No Song Selected</p>
+		   <p><span id="currentTime">0:00</span><span id="slash"></span><span  id="endTime"></span></p>
 	 	  <p>
 			<span onclick="previousTrack()">&#706; </span>
 			<span>Track: 
