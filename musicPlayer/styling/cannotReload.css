@@ -22,8 +22,8 @@
 }
  
 .notificationBox {
- width: 35%;
- height: 23.5%;
+ width: auto;
+ height: auto;
  position: fixed;
  background-color: grey;
  border: solid 2px grey;
@@ -32,7 +32,6 @@
  transition: 5s;
  box-align: center;
  z-index: 1;
- left: 32%;
  opacity: .9;
  overflow-y: auto;
 }
