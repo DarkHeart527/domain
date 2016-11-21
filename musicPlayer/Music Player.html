@@ -23,6 +23,12 @@
 					<p id="notificationText" class="notificationText">N/A</p>
 				</center>
 			</div>
+			<div class="themeDisplay" id="themeDisplay">
+					<p class="jsOption" selected>Original</option>
+					<p class="jsOptionSpecial" id="gCRequired1">Custom</option>
+					<p class="jsOption">None</option>
+					<p class="jsOption">School</option>
+			</div>
 		</center>
 		<a href="http://codark.com" class="linkBTC">Back To Codark</a>
 		<div class="allContent">
@@ -63,18 +69,20 @@
 					<button onclick="nextSong()" class="buttonType-2">Next Song</button>
 					<button onclick="restartSong()" class="buttonType-2">Restart Song</button>
 				</p>
-				<p class="text">Sound: <button onClick="mute()" class="buttonType-1" id="mute">Mute</button><button class="buttonType-1" onClick="unMute()" id="unMute" disabled>UnMute</button></p>
-				<p class="text"><button class="buttonType-1" onClick="pausea()" id="pause">Pause</button><button class="buttonType-1" onClick="unPausea()" id="unPause" disabled>UnPause</button></p>
+				<p class="text">Sound: <button onClick="mute_unmute()" class="buttonType-1" id="mute/unmute">Mute</button>
+				<p class="text"><button class="buttonType-1" onClick="pause_unpause()" id="pause/unpause">Pause</button>
 				<p class="text">Volume: <span id="volumeDisplay" class="text">100.0</span></p>
 				<input class="inputSlider" type="range" name="volume" id="volume" value="2500" min="0" max="10000" />
 				<p class="text">Speed: <span id="speedArea" class="text">1.00</span></p>
 				<input class="inputSlider2" name="speed" type="range" id="speedD" min="50" value="100" max="400" />
 				<p class="text">Theme</p>
-				<select onchange="changeTheme()" class="typeSelector" id="styleInput">
-					<option value="" class="option" selected>Original</option>
-					<option value="School" class="option">School</option>
-					<option value="None" class="option">None</option>
-				</select>
+				<p class="typeSelector" value="off" onClick="openThemes()" id="styleInput">Themes V
+				</p>
+				<input type="hidden" value="off" id="styleInputSupport" />
+				<div class="effects">
+					<input type="checkbox" id="echo" />Echo</input>
+					<button onClick="loadEffects()">Accept</button>
+				</div>
 				<p id="musicIdFetcher"><button onclick="musicIdFetch()" class="fetcher">Get Music Id</button></p>
 				<p class="text">Upload An mp3 File Or Text One Here On Skype</p>
 				<p><a class="text" href="https://join.skype.com/ur3jQ61lC6Ql" target="_blank">Join Skype Group - Codark.com</a></p>
