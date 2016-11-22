@@ -1,0 +1,26 @@
+<html>
+	<head>
+    <title>
+      Allowance Saver
+    </title>
+    <script src="allowance.js" type="text/javascript">
+    </script>
+    <link href="allowance.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body onload="startUp();load();">
+    <p class="heading">Allowance Saver</p>
+    <p id="display2"></p>
+    <p>
+      <button onclick="addOne();">Add</button>
+      <button onclick="takeOne();">Take</button>
+    </p>
+	<p><button onclick="deleteAllLogs();">Delete All Logs</button></p>
+	<p id="resetButton"><button onClick="reset()">Reset</button></p>
+	<p id="confirm"></p>
+    <p id="form"></p>
+	<center>
+		<p class="contentHelper">Date</p>
+		<p id="displayArea">Reason | Amount</p>
+	</center>
+  </body>
+ </html>

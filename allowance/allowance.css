@@ -1,0 +1,91 @@
+body {
+ margin: 0px;
+ background-color: black;
+}
+
+* {
+ color: white;
+ background-color: black;
+ appearance: none;
+ -webkit-appearance: none;
+ cursor: default;
+ -moz-appearance: none;
+}
+
+*:focus {
+ outline: none;
+}
+
+.heading {
+ font-size: 75px;
+ margin: 0px;
+ text-align: center;
+}
+
+.add {
+ color: #2cb200;
+ margin: 0px;
+ width: 80%;
+ border: solid white 1px;
+ text-align: left;
+}
+
+.sub:hover, .add:hover {
+ background-color: #1b1919;
+}
+
+.sub, .add {
+ transition: background-color .25s;
+}
+
+.sub {
+ color: red;
+ margin: 0px;
+ width: 80%;
+ border: solid white 1px;
+ text-align: left;
+}
+
+.addBtn {
+ text-align: right;
+ position: absolute;
+ right: 10%;
+ cursor: pointer;
+}
+
+.subBtn {
+ text-align: right;
+ position: absolute;
+ right: 10%;
+ cursor: pointer;
+}
+
+.contentHelper {
+ margin: 0px;
+ margin-bottom: -16px;
+ width: 80%;
+ border: solid white 1px;
+ text-align: left;
+ border-bottom-width: 5px;
+}
+
+button, a {
+ cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
