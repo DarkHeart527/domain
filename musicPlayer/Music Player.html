@@ -59,11 +59,11 @@
 				</select>
 				<select onchange="changeType();checkForMusic();checkAndPlay();changeSongs();" class="typeSelector" id="type2">
 					<option value="all" class="option" selected>All</option>
-					<option value="author" class="option">Author</option>
-					<option value="year" class="option">Year</option>
-					<option value="source" class="option">Source</option>
-					<option value="playlist" class="option">Playlist</option>
 					<option value="album" class="option">Album</option>
+					<option value="author" class="option">Author</option>
+					<option value="playlist" class="option">Playlist</option>
+					<option value="source" class="option">Source</option>
+					<option value="year" class="option">Year</option>
 				</select>
 				<p>
 					<button onclick="nextSong()" class="buttonType-2">Next Song</button>
@@ -80,7 +80,7 @@
 				</p>
 				<input type="hidden" value="off" id="styleInputSupport" />
 				<div class="effects">
-					<input type="checkbox" id="echo" />Echo</input>
+					<p onClick="echoOnOff()"><img>Echo</p>
 					<button onClick="loadEffects()">Accept</button>
 				</div>
 				<p id="musicIdFetcher"><button onclick="musicIdFetch()" class="fetcher">Get Music Id</button></p>
