@@ -23,3 +23,18 @@
 body {
  margin: 0px;
 }
+
+.linkBTC {
+ color: grey;
+ background-color: transparent;
+ text-decoration: none;
+ transition: border-right 2.5s, border-left 2.5s, color 1s;
+ margin: 0px;
+ margin-left: 5px;
+ position: fixed;
+ z-index: 1;
+}
+
+.linkBTC:hover {
+ color: black;
+}
