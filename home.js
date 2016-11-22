@@ -39,6 +39,7 @@ function page1() {
   '<a class="linkSelection" href="convert/start.html">Converter</a>' +
   '<a class="linkSelection" href="projects/Unnamed.html">Unnamed</a>' +
   '<a class="linkSelection" href="http://deathClicker.codark.com">Death Clicker</a>' +
+  '<a class="linkSelection" href="allowance/home.html">Allowance</a>' +
   '<a href="#" class="page2" onclick="addOne()">>></a>' +
   '</center>';
 }
