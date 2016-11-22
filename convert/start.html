@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<script src="convertJava.js" type="text/javascript">
+		</script>
+		<link href="convertCss.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body onload="setTimeout( function() { randomizeAccounting() }, 500)">
+		<select id="dontNeed2" onChange="checkAgain()">
+			<option value="" disabled></option>
+			<option value="" disabled>Audio</option>
+			<option value="" disabled></option>
+			<option value="mp3" selected>MP3</option>
+			<option value="ogg">OGG</option>
+			<option value="wav">WAV</option>
+			<option value="m4a">M4A</option>
+			<option value="" disabled></option>
+			<option value="" disabled>Video</option>
+			<option value="" disabled></option>
+			<option value="mp4">MP4</option>
+			<option value="ogg">OGG</option>
+			<option value="mov">MOV</option>
+			<option value="swf">SWF</option>
+		</select>
+		<p>Type</p>
+		<button onClick="makeFile()">File Upload</button><button onClick="makeUrl()">Addres/Url</button>
+		<form action="https://api.cloudconvert.com/convert" method="POST" enctype="multipart/form-data">
+			<input type="file" name="file" onchange="checkName(this, 'fname', 'submit')" id="file">
+			<span id="dontNeed">
+					<input type="hidden" name="apikey" id="api">
+					<span id="typeInput2"><input type="hidden" name="inputformat"></span>
+					<input type="hidden" name="outputformat" id="typeInput">
+					<input type="hidden" name="input" value="upload">
+					<input type="hidden" name="output" value="download">
+					<input type="hidden" name="timeout" value="0">
+					<input type="hidden" name="wait" value="true">
+					<input type="hidden" name="download" value="true">
+					<input type="submit" value="Convert!">
+			</span>
+		</form>
+	</body>
+</html>
