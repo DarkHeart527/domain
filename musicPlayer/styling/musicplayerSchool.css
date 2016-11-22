@@ -266,3 +266,24 @@ body {
  transition: 1.5s;
  background-color: red;
 }
+
+.themeDisplay {
+ margin: 0px;
+ position: absolute;
+ background-color: white;
+ color: black;
+ width: 10%;
+ height: auto;
+ margin-left: 45%;
+ margin-top: 814px;
+ z-index: 1;
+}
+
+.jsOption {
+ margin: 0px;
+}
+
+.jsOptionSpecial {
+ margin: 0px;
+ background-color: white;
+}
