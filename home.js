@@ -36,7 +36,7 @@ function page1() {
   '<center>' +
   '<a href="#" style="visibility: hidden;" onclick="" class="page"><<</a>' +
   '<a class="linkSelection" href="http://colorclock.codark.com">Color Clock</a>' +
-  '<a class="linkSelection" href="exsPages/exPage.html">Ex&#39;s Page - Coming Down</a>' +
+  '<a class="linkSelection" href="convert/start.html">Converter</a>' +
   '<a class="linkSelection" href="projects/Unnamed.html">Unnamed</a>' +
   '<a class="linkSelection" href="http://deathClicker.codark.com">Death Clicker</a>' +
   '<a href="#" class="page2" onclick="addOne()">>></a>' +
