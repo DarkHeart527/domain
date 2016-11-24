@@ -1,0 +1,18 @@
+body {
+ background-color: black;
+ margin: 0px;
+}
+
+.head {
+ color: blue;
+ text-shadow: 0px 0px 25px blue;
+ font-size: 100px;
+ text-align: center;
+ animation: colorTransformHead 3s infinite;
+}
+
+@keyframes colorTransformHead {
+ 0% {color: blue; text-shadow: 0px 0px 25px blue;}
+ 50% {color: red; text-shadow: 0px 0px 25px red;}
+ 100% {color: blue; text-shadow: 0px 0px 25px blue;}
+}
