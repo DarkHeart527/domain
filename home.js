@@ -49,6 +49,7 @@ function page2() {
   '<center>' +
   '<a href="#" style="visibility: visible;" onclick="deleteOne()" class="page"><<</a>' +
   '<a href="musicPlayer/Music%20Player.html" class="linkSelection">Music Player</a>' +
+  '<a href="iFrameVisitor/start.html" class="linkSelection">iFrame Visitor</a>' +
   '<a href="theRemix/home.html" class="linkSelection">The Remix</a>' +
   '<a href="#" class="page2" onclick="addOne()">>></a>' +
   '</center>';
