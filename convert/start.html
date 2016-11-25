@@ -34,7 +34,7 @@
 		<p>Type</p>
 		<button onClick="makeFile()">File Upload</button><button onClick="makeUrl()">Addres/Url</button>
 		<form action="https://api.cloudconvert.com/convert" method="POST" enctype="multipart/form-data">
-			<input type="file" name="file" onchange="checkName(this, 'fname', 'submit')" id="file">
+			<p id='fFile'></p>
 			<span id="dontNeed">
 					<input type="hidden" name="apikey" id="api">
 					<span id="typeInput2"><input type="hidden" name="inputformat"></span>
