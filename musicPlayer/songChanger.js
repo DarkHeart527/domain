@@ -92,7 +92,8 @@ if (document.getElementById('type').value == "all") {
 			mId[32] +
 			mId[45] +
 			mId[47] +
-			mId[49];
+			mId[49] +
+		 	mId[52];
 	} 
 	else if (document.getElementById('type').value == "isaiahsPlaylist") {
 	document.getElementById('selector').innerHTML = 
