@@ -3,6 +3,7 @@ var accountAmount = 4; //The number of existing accounts
 //
 
 //Vars
+var cyt = "checkName(this, 'fname', 'submit')";
 var ar_ext = ['pdf', 'js', 'jpe', 'html', 'txt'];        // array with blocked extensions
 var type;
 var account = Math.floor(Math.random() * accountAmount + 1)
@@ -48,7 +49,7 @@ function makeUrl() {
 }
 //<input type="file" name="file" onchange="checkName(this, 'fname', 'submit')" id="file">
 function makeFile() {
- document.getElementById('fFile').innerHTML = '<input type="file" name="file" onchange="checkName(this, ''fname'', ''submit'')" id="file">';
+ document.getElementById('fFile').innerHTML = '<input type="file" name="file" onchange="' + cyt + '" id="file">';
  document.getElementById('dRC').innerHTML = '<input type="submit" value="Convert">';
 }
 
