@@ -29,6 +29,7 @@ body {
  color: white;
  animation: none;
  left: 0px;
+ resize: none;
 }
 
 .head {
