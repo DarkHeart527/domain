@@ -45,7 +45,7 @@ function randomizeAccounting() {
 
 function makeUrl() {
  document.getElementById('fFile').innerHTML = '<input type="url" id="urlT">';
- document.getElementById('dRC').innerHTML = '<a onmouseover="uUrl()" id="urlA" href="">Download</a>';
+ document.getElementById('dRC').innerHTML = '<a onmouseover="uUrl()" id="urlA" href="" download>Download</a>';
 }
 //<input type="file" name="file" onchange="checkName(this, 'fname', 'submit')" id="file">
 function makeFile() {
