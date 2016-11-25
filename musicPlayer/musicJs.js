@@ -4,7 +4,7 @@ function musicIdFetch() {
   notiOnReg();
  }
  
- function engageAdText() {
+ function engageAdText() {/*
   document.getElementById('musicIdFetcher').innerHTML = '';
   setTimeout(function () { document.getElementById('musicIdFetcher').innerHTML = '<button onclick="musicIdFetch()" class="fetcher">Get Music Id</button>' }, 30000);
   adType = Number(Math.floor(Math.random() * 1 + 1));
@@ -19,7 +19,8 @@ function musicIdFetch() {
    document.getElementById('notificationText').innerHTML = '<span style="color: red">AD TYPE DOES NOT EXIST</b><br /><b style="color: red">Ad Type: ' + adType;
   }
   notiOnReg();
- }
+*/ }
+
 
 function mute_unmute() {
 if (document.getElementById('mute/unmute').innerHTML == "Mute") {
