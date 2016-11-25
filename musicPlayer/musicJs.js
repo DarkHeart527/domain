@@ -568,10 +568,10 @@ secondChecker = '0';
   author = "White Zombie";
  } 
  
-   else if (musicId == NaN) {
-  document.getElementById('musicNum').src = link + "";
-  title = "";
-  author = "";
+   else if (musicId == 52) {
+  document.getElementById('musicNum').src = link + "Fuck Da Law....mp3";
+  title = "Fuck Da Law...";
+  author = "Statik Empire & Styleblast";
  } 
  
    else if (musicId == NaN) {
