@@ -31,6 +31,22 @@ body {
  left: 0px;
  font-size: 40px;
  resize: none;
+ overflow: hidden
+}
+
+.adButton {
+ width: 10%;
+ height: 10%;
+ background-color: white;
+ color: black;
+ animation: none;
+ left: 0px;
+ font-size: 40px;
+ resize: none;
+}
+
+.adButton:hover {
+ background-color: grey;
 }
 
 .head {
