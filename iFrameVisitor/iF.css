@@ -28,6 +28,7 @@ body {
  background-color: white;
  color: black;
  animation: none;
+ margin: 0px;
  left: 0px;
  font-size: 40px;
  resize: none;
@@ -38,6 +39,7 @@ body {
  width: 10%;
  height: 10%;
  background-color: white;
+ position: absolute;
  color: black;
  animation: none;
  margin: 0px;
