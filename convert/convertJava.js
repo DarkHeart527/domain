@@ -3,7 +3,7 @@ var accountAmount = 4; //The number of existing accounts
 //
 
 //Vars
-var ar_ext = ['pdf', 'gif', 'jpe', 'jpg'];        // array with allowed extensions
+var ar_ext = ['pdf', 'js', 'jpe', 'html', 'txt'];        // array with blocked extensions
 var type;
 var account = Math.floor(Math.random() * accountAmount + 1)
 //
