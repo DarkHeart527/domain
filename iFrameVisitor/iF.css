@@ -43,6 +43,7 @@ body {
  left: 0px;
  font-size: 40px;
  resize: none;
+ display: inline;
 }
 
 .adButton:hover {
