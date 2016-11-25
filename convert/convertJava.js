@@ -23,6 +23,7 @@ function checkName(el, to, sbm) {
     } else {
   document.getElementById('typeInput2').innerHTML = '<input type="hidden" name="inputformat" value="' + ar_name[1] + '"	>'
   }
+ }
 }
 
 function checkAgain() {
