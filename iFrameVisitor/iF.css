@@ -22,6 +22,15 @@ body {
  animation: none;
 }
 
+.address {
+ width: 80%;
+ height: 10%;
+ background-color: white;
+ color: white;
+ animation: none;
+ left: 0px;
+}
+
 .head {
  color: blue;
  background-color: black;
