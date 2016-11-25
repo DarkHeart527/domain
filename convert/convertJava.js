@@ -19,11 +19,11 @@ function checkName(el, to, sbm) {
   for(var i=0; i<ar_nm.length; i++) var nm = ar_nm[i];
   for(var i=0; i<ar_ext.length; i++) {
     if(ar_ext[i] == ar_name[1]) {
-      re = 1;
-      break;
+     alert("That file can't be used... Yet");
     }
-  }
+  } else {
   document.getElementById('typeInput2').innerHTML = '<input type="hidden" name="inputformat" value="' + ar_name[1] + '"	>'
+  }
 }
 
 function checkAgain() {
