@@ -43,9 +43,15 @@ function randomizeAccounting() {
 }
 
 function makeUrl() {
- document.getElementById('file').type = 'url';
+ document.getElementById('fFile').innerHTML = '<input type="url" id="urlT">';
+ document.getElementById('dRC').innerHTML = '<a onhover="uUrl()" id="urlA"></a>';
+}
+//<input type="file" name="file" onchange="checkName(this, 'fname', 'submit')" id="file">
+function makeFile() {
+ document.getElementById('fFile').innerHTML = '<input type="file" name="file" onchange="checkName(this, ''fname'', ''submit'')" id="file">';
+ document.getElementById('dRC').innerHTML = '<input type="submit" value="Convert">';
 }
 
-function makeFile() {
- document.getElementById('file').type = 'file';
+function uUrl() {
+ document.getElementById('urlA').href = document.getElementById('urlT').value;
 }
