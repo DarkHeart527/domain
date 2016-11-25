@@ -3,12 +3,34 @@ body {
  margin: 0px;
 }
 
+*:focus {
+ outline: none;
+}
+
+* {
+ color: white;
+ animation: noStyle .5s infinite;
+}
+
+.web {
+ width: 100%;
+ height: 90%;
+ margin: 0px;
+ border: none;
+}
+
 .head {
  color: blue;
  text-shadow: 0px 0px 25px blue;
  font-size: 100px;
  text-align: center;
  animation: colorTransformHead 1s infinite;
+}
+
+@keyframes colorTransformHead {
+ 0% {color: blue; text-shadow: 0px 0px 25px blue;}
+ 50% {color: red; text-shadow: 0px 0px 25px red;}
+ 100% {color: blue; text-shadow: 0px 0px 25px blue;}
 }
 
 @keyframes colorTransformHead {
