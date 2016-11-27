@@ -22,11 +22,11 @@
 			}
 			function autoReloader() {
 			 setTimeout( function() { document.getElementById('frame').style += 'visibility: hidden';}, 0)
-			 setTimeout( function() {document.getElementById('frame').src += '';}, 100)
-			 setTimeout( function() { document.getElementById('frame').style += 'visibility: visible';}, 125)
-			 setTimeout( function() { document.getElementById('frame2').style += 'visibility: hidden';}, 25)
-			 setTimeout( function() {document.getElementById('frame2').src += '';}, 125)
-			 setTimeout( function() { document.getElementById('frame2').style += 'visibility: visible';}, 150)
+			 setTimeout( function() {document.getElementById('frame').src += '';}, 500)
+			 setTimeout( function() { document.getElementById('frame').style += 'visibility: visible';}, 1000)
+			 setTimeout( function() { document.getElementById('frame2').style += 'visibility: hidden';}, 1050)
+			 setTimeout( function() {document.getElementById('frame2').src += '';}, 1050)
+			 setTimeout( function() { document.getElementById('frame2').style += 'visibility: visible';}, 1100)
 			}
 		</script>
 		<style>
@@ -88,7 +88,7 @@
 			}
 		</style>
 	</head>
-	<body onload="setInterval ( function() {autoReloader();}, 500)">
+	<body onload="setInterval ( function() {autoReloader();}, 1500)">
 		<div class="clickPreventer" onclick="cool()"></div>
 		<center>
 			<p class="notice" id="coolClick">I'm sorry but you can't navigate that way. <br />Use the navigate bar to your left</p>
@@ -96,7 +96,7 @@
 		<div id="sideBar">
 		</div>	
 		<p class="openAndClose" id="oC" onClick="openNav()" style="transform: rotate(90deg);">|||</p>
-		<iframe id="frame2" src="home.html" class="view2">Sorry Browser NOT Supported</iframe>
-		<iframe id="frame" src="home.html" class="view">Sorry Browser NOT Supported</iframe>
+		<iframe id="frame2" src="https://darkheart527.github.io/dmn/home.html" class="view2">Sorry Browser NOT Supported</iframe>
+		<iframe id="frame" src="https://darkheart527.github.io/dmn/home.html" class="view">Sorry Browser NOT Supported</iframe>
 	</body>
 </html>
