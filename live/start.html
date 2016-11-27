@@ -1,0 +1,102 @@
+<html>
+	<head>
+		<title>
+			Viewing: Dr. Mark Norris
+		</title>
+		<script>
+			var isOpen = false;
+			function cool() {
+			 document.getElementById('coolClick').style = "margin-top: 50px;"
+			 setTimeout( function() {document.getElementById('coolClick').style = "margin-top: -500px;"}, 5500)
+			}
+			function openNav() {
+			 if (isOpen == false) {
+			  isOpen = true;
+			  document.getElementById('oC').style = "transform: rotate(0deg);";
+			  document.getElementById('sideBar').style = "margin-left: 0px;"
+			 } else {
+			  isOpen = false;
+			  document.getElementById('oC').style = "transform: rotate(90deg);";
+			  document.getElementById('sideBar').style = "margin-left: -200%;"
+			 }
+			}
+			function autoReloader() {
+			 setTimeout( function() { document.getElementById('frame').style += 'visibility: hidden';}, 0)
+			 setTimeout( function() {document.getElementById('frame').src += '';}, 100)
+			 setTimeout( function() { document.getElementById('frame').style += 'visibility: visible';}, 125)
+			 setTimeout( function() { document.getElementById('frame2').style += 'visibility: hidden';}, 25)
+			 setTimeout( function() {document.getElementById('frame2').src += '';}, 125)
+			 setTimeout( function() { document.getElementById('frame2').style += 'visibility: visible';}, 150)
+			}
+		</script>
+		<style>
+			.view {
+			 border: none;
+			 width: 100%;
+			 height: 100%;
+			 background-color: transparent;
+			}
+			.view2 {
+			 border: none;
+			 width: 100%;
+			 height: 100%;
+			 background-color: transparent;
+			 position: absolute;
+			 z-index: -1;
+			}
+			body {
+			 margin: 0px;
+			 background-color: black;
+			}
+			.link1 {
+			 position: absolute;
+			 width: 5%;
+			 height: 3%;
+			 background-color: red;
+			 margin-top: 6%;
+			}
+			.clickPreventer {
+			 width: 100%;
+			 height: 100%;
+			 background-color: transparent;
+			 position: absolute;
+			 cursor: default;
+			}
+			.notice {
+			 position: absolute;
+			 margin-top: -500px;
+			 background-color: white;
+			 box-shadow: 0px 0px 25px white;
+			 color: black;
+			 font-size: 25px;
+			 transition: 3s;
+			 width: 25%;
+			 height: 15%;
+			 text-align: center;
+			 margin-left: 37.5%;
+			}
+			.openAndClose {
+			 font-size: 35px;
+			 color: red;
+			 position: absolute;
+			 margin-top: 0%;
+			 margin-left: 1.5%;
+			 transition: 3s;
+			 color: white;
+			 text-shadow: 0px 0px 5px red;
+			 cursor: pointer;
+			}
+		</style>
+	</head>
+	<body onload="setInterval ( function() {autoReloader();}, 500)">
+		<div class="clickPreventer" onclick="cool()"></div>
+		<center>
+			<p class="notice" id="coolClick">I'm sorry but you can't navigate that way. <br />Use the navigate bar to your left</p>
+		</center>
+		<div id="sideBar">
+		</div>	
+		<p class="openAndClose" id="oC" onClick="openNav()" style="transform: rotate(90deg);">|||</p>
+		<iframe id="frame2" src="home.html" class="view2">Sorry Browser NOT Supported</iframe>
+		<iframe id="frame" src="home.html" class="view">Sorry Browser NOT Supported</iframe>
+	</body>
+</html>
