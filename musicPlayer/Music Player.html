@@ -42,14 +42,8 @@
 					<p class="nowPlaying"><b class="nowPlaying">Now Playing: </b><span class="nowPlaying" id="title"></span></p>
 					<p class="author"><b class="author">Author: </b><span class="author" id="author"></span></p>
 				</div>
+				<p class="timeDisplay" id="timeDisplayArea">0:00:00</p>
 			</center>
-			<p class="spacer">Spacer</p>
-			<p class="spacer">Spacer</p>
-			<p class="spacer">Spacer</p>
-			<p class="spacer">Spacer</p>
-			<p class="spacer">Spacer</p>
-			<p class="spacer">Spacer</p>
-			<center><p class="timeDisplay" id="timeDisplayArea">0:00:00</p></center>
 			<p id="musicNumByStand"></p>
 			<p><input type="range" onmouseover='document.getElementById("musicNumByStand").value = "off";' onmousedown='intVar = setInterval( function() { changeTime() }, 200);' onmouseup="clearInterval(intVar)" onmouseout="document.getElementById('musicNumByStand').value = 'on';" onchange="changeTime()" onclick="changeTime()" class="progressBar" id="progressTime" max="0" min="0" name="Done Time"></p>
 			<audio src="" id="musicNum" autoplay></audio>
