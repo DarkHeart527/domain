@@ -239,6 +239,7 @@ body {
  border-radius: 35px;
  margin-bottom: 40px;
  animation: moveSideToSide 5s ease-in-out infinite;
+ position: absolute;
 }
 
 .inputSlider2 {
