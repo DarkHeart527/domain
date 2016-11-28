@@ -27,6 +27,15 @@
 			 setTimeout( function() { document.getElementById('frame2').style += 'visibility: hidden';}, 10500)
 			 setTimeout( function() {document.getElementById('frame2').src += '';}, 10500)
 			 setTimeout( function() { document.getElementById('frame2').style += 'visibility: visible';}, 11000)
+			 setTimeout( function() { autoReloader() }, 11100)
+			}
+			function ask() {
+			 document.getElementById('line1').innerHTML = "We recommend you don't use this site. Go anyway?"
+			 document.getElementById('line2').innerHTML = "<span onClick='pass()'>Yes, Go anyway</span>"
+			}
+			function pass() {
+			 document.getElementById('ask').remove()
+			 autoReloader()
 			}
 		</script>
 		<style>
@@ -96,11 +105,17 @@
 			}
 		</style>
 	</head>
-	<body onload="setInterval ( function() {autoReloader();}, 1500)">
+	<body onload="">
 		<div class="clickPreventer" onclick="cool()"></div>
 		<center>
 			<p class="notice" id="coolClick">I'm sorry but you can't navigate that way. <br />Use the navigate bar to your left</p>
 		</center>
+		<div class="ask">
+			<p id="line1">Are you currently using LTE or any related type?</p>
+			<p id="line2"><span onClick="ask()">Yes</span><span onClick="pass()">No</span></p>
+			<br />
+			<p><span>WARNING:</span> Using this site <span>WILL</span> cause <span>DATA OVERAGES</span></p>
+		</div>
 		<div class="sideBar" id="sideBar" style="margin-left: -200%;">
 		</div>	
 		<p class="openAndClose" id="oC" onClick="openNav()" style="transform: rotate(90deg);">|||</p>
