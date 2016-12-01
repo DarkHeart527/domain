@@ -9,4 +9,3 @@ function visit() {
   document.getElementById('web').src = 'https://' + webId[0];
   document.getElementById('address').value = document.getElementById('web').src;
 }
-
