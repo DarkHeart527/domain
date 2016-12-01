@@ -6,6 +6,6 @@ function visit() {
   //webId = webId.split('https://');
   //webId.filter(Boolean);
   //webId2 = webId.split('http://');
-  document.getElementById('web').src = 'https://' + webId[0];
+  document.getElementById('web').src = 'https://' + webId[i];
   document.getElementById('address').value = document.getElementById('web').src;
 }
