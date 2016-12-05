@@ -877,8 +877,8 @@ function checkForMusic() {
  } else if (document.getElementById('type').value == "author_Ricegum") {
   musicId = 'authRicegum' + random1;
   cIAP();
- } else if (document.getElementById('type').value == "") {
-  musicId = '' + random;
+ } else if (document.getElementById('type').value == "author_MontanaOf300") {
+  musicId = 'authMontanaOf300' + random1;
   cIAP();
  } else if (document.getElementById('type').value == "") {
   musicId = '' + random;
@@ -990,6 +990,12 @@ function cIAP() {
   musicId = 41;
  }
  
+ //Author--Montana Of 300 - authMontana300
+
+ if (musicId == "authMontantaOf3001") {
+  musicId = 53;
+ }
+
  //Author--Drake - authDrake
  
  if (musicId == "authDrake1") {
@@ -1061,7 +1067,8 @@ function changeType() {
   document.getElementById('type').innerHTML =
   '<option value="author_Drake">Drake</option>' +
   '<option value="author_21Savage">21 Savage</option>' +
-  '<option value="author_Ricegum">Ricegum</option>';
+  '<option value="author_Ricegum">Ricegum</option>' +
+  '<option value="author_MontanaOf300">Montana Of 300</option>'
  } 
  
  else if (document.getElementById('type2').value == "all") {
