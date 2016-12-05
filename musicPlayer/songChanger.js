@@ -140,6 +140,7 @@ else if (document.getElementById('type').value == "author_Ricegum") {
 
 else if (document.getElementById('type').value == "author_MontanaOf300") {
  document.getElementById('selector').innerHTML =
+	 mId[0] +
 	 mId[53];
 	}
 }
