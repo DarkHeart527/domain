@@ -138,7 +138,7 @@ else if (document.getElementById('type').value == "author_Ricegum") {
 		  mId[42];
 	}
 
-else if () {
+else if (document.getElementById('type').value == "author_MontanaOf300") {
  document.getElementById('selector').innerHTML =
 	 mId[53];
 	}
