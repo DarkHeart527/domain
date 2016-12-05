@@ -992,7 +992,7 @@ function cIAP() {
  
  //Author--Montana Of 300 - authMontana300
 
- if (musicId == "authMontantaOf3001") {
+ if (musicId == "authMontanaOf3001") {
   musicId = 53;
  }
 
