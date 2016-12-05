@@ -1,4 +1,4 @@
-#[Creative Commons Attribution-NoDerivatives 4.0 International License.](https://creativecommons.org/licenses/by-nd/4.0/)
+
 
 #My Online Project http://codark.com
 
