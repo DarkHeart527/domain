@@ -574,10 +574,10 @@ secondChecker = '0';
   author = "Statik Empire & Styleblast";
  } 
  
-   else if (musicId == NaN) {
-  document.getElementById('musicNum').src = link + "";
-  title = "";
-  author = "";
+   else if (musicId == 53) {
+  document.getElementById('musicNum').src = link + "Montana of 300 - Holy Ghost.mp3";
+  title = "Holy Ghost";
+  author = "Montana Of 300";
  } 
  
    else if (musicId == NaN) {
