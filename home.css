@@ -2,17 +2,16 @@ body, html {
  margin: 0px;
  background-color: black;
 }
+* {
+ text-decoration: none;
+ color: yellow;
+}
 
 b, i, u {
  color: relative;
  animation: relative;
  background-color: relative;
  font-size: relative;
-}
-
-* {
- text-decoration: none;
- color: yellow;
 }
 
 .linkSelection {
