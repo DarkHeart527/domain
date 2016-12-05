@@ -12,10 +12,10 @@
 */
 
 function changeSongs() {
-if (document.getElementById('type').value == "all") {
- document.getElementById('selector').innerHTML = 
-		    mId[0] +
-		    mId[1] +
+ if (document.getElementById('type').value == "all") {
+  document.getElementById('selector').innerHTML = 
+		        mId[0] +
+		        mId[1] +
 			mId[2] +
 			mId[3] +
 			mId[4] +
@@ -71,10 +71,10 @@ if (document.getElementById('type').value == "all") {
 			mId[54] +
 			mId[55];
 			}
-	else if (document.getElementById('type').value == "pocketband") {
-	 document.getElementById('selector').innerHTML = 		    
+else if (document.getElementById('type').value == "pocketband") {
+ document.getElementById('selector').innerHTML = 		    
 			mId[0] +
-		    mId[1] +
+		        mId[1] +
 			mId[3] +
 			mId[4] +
 			mId[7] +
@@ -95,8 +95,8 @@ if (document.getElementById('type').value == "all") {
 			mId[49] +
 		 	mId[52];
 	} 
-	else if (document.getElementById('type').value == "isaiahsPlaylist") {
-	document.getElementById('selector').innerHTML = 
+else if (document.getElementById('type').value == "isaiahsPlaylist") {
+ document.getElementById('selector').innerHTML = 
 			mId[0] +
 			mId[33] +
 			mId[31] +
@@ -113,29 +113,33 @@ if (document.getElementById('type').value == "all") {
 			mId[43] +
 			mId[44] +
 			mId[50];
-		 }
-		  else if (document.getElementById('type').value == "author_Drake") {
-		   document.getElementById('selector').innerHTML =
+	}
+	
+else if (document.getElementById('type').value == "author_Drake") {
+ document.getElementById('selector').innerHTML =
 		   mId[0] +
 		   mId[26] +
 		   mId[43];
-		  }
+	}
 		  
-		  else if (document.getElementById('type').value == "author_21Savage") {
-		  
-		  document.getElementById('selector').innerHTML =
+else if (document.getElementById('type').value == "author_21Savage") {
+ document.getElementById('selector').innerHTML =
 		  mId[0] +
 		  mId[34] +
 		  mId[35] +
 		  mId[36] +
 		  mId[38] +
 		  mId[41];
-		  }
+	}
 		  
-		  else if (document.getElementById('type').value == "author_Ricegum") {
-		  
-		  document.getElementById('selector').innerHTML =
+else if (document.getElementById('type').value == "author_Ricegum") {
+ document.getElementById('selector').innerHTML =
 		  mId[0] +
 		  mId[42];
-		  }
+	}
+
+else if () {
+ document.getElementById('selector').innerHTML =
+	 mId[53];
+	}
 }
