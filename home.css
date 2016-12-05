@@ -3,6 +3,13 @@ body, html {
  background-color: black;
 }
 
+b, i, u {
+ color: relative;
+ animation: relative;
+ background-color: relative;
+ font-size: relative;
+}
+
 * {
  text-decoration: none;
  color: yellow;
