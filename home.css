@@ -31,7 +31,7 @@ b, i, u {
 .page, .page2 {
  color: white;
  font-size: 30px;
- text-decoration: none
+ text-decoration: none;
  transition: 0.75s;
 }
 
