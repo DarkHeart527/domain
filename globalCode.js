@@ -37,3 +37,11 @@ function checkPermission() {
   setPageTwo();
  }
 }
+
+setPageOne() {
+ 
+}
+
+function setPageTen() {
+ 
+}
