@@ -20,9 +20,7 @@ function askForPerm() {
 function checkCode() {
  localStorage.setItem("login", carryOutGC);
  checkGC = carryOutGC;
- if (checkGC) {
-  prompt("You can't leave the box empty!\nPlease Type In Your Seven Digit Global Code To Login... Ex: 1234567\n" + 'If you don' + "'" + 't have a GC then type "Guest"',"");
- } else if (checkGC == 4278928) {
+ if (checkGC == 4278928) {
   localStorage.permissionLevel = 10;
  } else {
   error();
@@ -30,7 +28,7 @@ function checkCode() {
 }
 
 function checkPermission() {
- if (localStorage.permissionLevel == 1) {
+ if (localStorage.permissionLevel == 1 || localStorage.permissionLevel == 2) {
   if (document.getElementById('whatPage').value == "home") {
    setPageOne();
   }
