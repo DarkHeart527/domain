@@ -5,6 +5,14 @@ function askForPerm() {
   
  } else {
   var globalCode = prompt("Please Type In Your Seven Digit Global Code To Login... Ex: 1234567" + "<br />" + 'If you don' + "'" + 't have a GC then type "Guest"',"");
-  if (
+  if (globalCode == "Guest") {
+   localStorage.setItem("login", "guest");
+  } else {
+   checkCode();
+  }
  }
+}
+
+function checkCode() {
+ 
 }
