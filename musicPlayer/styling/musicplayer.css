@@ -9,11 +9,11 @@
 
 .selector {
  background-color: white;
- color: purple;
+ color: black;
 }
 
 body {
- background-color: orange;
+ background-color: black;
 }
 
 .allContent {
@@ -38,8 +38,8 @@ body {
 
 .nowPlaying {
  background-color: transparent;
- color: orange;
- font-size: 70px;
+ color: darkgrey;
+ font-size: 35px;
 }
 
 .author {
