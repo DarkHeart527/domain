@@ -1,5 +1,6 @@
 askForPerm();
 var carryOutGC;
+var checkGC;
 
 function askForPerm() {
  if (localStorage.New == 1) {
