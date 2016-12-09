@@ -11,8 +11,8 @@ function askForPerm() {
    localStorage.permissionLevel = 1;
    checkPermission();
   } else {
-   checkCode();
    carryOutGC = globalCode;
+   checkCode();
   }
  }
 }
