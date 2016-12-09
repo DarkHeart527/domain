@@ -1,6 +1,2 @@
-var globalCode = null;
-setInterval( function() { globalCodeChanger() });
-
-function globalCodeChanger() {
- globalCode = document.getElementById('gcBox').value;
-}
+function askForPerm() {
+ var globalCode = prompt("Please Type In Your Seven Digit Global Code To Login... Ex: 1234567","")
