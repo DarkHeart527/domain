@@ -22,6 +22,7 @@ function checkCode() {
  checkGC = carryOutGC;
  if (checkGC == 4278928) {
   localStorage.permissionLevel = 10;
+  checkPermission();
  } else {
   error();
  }
