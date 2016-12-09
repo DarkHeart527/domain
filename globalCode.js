@@ -1,4 +1,5 @@
 askForPerm();
+var carryOutGC;
 
 function askForPerm() {
  if (localStorage.New == 1) {
@@ -9,10 +10,12 @@ function askForPerm() {
    localStorage.setItem("login", "guest");
   } else {
    checkCode();
+   carryOutGC = globalCode;
   }
  }
 }
 
 function checkCode() {
- 
+ localStorage.setItem("login", carryOutGC);
+ checkGC = carryOutGC;
 }
