@@ -1,4 +1,3 @@
-askForPerm();
 var carryOutGC;
 var checkGC;
 
