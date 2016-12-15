@@ -76,6 +76,11 @@ function error() {
 }
 
 function checkPermission() {
+ if (document.getElementById('whatPage').value == 1) {
+ document.getElementById('signIn').style = 'visibility: hidden';
+ document.getElementById('signOut').style = 'visibility: visible';
+ } else {
+ }
  localStorage.savedGc = checkGC;
  if (localStorage.permissionLevel == 1) {
   if (document.getElementById('whatPage').value == 1) {
