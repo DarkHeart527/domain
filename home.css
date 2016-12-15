@@ -3,6 +3,11 @@ body, html {
  background-color: black;
 }
 
+.signInOut {
+ color: blue;
+ cursor: pointer;
+}
+
 b, i, u {
  color: relative;
  animation: relative;
