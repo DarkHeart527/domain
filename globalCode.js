@@ -28,8 +28,11 @@ function askForPerm() {
 }
 
 function signedIn() {
- document.getElementById('').style = '';
- document.getElementById('').style = '';
+ if (document.getElementById('whatPage').value == 1) {
+ document.getElementById('signIn').style = 'visibility: hidden';
+ document.getElementById('signOut').style = 'visibility: visible';
+ } else {
+ }
 }
 
 function askForPermNoAsk() {
@@ -51,6 +54,13 @@ function checkCode() {
  } else {
   error();
  }
+}
+
+function logOut() {
+ localStorage.New = 0;
+ localStorage.setItem("login", "");
+ localStorage.permissionLevel = 1;
+ localStorage.savedGc = "";
 }
 
 function error() {
