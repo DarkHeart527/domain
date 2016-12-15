@@ -40,26 +40,26 @@ function page1() {
   '<a id="link3" class="linkSelection" href="projects/Unnamed.html">Unnamed</a>' +
   '<a id="link4" class="linkSelection" href="http://deathClicker.codark.com">Death Clicker</a>' +
   '<a id="link5" class="linkSelection" href="allowance/home.html">Allowance</a>' +
-  '<a href="#" class="page2" onclick="addOne()">>></a>' +
+  '<a href="#" class="page2" onclick="addOne();checkPermission()">>></a>' +
   '</center>';
 }
 
 function page2() {
  document.getElementById('navHeader').innerHTML =
   '<center>' +
-  '<a href="#" style="visibility: visible;" onclick="deleteOne()" class="page"><<</a>' +
+  '<a href="#" style="visibility: visible;" onclick="deleteOne();checkPermission()" class="page"><<</a>' +
   '<a id="link6" href="musicPlayer/Music%20Player.html" class="linkSelection">Music Player</a>' +
   '<a id="link7" href="iFrameVisitor/start.html" class="linkSelection">iFrame Visitor</a>' +
   '<a id="link8" href="theRemix/home.html" class="linkSelection">The Remix</a>' +
-  '<a href="#" class="page2" onclick="addOne()">>></a>' +
+  '<a href="#" class="page2" onclick="addOne();checkPermission()">>></a>' +
   '</center>';
 }
 
 function page3() {
   document.getElementById('navHeader').innerHTML =
   '<center>' +
-  '<a href="#" style="visibility: visible;" onclick="deleteOne()" class="page"><<</a>' +
+  '<a href="#" style="visibility: visible;" onclick="deleteOne();checkPermission()" class="page"><<</a>' +
   '<a href="" class="linkSelection"></a>' + //Code Area
-  '<a href="#" class="page2" onclick="addOne()">>></a>' +
+  '<a href="#" class="page2" onclick="addOne();checkPermission()">>></a>' +
   '</center>';
 }
