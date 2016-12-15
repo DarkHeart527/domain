@@ -61,6 +61,7 @@ function logOut() {
  localStorage.setItem("login", "");
  localStorage.permissionLevel = 1;
  localStorage.savedGc = "";
+ setTimeout(function() { location = "http://codark.com" }, 100);
 }
 
 function error() {
