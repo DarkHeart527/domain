@@ -5,7 +5,6 @@ onLoaded();
 function onLoaded() {
  if (localStorage.New == 1) {
   checkGC = localStorage.getItem("login");
-   = localStorage.getItem("login");
   setTimeout( function() { askForPermNoAsk();signedIn(); }, 250);
  }
 }
