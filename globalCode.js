@@ -51,7 +51,7 @@ function checkCode() {
   localStorage.permissionLevel = 10;
   checkPermission();
  } else if (checkGC == "guest") {
-  print 'No Action Needed'
+  console.log 'No Action Needed';
  } else {
   error();
  }
