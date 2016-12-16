@@ -5,6 +5,7 @@ onLoaded();
 function onLoaded() {
  if (localStorage.New == 1) {
   checkGC = localStorage.getItem("login");
+  carryOutGc = localStorage.getItem("login");
   setTimeout( function() { askForPermNoAsk();signedIn(); }, 250);
  }
 }
@@ -16,7 +17,7 @@ function askForPerm() {
  } else {
   var globalCode = prompt("Please Type In Your Seven Digit Global Code To Login... Ex: 1234567\n" + 'If you don' + "'" + 't have a GC then type "Guest"',"");
   if (globalCode == "Guest") {
-   localStorage.setItem("login", "guest");
+   localStorage.setItem("login", "Guest");
    localStorage.permissionLevel = 1;
    checkPermission();
   } else {
@@ -50,7 +51,7 @@ function checkCode() {
  if (checkGC == 4278928) {
   localStorage.permissionLevel = 10;
   checkPermission();
- } else if (checkGC == "guest") {
+ } else if (checkGC == "Guest") {
  } else {
   error();
  }
