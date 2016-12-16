@@ -5,6 +5,7 @@ onLoaded();
 function onLoaded() {
  if (localStorage.New == 1) {
   checkGC = localStorage.getItem("login");
+   = localStorage.getItem("login");
   setTimeout( function() { askForPermNoAsk();signedIn(); }, 250);
  }
 }
@@ -50,6 +51,8 @@ function checkCode() {
  if (checkGC == 4278928) {
   localStorage.permissionLevel = 10;
   checkPermission();
+ } else if (checkGC == "guest") {
+  print 'No Action Needed'
  } else {
   error();
  }
