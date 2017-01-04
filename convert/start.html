@@ -7,7 +7,7 @@
 	<body onload="setTimeout( function() { randomizeAccounting() }, 500)">
 	<a href="http://codark.com" class="linkBTC">Back To Codark</a>
 	<center>
-		<select id="dontNeed2" onChange="checkAgain()">
+		<!--<select id="dontNeed2" onChange="checkAgain()">
 			<option value="" disabled></option>
 			<option value="" disabled>Audio</option>
 			<option value="" disabled></option>
@@ -30,22 +30,8 @@
 			<option value="png">PNG</option>
 			<option value="tiff">TIFF</option>
 			<option value="gif">GIF</option>
-		</select>
+		</select>-->
 		<p>Type</p>
 		<button onClick="makeFile()">File Upload</button><button onClick="makeUrl()">Downloader</button>
-		<form action="https://api.cloudconvert.com/convert" method="POST" enctype="multipart/form-data">
-			<p id='fFile'></p>
-			<span id="dontNeed">
-					<input type="hidden" name="apikey" id="api">
-					<span id="typeInput2"><input type="hidden" name="inputformat"></span>
-					<input type="hidden" name="outputformat" id="typeInput">
-					<input type="hidden" name="input" value="upload">
-					<input type="hidden" name="output" value="download">
-					<input type="hidden" name="timeout" value="0">
-					<input type="hidden" name="wait" value="true">
-					<input type="hidden" name="download" value="true">
-				        <span id='dRC'></span>
-			</span>
-		</form>
 	</body>
 </html>
