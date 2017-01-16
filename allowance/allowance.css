@@ -3,6 +3,32 @@ body {
  background-color: black;
 }
 
+.headButton {
+ font-size: 30px;
+}
+
+#tab1, #tab2 {
+ position: absolute;
+ width: 100%;
+ height: auto;
+}
+
+.actualDisplay {
+ background-color: red;
+ width: 100%;
+ height: auto;
+ position: absolute;
+}
+
+textarea, input {
+ cursor: text;
+}
+
+.moneyInAccount {
+ font-size: 25px;
+ text-align: center;
+}
+
 * {
  color: white;
  background-color: black;
