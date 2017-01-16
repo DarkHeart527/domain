@@ -68,7 +68,7 @@ function logOut() {
 function error() {
  globalCode = prompt("Error: Invalid GC!!!\nPlease Type In Your Seven Digit Global Code To Login... Ex: 1234567\n" + 'If you don' + "'" + 't have a GC then type "Guest"',"");
  if (globalCode == "Guest") {
-   localStorage.setItem("login", "guest");
+   localStorage.setItem("login", "Guest");
    localStorage.permissionLevel = 1;
    checkPermission();
   } else {
