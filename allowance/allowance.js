@@ -19,11 +19,15 @@
        localStorage.setItem("payments", document.getElementById('displayArea').innerHTML);
       }
       function constantReloader() {
-       document.getElementById('display2').innerHTML = "Money In Your Account: " + Number(localStorage.MONEYZZ);
+       document.getElementById('display2').innerHTML = "Money In Your Account: " + "<span id='moneyAmount'>" + Number(localStorage.MONEYZZ) + "</span>";
 	   if (localStorage.MONEYZZ < 0) {
-	    checkNegative = "-";
-	   } else {
-	    checkNegative = '';
+	    document.getElementById('moneyAmount').style = "color: red";   
+	   } else if (localStorage.MONEYZZ < 10 & localStorage.MONEYZZ > (0 - 1)) {
+	    document.getElementById('moneyAmount').style = "color: green";   
+	   } else if (localStorage.MONEYZZ < 25 & localStorage.MONEYZZ > 9) {
+	    document.getElementById('moneyAmount').style = "color: limegreen";   
+	   } else if (localStorage.MONEYZZ < 50 & localStorage.MONEYZZ > 24) {
+	    document.getElementById('moneyAmount').style = "color: blue";   
 	   }
       }
       function load() {
@@ -125,4 +129,8 @@
 	  function no() {
 	   document.getElementById('confirm').innerHTML = "";
 	   document.getElementById('resetButton').innerHTML = "<button onClick='reset()'>Reset</button>";
+	  }
+	  
+	  function openSG() {
+	   
 	  }
