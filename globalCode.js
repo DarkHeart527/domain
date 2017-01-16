@@ -53,7 +53,7 @@ function checkCode() {
   checkPermission();
  } else if (checkGC == "Guest") {
  } else {
-  error();
+  //error();
  }
 }
 
