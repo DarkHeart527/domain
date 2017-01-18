@@ -36,7 +36,7 @@ function page1() {
   '<center>' +
   '<a href="#" style="visibility: hidden;" onclick="" class="page"><<</a>' +
   //'<a id="link1" class="linkSelection" href="http://colorclock.codark.com">Color Clock</a>' +
-  //'<a id="link2" class="linkSelection" href="convert/start.html">Converter</a>' +
+  '<a id="link2" class="linkSelection" href="convert/start.html">Converter</a>' +
   //'<a id="link3" class="linkSelection" href="projects/Unnamed.html">Unnamed</a>' +
   //'<a id="link4" class="linkSelection" href="http://deathClicker.codark.com">Death Clicker</a>' +
   //'<a id="link5" class="linkSelection" href="allowance/home.html">Allowance</a>' +
