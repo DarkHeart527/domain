@@ -1,19 +1,2 @@
-MAJOR UPDATE COMING - Musicplayer
+None Right Now
 
-https://github.io/domain/musicPlayer/Music%20Player.html
-
-Features Include All Below
-
-Sort your music by author, playlist, year, album, source, and more!
-Themes for the file that includes original, dark, bye lag, and matrix!
-Adding up to thirty songs!!!
-Have global codes that unlock cool features!
-
-Note: Below might not come quick this adds an extra two days of work
-
-See visual effects and have the ability to turn it off or on!
-Select music video auto, selected, or random!
-
-Notice: Visual Effects Is The Same As Music Video
-
-| Expected Finish Date / 12-01-16 |
