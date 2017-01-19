@@ -1,5 +1,5 @@
 function makeUrl() {
- document.getElementById('displayArea').innerHTML = '<a onmouseover="uUrl()" id="urlA" href="" download>Download</a>';
+ document.getElementById('display').innerHTML = '<a onmouseover="uUrl()" id="urlA" href="" download>Download</a>';
 }
 
 function mpCutI() {
