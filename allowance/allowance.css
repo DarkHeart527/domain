@@ -56,11 +56,19 @@ textarea, input {
  text-align: left;
 }
 
-.sub:hover, .add:hover {
+.goal {
+ color: white;
+ margin: 0px;
+ width: 80%;
+ border: solid white 1px;
+ text-align: left;
+}
+
+.sub:hover, .add:hover, .goal:hover {
  background-color: #1b1919;
 }
 
-.sub, .add {
+.sub, .add, .goal:hover {
  transition: background-color .25s;
 }
 
@@ -80,6 +88,13 @@ textarea, input {
 }
 
 .subBtn {
+ text-align: right;
+ position: absolute;
+ right: 10%;
+ cursor: pointer;
+}
+
+.goalBtn {
  text-align: right;
  position: absolute;
  right: 10%;
