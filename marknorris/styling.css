@@ -1,3 +1,3 @@
-.cool {
- background-color: red; 
+.cool::before {
+ content: 'O '
 }
