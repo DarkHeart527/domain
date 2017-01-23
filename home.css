@@ -75,3 +75,11 @@ margin-left:50%;
  font-size: 100px;
  color: white;
 }
+
+.codarkLink {
+ background-color: white;
+ width: 10%;
+ height: 5%;
+ font-size: 25px;
+ color: black;
+}
