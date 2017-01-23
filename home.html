@@ -3,6 +3,16 @@
     <script src="home.js" type="text/javascript">
     </script>
     <script src="https://code.jquery.com/jquery-1.10.2.js">
+	     $(document).ready( function() {
+		$("#leftLink").click( function() {
+		 pageNum = pageNum + 1;
+		 if (pageNum == 1) {
+		  (this).hide();	 
+		 } else {
+		  (this).show();	 
+		 }
+		});
+	   });
     </script>
     <!--<script src="globalCode.js">
     </script>-->
