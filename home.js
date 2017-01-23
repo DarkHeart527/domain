@@ -1,5 +1,15 @@
 alert('The Home Screen Is Currently Being Remade/nPlease Be Aware That Some Errors Can And Will Exist')
 
+	   $(document).ready( function() {
+		$("#leftLink").click( function() {
+		 pageNum = pageNum + 1;
+		 if (pageNum == 1) {
+		  (this).hide();	 
+		 } else {
+		  (this).show();	 
+		 }
+		});
+	   });
 var pageNum = 1;
 
 function checkNav() {
