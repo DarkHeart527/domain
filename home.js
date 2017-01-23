@@ -1,3 +1,5 @@
+alert('The Home Screen Is Currently Being Remade/nPlease Be Aware That Some Errors Can And Will Exist')
+
 var pageNum = 1;
 
 function checkNav() {
