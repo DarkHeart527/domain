@@ -1,11 +1,27 @@
 body, html {
  margin: 0px;
+ margin-top: -5px;
  background-color: black;
 }
 
-.signInOut {
- color: blue;
+* {
+ cursor: default;
+}
+
+.clickable, #leftLink, #rightLink, .commonLink {
  cursor: pointer;
+}
+
+
+
+a {
+ text-decoration: none;
+ color: inherit;
+ cursor: pointer;
+} 
+
+a:hover {
+ color: blue;
 }
 
 b, i, u {
@@ -29,10 +45,6 @@ b, i, u {
  transition: 1.5s;
 }
 
-.linkSelection::after {
- content: ' / ';
-}
-
 .page, .page2 {
  color: white;
  font-size: 30px;
@@ -49,6 +61,29 @@ b, i, u {
  top: 0px;
  left: 0px;
  position: fixed;
+}
+
+@keyframes special {
+ 0% {background-color: green;color: lightgreen;}
+ 25% {color: white;}
+ 50% {background-color: white;color: green;}
+ 75% {color: white;}
+ 100% {background-color: green;color: lightgreen;}
+}
+
+@keyframes unlockable {
+ 0% {background-color: lightblue;color: blue;}
+ 25% {color: black;}
+ 50% {background-color: blue;color: lightblue;}
+ 75% {color: black;}
+ 100% {background-color: lightblue;color: blue;}
+}
+
+@keyframes specialEffects {
+ 0% {transform: rotate(360deg);top: 6%;background-color: green;width: 5px;height: 5px;left: 75%;border-radius: 5px;}
+ 33% {transform: rotate(0deg);top: 8%;background-color: white;width: 7px;height: 7px;left: 73%;border-radius: 0px;}
+ 66% {top: 8%;background-color: lightgreen;width: 9px;height: 9px;left: 77%;border-radius: 0px;}
+ 100% {transform: rotate(360deg);top: 6%;background-color: green;width: 5px;height: 5px;left: 75%;border-radius: 5px;}
 }
 
 .page2 {
@@ -77,9 +112,89 @@ margin-left:50%;
 }
 
 .codarkLink {
+ background-color: black;
+ width: 10%;
+ height: 5%;
+ padding-top: 10px;
+ font-size: 25px;
+ color: white;
+ text-align: center;
+}
+
+.navigationLink {
  background-color: white;
  width: 10%;
  height: 5%;
+ padding-top: 10px;
  font-size: 25px;
  color: black;
+ text-align: center;
+ transition: padding-top 1s, padding-bottom 1s, border-radius 1s;
+}
+
+.commonLink {
+ background-color: white;
+ width: 10%;
+ height: 5%;
+ padding-top: 10px;
+ font-size: 25px;
+ color: black;
+ text-align: center;
+ transition: padding-top 1s, padding-bottom 1s, border-radius 1s;
+}
+
+.signInOut {
+ background-color: white;
+ width: 10%;
+ height: 5%;
+ padding-top: 10px;
+ font-size: 25px;
+ color: black;
+ text-align: center;
+ transition: padding-top 1s, padding-bottom 1s, border-radius 1s;
+}
+
+.specialLink {
+ background-color: green;
+ width: 10%;
+ height: 5%;
+ padding-top: 10px;
+ font-size: 25px;
+ color: lightgreen;
+ text-align: center;
+ transition: padding-top 1s, padding-bottom 1s, border-radius 1s;
+ animation: special 4s infinite;
+}
+
+
+.specialEffects {
+ position: absolute;
+ animation: specialEffects 3s infinite;
+}
+
+.unlockableLink {
+ background-color: blue;
+ width: 10%;
+ height: 5%;
+ padding-top: 10px;
+ font-size: 25px;
+ color: lightblue;
+ text-align: center;
+ transition: padding-top 1s, padding-bottom 1s, border-radius 1s;
+ animation: unlockable 5s infinite;
+}
+
+.commonLink:hover, .navigationLink:hover, .unlockableLink:hover, .specialLink:hover {
+ padding-top: 20px;
+ padding-bottom: 10px;
+ border-radius: 10px;
+ transition: padding-top 1s, padding-bottom 1s, border-radius 1s;
+}
+
+.navHeader {
+ display: flex;
+}
+
+.seeable {
+ color: red;
 }
