@@ -95,9 +95,6 @@ localStorage.New = 1;
 }
 
 function setPageOne() {
- if (document.getElementById('link3')) {
-  document.getElementById('link3').remove()
- }
 }
 
 function setPageTen() {
