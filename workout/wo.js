@@ -2,7 +2,7 @@ var d = new Date();
 var Bday = d.getDate();
 var Bmonth = d.getMonth();
 var year = d.getFullYear();
-var day = Bday + 1;
+var day = Bday;
 var month = Bmonth + 1;
 
 
