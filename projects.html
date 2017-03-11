@@ -1,0 +1,37 @@
+<html lang=en>
+	<head>
+		<meta name="viewport" width=device-width>
+		<meta name="language" lang=en>
+		<link href="css/main.css" rel="stylesheet" />
+		<title id="title">Projects</title>
+		<script src="scripts/animation.js">
+		</script>
+		<script>
+			setTimeout( function() { document.getElementById('title').innerHTML = document.getElementById('head').innerHTML + ' - ' + document.getElementById('title').innerHTML; placeholderE(); }, 500);
+		</script>
+	</head>
+	<body>
+		<!-- Preload Images -->
+		<img src="css/background1.jpg" class="preload" />
+		<img src="css/background2.jpg" class="preload" />
+		<img src="css/background3.jpg" class="preload" />
+		<img src="css/background4.jpg" class="preload" />
+		<!-- -->
+		<img class="headerPicture" src="css/heading.jpg" />
+		<header>
+			<div class="logo"></div>
+			<span class="head" id="head">No Name Yet</span>
+			<form action="search.php" method="GET" id="search" name="search">
+				<input type="text" id="searchBox" class="searchBar" placeholder="Search..." />
+				<input class="searchSubmit" type="submit" />
+			</form>
+		</header>
+		<nav>
+			<a href="index.html">Home</a>
+			<a href="#Programming">Programming</a>
+			<a href="#Sources">Sources</a>
+			<a href="projects.html"><b>Projects</b></a>
+		</nav>
+		<h1 class="projectH1">Here are a list of my projects</h1>
+	</body>
+</html>
