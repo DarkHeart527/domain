@@ -150,3 +150,13 @@ nav a:hover {
  padding-left: 5px;
  padding-right: 5px;
 }
+
+.projectSection, .projectLink {
+ font-size: 25px;
+ color: lightgreen;
+ text-decoration: none;
+}
+
+.projectSection, .projectLink:hover {
+ color: white;
+}
