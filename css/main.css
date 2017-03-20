@@ -142,3 +142,9 @@ nav a:hover {
  position: absolute;
  z-index: -1;
 }
+
+.projectSection {
+ width: 100%;
+ height: auto;
+ background-color: grey;
+}
