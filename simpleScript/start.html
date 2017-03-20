@@ -1,0 +1,128 @@
+<html>
+	<head>
+		<title></title>
+		<script src="easyScript.js" type="text/javascript">
+		</script>
+		<script>
+		setTimeout( function() {while (document.getElementById('jFunc').id == 'jFunc') {
+		 code('jFunc');
+		}}, 50)
+		var count = 0;
+		function code(id) {
+		   var a = document.getElementById(id).innerHTML;
+		   var b = a.split(' ');
+		   var c = 0;
+		   var i = 0;
+		   var d;
+		   var finishProduct = '';
+		   for (i = 0;i < b.length;i++) {
+		   c = b[i];
+		   if (b[i] == 'newElement' | b[i] == 'function' | b[i] == 'numberRandom') {
+		    finishProduct = finishProduct + '<span style="color: blue">' + b[i] + "</span>";
+		   } else if (b[i] == '(' | b[i] == ')') {
+		    finishProduct = finishProduct + '<span style="color: yellow">' + b[i] + "</span>";
+		   } else if (b[i] == '=' | b[i] == '-' | b[i] == '+' | b[i] == '*') {
+		    finishProduct = finishProduct + '<span style="color: yellow"> ' + b[i] + " </span>";
+		   } else if (b[i] == ';' | b[i] == ':') {
+		    finishProduct = finishProduct + '<span style="color: blue">' + b[i] + " </span>";
+		   } else if (b[i] == ',') {
+		    finishProduct = finishProduct + '<span style="color: yellow">' + ', ' + " </span>";
+		   } else if (b[i] == undefined | b[i] == 'undefined') {
+		    b[i] = '';
+		   } else if (b[i] == '()') {
+		    finishProduct = finishProduct + '<span style="color: yellow">' + '() ' + "</span>";
+		   } else if (b[i] == 'var') {
+		    finishProduct = finishProduct + '<span style="color: orange">' + 'var ' + "</span>";
+		   } else if (b[i] == Number(b[i])) {
+		    finishProduct = finishProduct + '<span style="color: green">' + b[i] + "</span>";
+		   } else{
+		    finishProduct = finishProduct + '<span style="color: white">' + b[i] + "</span>";
+		   }
+		   document.getElementById(id).innerHTML = finishProduct;
+		  }
+		  document.getElementById(id).id = 'doneJavascript';
+		 }
+		</script>
+		<style>
+		* {
+		 margin: 0px;
+		}
+		*:focus {
+		 outline: none;
+		}
+		body {
+		 background-color: darkgrey;
+		 margin-left: 10%;
+		 margin-right: 10%;
+		 margin-top: 3%;
+		}
+		#newElementFrameAfter, #newElementFrameBefore, #numberRandom, #numberRandom2 {
+		 width: 100%;
+		 height: 20%;
+		 overflow: auto;
+		 background-color: grey;
+		 font-size: 50px;
+		}
+		#doneJavascript {
+		 background-color: black;
+		 font-size: 2em;
+		 margin-left: 5px;
+		 margin-right: 5px;
+		}
+		.article {
+		 width: 100%;
+		 height: auto;
+		 background-color: black;
+		 border-radius: 15px;
+		 padding: 10px;
+		}
+		.note {
+		 font-size: 25px;
+		 color: yellow;
+		 margin: 0px;
+		 text-align: center;
+		}
+		.cstmBtn {
+		 padding: 2px;
+		 color: white;
+		 border: none;
+		 font-size: 25px;
+		 background-color: transparent;
+		 cursor: pointer;
+		 transition: .25s;
+		}
+		.cstmBtn:hover {
+		 color: grey;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="article">
+			<p class="note">The Count Does Not Display When Used</p>
+			<p id="jFunc">newElement ( 'p' , 'newElementFrame' , 'after' , 'Some HTML Text' , 'mySpecialId' , 'mySpecialClass' , 'background-color: red ; color : black ; font-size: 25px ; ' ) ;</p>
+			<div id="newElementFrameAfter"></div>
+			<button class="cstmBtn" onclick="count = count + 1;newElement('p', 'newElementFrameAfter', 'after', 'Some HTML Text: ' + count, 'mySpecialId', 'mySpecialClass', 'background-color: red;color : black;font-size: 25px;');">Try It!</button>
+		</div>
+		<br /><br /><br />
+		<div class="article">
+			<p class="note">The Count Does Not Display When Used</p>
+			<p id="jFunc">newElement ( 'p' , 'newElementFrame' , 'after' , 'Some HTML Text' , 'mySpecialId' , 'mySpecialClass' , 'background-color: red ; color : black ; font-size: 25px ; ' ) ;</p>
+			<div id="newElementFrameBefore"></div>
+			<button class="cstmBtn" onclick="count = count + 1;newElement('p', 'newElementFrameBefore', 'before', 'Some HTML Text: ' + count, 'mySpecialId', 'mySpecialClass', 'background-color: red;color : black;font-size: 25px;');">Try It!</button>
+		</div>
+		<br /><br /><br />
+		<div class="article">
+			<p class="note">This Generates A Random Number Starting From 1 to 1000</p>
+			<p id="jFunc">numberRandom ( 'numberRandom' , 1 , 1000 )</p>
+			<div id="numberRandom"></div>
+			<button class="cstmBtn" onclick="numberRandom('numberRandom', 1, 1000, true, 'before', 'The number randomly generated is: ')">Try It!</button>
+		</div>
+		<br /><br /><br />
+		<div class="article">
+			<p class="note">This Generates A Random Number Starting From 500 to 1000</p>
+			<p id="jFunc">numberRandom ( 'numberRandom' , 1 , 1000 , true , 'after' , ' is the randomly generated number' )</p>
+			<div id="numberRandom2"></div>
+			<button class="cstmBtn" onclick="numberRandom('numberRandom2', 500, 500, true, 'after', ' is the randomly generated number')">Try It!</button>
+		</div>
+	</body>
+</html>
