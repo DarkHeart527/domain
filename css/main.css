@@ -147,4 +147,6 @@ nav a:hover {
  width: 100%;
  height: auto;
  background-color: grey;
+ padding-left: 5px;
+ padding-right: 5px;
 }
