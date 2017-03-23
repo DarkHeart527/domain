@@ -3,6 +3,7 @@
 		<script>
 		var playing = false;
 		var playType = "Default";
+		var songListSearch;
 		var songList;
 		var songListMax; //Maximum Number Of Tracks
 		var songListMin = 0; //Minimum Number Of Tracks
@@ -24,8 +25,7 @@
 			  startMusic();
 			 }
 			 if (playType == "Default") {
-			  songList = document.getElementsByClassName("AuthorDrake");
-			  songList = songList;
+			  songListSearch = document.getElementsByClassName("Author" + authorNumber);
 			  songListMax = songList.length - 1; //Maximum Number Of Tracks
 			  songTitle = songList[songListCurrent].attributes.infoTitle.value;
 			  songArtist = songList[songListCurrent].attributes.infoArtist.value;
