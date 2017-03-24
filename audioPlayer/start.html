@@ -9,7 +9,7 @@
 		var songListMin = 0; //Minimum Number Of Tracks
 		var songListCurrent;
 		var songTitle;
-		var authorNumber;
+		var authorNumber = 1;
 		var songArtist;
 		var songUrl;
 		var songDuration;
@@ -27,6 +27,7 @@
 			 }
 			 if (playType == "Default") {
 			  songListSearch = document.getElementsByClassName("Author" + authorNumber);
+			  songList = songListSearch[0];
 			  songListMax = songList.length - 1; //Maximum Number Of Tracks
 			  songTitle = songList[songListCurrent].attributes.infoTitle.value;
 			  songArtist = songList[songListCurrent].attributes.infoArtist.value;
