@@ -27,6 +27,7 @@
 			 }
 			 if (playType == "Default") {
 			  songListSearch = document.getElementsByClassName("Author");
+			  console.log(songListSearch);
 			  songList = songListSearch[authorNumber].getElementsByClassName("track");
 			  songListMax = songList.length - 1; //Maximum Number Of Tracks
 			  songTitle = songList[songListCurrent].attributes.infoTitle.value;
