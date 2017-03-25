@@ -39,11 +39,12 @@
 			 }
 			}
 			function songEnded() {
-			 songListCurrent = songListCurrent + 1;
 			 if (songListCurrent == songListMax) {
-			 if (playType == "Default") {
-			   songListCurrent = 0;
-			  }
+			  if (playType == "Default") {
+			    songListCurrent = 0;
+			   }
+			 } else {
+			  songListCurrent = songListCurrent + 1;	 
 			 }
 			 startMusic();
 			}
