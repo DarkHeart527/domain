@@ -55,7 +55,6 @@ body {
 
 .trackList {
  display: block;
- position: absolute;
 }
 
 .track {
@@ -96,4 +95,8 @@ body {
  background-color: transparent;
  color: transparent;
  opacity: 0;
+}
+
+.Author {
+ position: relative;
 }
