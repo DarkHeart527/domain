@@ -1,2 +1,10 @@
-None Right Now
-
+Audio Player!!!
+- Go through many artists!
+- Customizable Playlists!
+- Add songs from other places using these file types! (mp3, wav)
+- Easy Navigation!
+  Want a song on this Audio Player?
+  Comment it below!!!
+    Expected Javascript finish date: 4-1-17
+    Expected Cascading Styling Sheet finish date: 4-7-17
+      Accepting music date: 4-1-17
