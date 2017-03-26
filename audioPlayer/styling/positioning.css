@@ -59,6 +59,8 @@ body {
 
 .track {
  display: inherit;
+ font-size: 35px;
+ cursor: pointer;
 }
 
 #progressBarHolder {
@@ -97,8 +99,9 @@ body {
  opacity: 0;
 }
 
-.Author {
+.Artist {
  position: absolute;
+ visibility: hidden;
 }
 
 #currentArtist {
