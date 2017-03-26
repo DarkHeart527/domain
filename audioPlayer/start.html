@@ -9,16 +9,34 @@
 		var songListMin = 0; //Minimum Number Of Tracks
 		var songListCurrent;
 		var songTitle;
-		var authorNumber = 0;
+		var artistNumber = 0;
 		var songArtist;
 		var songUrl;
 		var songDuration;
 		var Sinterval;
 		var pictureC = 1;
-		var songListSearch = document.getElementsByClassName("Author");
+		var audio = {
+		 pausePlay: function() {
+			 if (document.getElementById('playPause').value == "paused") {
+			  document.getElementById('playPause').innerHTML = "Pause"
+			  document.getElementById('audio').play();
+			  document.getElementById('playPause').value = "playing";
+			 } else {
+			  document.getElementById('playPause').innerHTML = "Play"
+			  document.getElementById('audio').pause();
+			  document.getElementById('playPause').value = "paused"
+			 }
+			 if (playing == false) {
+			  startMusic();
+			  document.getElementById('playPause').value = "playing";
+			 }
+			},
+		}
+		var songListSearch = document.getElementsByClassName("Artist");
 			function startMusic() {
 			 if (playing == true) {
 			 } else {
+			  document.getElementById('playPause').innerHTML = "Pause"
 			  playing = true;
 			  songListMin = 0; //Minimum Number Of Tracks
 			  songListCurrent = songListMin;
@@ -27,10 +45,10 @@
 			 if (playType == "Default") {
 			  console.info("All The Music");
 			  console.info(songListSearch);
-			  songList = songListSearch[authorNumber].getElementsByClassName("track");
+			  songList = songListSearch[artistNumber].getElementsByClassName("track");
 			  songListMax = songList.length - 1; //Maximum Number Of Tracks
 			  songTitle = songList[songListCurrent].attributes.infoTitle.value;
-			  songArtist = songListSearch[authorNumber].attributes.infoArtist.value;
+			  songArtist = songListSearch[artistNumber].attributes.infoArtist.value;
 			  songUrl = songList[songListCurrent].attributes.url.value;
 			  document.getElementById('title').innerHTML = songTitle;
 			  document.getElementById('artist').innerHTML = songArtist;
@@ -38,9 +56,17 @@
 			  document.getElementById('audio').src = 'music/' + songUrl;
 			 }
 			}
-			function changedAuthor() {
-			playing = false;
-			songListCurrent = 0;
+			
+			function changedArtist() {
+			 for (i = 0;songListSearch.length > i;i++) {
+			  songListSearch[i].style = '';
+			  if (i == songListSearch.length - 1) {
+			   songListSearch[artistNumber].style = "visibility: visible;";
+			  }
+			 }
+			 document.getElementById('playPause').innerHTML = "Play"
+			 playing = false;
+			 songListCurrent = 0;
 			if (playing == true) {
 			} else {
 			  songListMin = 0; //Minimum Number Of Tracks
@@ -48,10 +74,10 @@
 			}
 			 if (playType == "Default") {
 			  console.log(songListSearch);
-			  songList = songListSearch[authorNumber].getElementsByClassName("track");
+			  songList = songListSearch[artistNumber].getElementsByClassName("track");
 			  songListMax = songList.length - 1; //Maximum Number Of Tracks
 			  songTitle = songList[songListCurrent].attributes.infoTitle.value;
-			  songArtist = songListSearch[authorNumber].attributes.infoArtist.value;
+			  songArtist = songListSearch[artistNumber].attributes.infoArtist.value;
 			  songUrl = songList[songListCurrent].attributes.url.value;
 			  document.getElementById('currentArtist').innerHTML = songArtist;
 			 }
@@ -70,19 +96,6 @@
 			 var currentMath = document.getElementById('audio').currentTime / songDuration;
 			 var afterMath = currentMath * 100;
 			 document.getElementById('progress').style = 'width: ' + afterMath + '%';
-			}
-			function pP() {
-			 if (document.getElementById('playPause').value == "paused") {
-			  document.getElementById('audio').play();
-			  document.getElementById('playPause').value = "playing";
-			 } else {
-			  document.getElementById('audio').pause();
-			  document.getElementById('playPause').value = "paused"
-			 }
-			 if (playing == false) {
-			  startMusic();
-			  document.getElementById('playPause').value = "playing";
-			 }
 			}
 			setTimeout( function() {
 			setInterval( function() {
@@ -117,16 +130,16 @@
 			 }
 			 startMusic();
 			}
-			function nextAuthor() {
-			if (authorNumber < songListSearch.length - 1) {
-			  authorNumber += 1;
-			  changedAuthor();
+			function nextArtist() {
+			if (artistNumber < songListSearch.length - 1) {
+			  artistNumber += 1;
+			  changedArtist();
 			 }
 			}
-			function prevAuthor() {
-			if (authorNumber > 0) {
-			   authorNumber -= 1;
-			   changedAuthor();
+			function prevArtist() {
+			if (artistNumber > 0) {
+			   artistNumber -= 1;
+			   changedArtist();
 			  }
 			 }
 		</script>
@@ -155,22 +168,22 @@
 				</div>
 			</div>
 			<div class="center">
-				<span id="leftABtn" onclick="prevAuthor()">&#8666;</span>
+				<span id="leftABtn" onclick="prevArtist()">&#8666;</span>
 				<span id="currentArtist" onClick="">Drake</span>
-				<span id="nextABtn" onclick="nextAuthor()">&#8667;</span>
+				<span id="nextABtn" onclick="nextArtist()">&#8667;</span>
 			</div>
 			<div>
 				<button id="" onclick="previous();">Previous</button>
+				<button id="playPause" onclick="audio.pausePlay();">Play</button>
 				<button id="" onclick="next();">Next</button>
-				<button id="playPause" onclick="pP();">Play / Pause</button>
 			</div>
 			<div class="scrollable">
 				<ul class="trackList">
-					<ul class="Author" infoArtist="Drake">
+					<ul class="Artist" infoArtist="Drake" style="visibility: visible;">
 						<li class="track" infoTitle="Energy" url="Energy.mp3"></li>
 						<li class="track" infoTitle="Headlines" url="Headlines.mp3"></li>
 					</ul>
-					<ul class="Author" infoArtist="Linkin Park">
+					<ul class="Artist" infoArtist="Linkin Park">
 						<li class="track" infoTitle="Cure For The Itch" url="Cure For The Itch.mp3"></li>
 						<li class="track" infoTitle="In The End" url="In The End.mp3"></li>
 						<li class="track" infoTitle="Forgotten" url="Forgotten.mp3"></li>
@@ -186,7 +199,22 @@
 		<script>
 			for (i = 0;document.getElementsByClassName('track').length > i; i++) {
 			 var a = document.getElementsByClassName('track');
-			 a[i].innerHTML = document.getElementsByClassName('track')[i].attributes.infoTitle.value;
+			 a[i].innerHTML = a[i].attributes.infoTitle.value;
+			 a[i].value = i;
+			 a[i].onclick = function() {
+			  this.id = "clicked"
+			  var sartist = this.parentElement;
+			  var sartist2 = sartist.parentElement;
+			  var songs = sartist.getElementsByClassName('track');
+			  songTitle = this.attributes.infoTitle.value;
+			  songArtist = sartist.attributes.infoArtist.value;
+			  songUrl = this.attributes.url.value;
+			  document.getElementById('title').innerHTML = songTitle;
+			  document.getElementById('artist').innerHTML = songArtist;
+			  document.getElementById('currentArtist').innerHTML = songArtist;
+			  document.getElementById('audio').src = 'music/' + songUrl;
+			  this.id = '';
+			 }
 			}
 		</script>
 	</body>
