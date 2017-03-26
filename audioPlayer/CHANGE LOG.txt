@@ -1,2 +1,5 @@
 CHANGE LOG:
 - Bug Fixes
+- Better Navigation Styling
+  Programmer Updates:
+    - for Method Changes innerHTML Of Each Track (Titles Are Also Set As Text In The Track List)
