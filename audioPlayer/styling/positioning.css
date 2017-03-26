@@ -10,7 +10,6 @@ body {
  margin-top: 5%;
  border-radius: 15px;
  background-color: grey;
- padding-bottom: 20%;
 }
 
 #image {
@@ -55,6 +54,9 @@ body {
 
 .trackList {
  display: block;
+ overflow-x: visible;
+ overflow-y: visible;
+ width: inherit;
 }
 
 .track {
@@ -119,6 +121,7 @@ body {
 
 #nextABtn:hover {
  color: darkgrey;
+ text-shadow: -4px 4px 2px black;
 }
 
 #leftABtn {
@@ -131,6 +134,7 @@ body {
 
 #leftABtn:hover {
  color: darkgrey;
+ text-shadow: 4px 4px 2px black;
 }
 
 .center {
