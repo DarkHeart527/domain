@@ -81,6 +81,7 @@
 			  songUrl = songList[songListCurrent].attributes.url.value;
 			  document.getElementById('currentArtist').innerHTML = songArtist;
 			 }
+			 document.getElementsByClassName('trackList')[0].style = "height: " + Number((songList.length + 1)* 40) + "px;"
 			}
 			function songEnded() {
 			 if (songListCurrent == songListMax) {
@@ -178,7 +179,7 @@
 				<button id="" onclick="next();">Next</button>
 			</div>
 			<div class="scrollable">
-				<ul class="trackList">
+				<ul class="trackList" style="height: 120px;">
 					<ul class="Artist" infoArtist="Drake" style="visibility: visible;">
 						<li class="track" infoTitle="Energy" url="Energy.mp3"></li>
 						<li class="track" infoTitle="Headlines" url="Headlines.mp3"></li>
@@ -213,6 +214,7 @@
 			  document.getElementById('artist').innerHTML = songArtist;
 			  document.getElementById('currentArtist').innerHTML = songArtist;
 			  document.getElementById('audio').src = 'music/' + songUrl;
+			  document.getElementById('playPause').innerHTML = "Pause"
 			  this.id = '';
 			 }
 			}
