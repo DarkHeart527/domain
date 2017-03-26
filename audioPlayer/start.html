@@ -18,16 +18,15 @@
 		var songListSearch = document.getElementsByClassName("Author");
 			function startMusic() {
 			 if (playing == true) {
-			  console.info('Music Started!');
 			 } else {
 			  playing = true;
-			  console.info('Loading Music...');
 			  songListMin = 0; //Minimum Number Of Tracks
 			  songListCurrent = songListMin;
 			  startMusic();
 			 }
 			 if (playType == "Default") {
-			  console.log(songListSearch);
+			  console.info("All The Music");
+			  console.info(songListSearch);
 			  songList = songListSearch[authorNumber].getElementsByClassName("track");
 			  songListMax = songList.length - 1; //Maximum Number Of Tracks
 			  songTitle = songList[songListCurrent].attributes.infoTitle.value;
@@ -37,6 +36,24 @@
 			  document.getElementById('artist').innerHTML = songArtist;
 			  document.getElementById('currentArtist').innerHTML = songArtist;
 			  document.getElementById('audio').src = 'music/' + songUrl;
+			 }
+			}
+			function changedAuthor() {
+			playing = false;
+			songListCurrent = 0;
+			if (playing == true) {
+			} else {
+			  songListMin = 0; //Minimum Number Of Tracks
+			  songListCurrent = songListMin;
+			}
+			 if (playType == "Default") {
+			  console.log(songListSearch);
+			  songList = songListSearch[authorNumber].getElementsByClassName("track");
+			  songListMax = songList.length - 1; //Maximum Number Of Tracks
+			  songTitle = songList[songListCurrent].attributes.infoTitle.value;
+			  songArtist = songListSearch[authorNumber].attributes.infoArtist.value;
+			  songUrl = songList[songListCurrent].attributes.url.value;
+			  document.getElementById('currentArtist').innerHTML = songArtist;
 			 }
 			}
 			function songEnded() {
@@ -103,13 +120,13 @@
 			function nextAuthor() {
 			if (authorNumber < songListSearch.length - 1) {
 			  authorNumber += 1;
-			  startMusic();
+			  changedAuthor();
 			 }
 			}
 			function prevAuthor() {
 			if (authorNumber > 0) {
 			   authorNumber -= 1;
-			   startMusic();
+			   changedAuthor();
 			  }
 			 }
 		</script>
@@ -137,10 +154,10 @@
 					</div>
 				</div>
 			</div>
-			<div>
-				<button id="" onclick="prevAuthor()">Previous Author</button>
-				<span id="currentArtist">Drake</span>
-				<button id="" onclick="nextAuthor()">Next Author</button>
+			<div class="center">
+				<span id="leftABtn" onclick="prevAuthor()">&#8666;</span>
+				<span id="currentArtist" onClick="">Drake</span>
+				<span id="nextABtn" onclick="nextAuthor()">&#8667;</span>
 			</div>
 			<div>
 				<button id="" onclick="previous();">Previous</button>
@@ -150,18 +167,27 @@
 			<div class="scrollable">
 				<ul class="trackList">
 					<ul class="Author" infoArtist="Drake">
-						<li class="track" infoTitle="Energy" url="Energy.mp3">Energy</li>
-						<li class="track" infoTitle="Headlines" url="Headlines.mp3">Headlines</li>
+						<li class="track" infoTitle="Energy" url="Energy.mp3"></li>
+						<li class="track" infoTitle="Headlines" url="Headlines.mp3"></li>
 					</ul>
 					<ul class="Author" infoArtist="Linkin Park">
-						<li class="track" infoTitle="Cure For The Itch" url="Cure For The Itch.mp3">Cure For The Itch</li>
-						<li class="track" infoTitle="In The End" url="In The End.mp3">In The End</li>
-						<li class="track" infoTitle="Forgotten" url="Forgotten.mp3">Forgotten</li>
+						<li class="track" infoTitle="Cure For The Itch" url="Cure For The Itch.mp3"></li>
+						<li class="track" infoTitle="In The End" url="In The End.mp3"></li>
+						<li class="track" infoTitle="Forgotten" url="Forgotten.mp3"></li>
 					</ul>
 				</ul>
 			</div>
 		</div>
 		<audio id="audio" onloadedmetadata="songDuration = document.getElementById('audio').duration;" onplay="Sinterval = setInterval(function() { showTime(); })" onended="songEnded();" src="" autoplay>
 		</audio>
+		<div class="linkChangeLogD">
+			<a class="linkChangeLog" href="CHANGE LOG.txt" target="_blank">Change Log</a>
+		</div>
+		<script>
+			for (i = 0;document.getElementsByClassName('track').length > i; i++) {
+			 var a = document.getElementsByClassName('track');
+			 a[i].innerHTML = document.getElementsByClassName('track')[i].attributes.infoTitle.value;
+			}
+		</script>
 	</body>
 </html>
