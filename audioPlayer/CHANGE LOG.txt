@@ -1,4 +1,15 @@
 CHANGE LOG:
+3-26-17 12:36 AM
+- Performance fixes
+- Styling fixes
+- Tracks are now click-playable
+- Song does not change when you choose different artists until you press play
+- Pause/Play is now Pause when plaing and Play when paused
+  Programmer Updates:
+    - Artist Is Now In The .Artist Element
+    - Changed Everything Stating Author To Artist
+
+3-25-17 11:23 PM
 - Bug Fixes
 - Better Navigation Styling
 - Change Log Link
