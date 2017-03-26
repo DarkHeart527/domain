@@ -1,4 +1,7 @@
 CHANGE LOG:
+3-26-17 2:00 PM
+- Bug Fixes
+
 3-26-17 1:28 AM
 - Smart Sizing Added To Track List
 - New Button Hover Styling
