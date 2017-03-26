@@ -9,12 +9,13 @@
 		var songListMin = 0; //Minimum Number Of Tracks
 		var songListCurrent;
 		var songTitle;
-		var authorNumber = 1;
+		var authorNumber = 0;
 		var songArtist;
 		var songUrl;
 		var songDuration;
 		var Sinterval;
 		var pictureC = 1;
+		var songListSearch = document.getElementsByClassName("Author");
 			function startMusic() {
 			 if (playing == true) {
 			  console.info('Music Started!');
@@ -26,15 +27,15 @@
 			  startMusic();
 			 }
 			 if (playType == "Default") {
-			  songListSearch = document.getElementsByClassName("Author");
 			  console.log(songListSearch);
 			  songList = songListSearch[authorNumber].getElementsByClassName("track");
 			  songListMax = songList.length - 1; //Maximum Number Of Tracks
 			  songTitle = songList[songListCurrent].attributes.infoTitle.value;
-			  songArtist = songList[songListCurrent].attributes.infoArtist.value;
+			  songArtist = songListSearch[authorNumber].attributes.infoArtist.value;
 			  songUrl = songList[songListCurrent].attributes.url.value;
 			  document.getElementById('title').innerHTML = songTitle;
 			  document.getElementById('artist').innerHTML = songArtist;
+			  document.getElementById('currentArtist').innerHTML = songArtist;
 			  document.getElementById('audio').src = 'music/' + songUrl;
 			 }
 			}
@@ -100,13 +101,17 @@
 			 startMusic();
 			}
 			function nextAuthor() {
-			 authorNumber += 1;
-			 startMusic();
+			if (authorNumber < songListSearch.length - 1) {
+			  authorNumber += 1;
+			  startMusic();
+			 }
 			}
 			function prevAuthor() {
-			 authorNumber -= 1;
-		  	 startMusic();
-			}
+			if (authorNumber > 0) {
+			   authorNumber -= 1;
+			   startMusic();
+			  }
+			 }
 		</script>
 		<link href="styling/positioning.css" rel="stylesheet" type="text/css" />
 	</head>
@@ -121,8 +126,8 @@
 		<div class="holder">
 			<div class="imageHolder">
 				<img src="pictures/none.png" id="image" />
-				<p id="title">Some Title Here</p>
-				<p id="artist">Some Artist Here</p>
+				<p id="title">Energy</p>
+				<p id="artist">Drake</p>
 			</div>
 			<div id="progressBarHolder">
 				<div id="progress">
@@ -133,22 +138,25 @@
 				</div>
 			</div>
 			<div>
+				<button id="" onclick="prevAuthor()">Previous Author</button>
+				<span id="currentArtist">Drake</span>
+				<button id="" onclick="nextAuthor()">Next Author</button>
+			</div>
+			<div>
 				<button id="" onclick="previous();">Previous</button>
 				<button id="" onclick="next();">Next</button>
 				<button id="playPause" onclick="pP();">Play / Pause</button>
-				<button id="" onclick="prevAuthor()">Previous Author</button>
-				<button id="" onclick="nextAuthor()">Next Author</button>
 			</div>
 			<div class="scrollable">
 				<ul class="trackList">
-					<ul class="Author" value="Drake">
-						<li class="track" infoTitle="Energy" infoArtist="Drake" url="Energy.mp3">Energy</li>
-						<li class="track" infoTitle="Headlines" infoArtist="Drake" url="Headlines.mp3">Headlines</li>
+					<ul class="Author" infoArtist="Drake">
+						<li class="track" infoTitle="Energy" url="Energy.mp3">Energy</li>
+						<li class="track" infoTitle="Headlines" url="Headlines.mp3">Headlines</li>
 					</ul>
-					<ul class="Author" value="Linkin Park">
-						<li class="track" infoTitle="Cure For The Itch" infoArtist="Linkin Park" url="Cure For The Itch.mp3">Cure For The Itch</li>
-						<li class="track" infoTitle="In The End" infoArtist="Linkin Park" url="In The End.mp3">In The End</li>
-						<li class="track" infoTitle="Forgotten" infoArtist="Linkin Park" url="Forgotten.mp3">Forgotten</li>
+					<ul class="Author" infoArtist="Linkin Park">
+						<li class="track" infoTitle="Cure For The Itch" url="Cure For The Itch.mp3">Cure For The Itch</li>
+						<li class="track" infoTitle="In The End" url="In The End.mp3">In The End</li>
+						<li class="track" infoTitle="Forgotten" url="Forgotten.mp3">Forgotten</li>
 					</ul>
 				</ul>
 			</div>
