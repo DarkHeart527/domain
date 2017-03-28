@@ -9,6 +9,36 @@
 		<script>
 			setTimeout( function() { document.getElementById('title').innerHTML = document.getElementById('head').innerHTML + ' - ' + document.getElementById('title').innerHTML; placeholderE(); }, 500);
 		</script>
+		<style>
+		.SEARCHCLASS {
+		 visibility: hidden;
+		 width: 0px;
+		 height: 0px;
+		}
+		.searchtitle {
+		 position: absolute;
+		 color: blue;
+		 font-size: 25px;
+		}
+		.SEARCHCLASS article {
+		 font-size: 20px;
+		 color: lightgreen;
+		}
+		.foundtitle {
+		 color: blue;
+		 font-size: 25px;
+		 text-decoration: none;
+		}
+		.foundtitle:hover {
+		 text-decoration: underline;
+		 color: lightblue;
+		}
+		#TOTALFOUNDT {
+		 font-size: 15px;
+		 color: green;
+		 
+		}
+		</style>
 	</head>
 	<body>
 		<!-- Preload Images -->
@@ -32,6 +62,48 @@
 			<a href="#Sources">Sources</a>
 			<a href="projects.html">Projects</a>
 		</nav>
-		<a style="color: blue;text-decoration: none;font-size: 35px;" href="https://discord.gg/Ggwnct3" target="_blank">Join My Discord!</a>
+		<p>Please Note: Search Is <b>IN PROGRESS</b> Please use the styling based search below</p>
+		<a style="color: blue;text-decoration: none;font-size: 35px;" href="https://discord.gg/Ggwnct3" target="_blank">Join My Discord!</a><br />
+		<textarea id="cS" class="cssSearch"></textarea>
+		<span style="color: grey;font-size: 35px;" onclick="cssSearch()">Submit</span>
+		<div class="searchContent">
+			<div id="CSSNONEFOUND">
+				<p style="color: green;font-size: 35px;" id="CSSNONEFOUNDT"></p>
+			</div>
+				<span id="TOTALFOUNDT"></span>
+			<div class="adio plyr playr aio audioplayer  a au aud audio p pl pla play plae player SEARCHCLASS">
+				<a class="foundtitle" href="audioPlayer/start.html">Audio Player</a>
+				<article>The Audio Player is a W.I.P. project at which you have the ability to Customize Playlists, Add Mp3 Files With Urls, or Just Listen To The Already Added Music. You can even suggest one at <a href="https://discord.gg/Ggwnct3"><b>my discord</b></a>. Want the files faster? All you have to do is upload it with the suggestion!</article>
+				<br />
+			</div>
+		</div>
+		<script>
+		function cssSearch() {
+		 var a = document.getElementById('cS').value;
+		 var b = a.toLowerCase();
+		 var c = document.getElementsByClassName(b);
+		 var all = document.getElementsByClassName('SEARCHCLASS');
+		  document.getElementById('CSSNONEFOUND').style = "visibility: hidden;width: 0px;height: 0px;"
+		 var found = 0;
+		 d = c.length;
+		 console.log(a);
+		 console.log(b);
+		 console.log(c);
+		 for (i = 0;i < all.length;i++) {
+		  all[i].style = "";
+		 }
+		 for (i = 0;i < d;i++) {
+		  found++;
+		  document.getElementById('TOTALFOUNDT').innerHTML = "Total results found " + found + " out of " + all.length;
+		  console.log(i);
+		  c[i].style = "visibility: visible;width: auto;height: auto;"
+		 }
+		 if (found == 0) {
+		  document.getElementById('CSSNONEFOUND').style = "visibility: visible"
+		  document.getElementById('TOTALFOUNDT').innerHTML = '';
+		  document.getElementById('CSSNONEFOUNDT').innerHTML = "No results could be found out of the " + all.length + " that exists." 
+		 }
+		}
+		</script>
 	</body>
 </html>
