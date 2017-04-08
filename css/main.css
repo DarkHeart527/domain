@@ -160,3 +160,16 @@ nav a:hover {
 .projectSection, .projectLink:hover {
  color: white;
 }
+
+.cssSearch {
+ resize: none;
+}
+
+.searchContent {
+ width: 80%;
+ margin-left: 8%;
+ padding-left: 2%;
+ padding-right: 2%;
+ background-color: grey;
+ border-radius: 25px;
+}
