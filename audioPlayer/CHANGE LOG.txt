@@ -1,4 +1,7 @@
 CHANGE LOG:
+4-11-17 12:29 PM
+- Added Search Bar
+
 3-26-17 2:00 PM
 - Bug Fixes
 
