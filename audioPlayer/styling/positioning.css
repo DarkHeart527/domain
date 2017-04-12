@@ -184,4 +184,5 @@ body {
  height: 50%;
  overflow-y: auto;
  background-color: red;
+ opacity: 1;
 }
