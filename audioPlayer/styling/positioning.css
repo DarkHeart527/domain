@@ -174,3 +174,14 @@ body {
  left: 0px;
  cursor: pointer;
 }
+
+#searchArea {
+ 
+}
+
+#currentPlaylists {
+ width: 50%;
+ height: 50%;
+ overflow-y: auto;
+ background-color: red;
+}
