@@ -2,19 +2,26 @@
   <style>
   body, html {
    margin: 0;
-   background-color: transparent;
+   background-color: black;
   }
   
   .pTag {
    font-size: 12.5em;
-   animation: pTagColor 4s infinite linear;
+   animation: pTagColor 4s infinite cubic-bezier(1, 0.65, 0, 2.32);
   }
   
   @keyframes pTagColor{
    0% {color: white;}
-   25% {color: blue;}
-   50% {color: yellow;}
-   100% {color: red;}
+   10% {color: blue;}
+   20% {color: yellow;}
+   30% {color: magenta;}
+   40% {color: orange;}
+   50% {color: green;}
+   60% {color: lightblue;}
+   70% {color: pink;}
+   80% {color: purple;}
+   90% {color: red;}
+   100% {color: lightgreen;}
   }
   </style>
   <body>
