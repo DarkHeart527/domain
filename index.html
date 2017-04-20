@@ -7,13 +7,14 @@
 		<script src="scripts/animation.js">
 		</script>
 		<script>
+			setTimeout( function() {
 			var liveHosting = false;
 			if (liveHosting == false) {
 			 document.getElementById('iFrame').style = "visibility: hidden; width: 0px; height: 0px;"
 			} else {
 			 document.getElementById('iFrameDisabled').style = "visibility: hidden; width: 0px; height: 0px;"
 			}
-			setTimeout( function() { document.getElementById('title').innerHTML = document.getElementById('head').innerHTML + ' - ' + document.getElementById('title').innerHTML; placeholderE(); }, 500);
+			 document.getElementById('title').innerHTML = document.getElementById('head').innerHTML + ' - ' + document.getElementById('title').innerHTML; placeholderE(); }, 500);
 		</script>
 		<style>
 		.SEARCHCLASS {
