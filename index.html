@@ -7,6 +7,12 @@
 		<script src="scripts/animation.js">
 		</script>
 		<script>
+			var liveHosting = false;
+			if (liveHosting == false) {
+			 document.getElementById('iFrame').remove();
+			} else {
+			 document.getElementById('iFrameDisabled').remove();	
+			}
 			setTimeout( function() { document.getElementById('title').innerHTML = document.getElementById('head').innerHTML + ' - ' + document.getElementById('title').innerHTML; placeholderE(); }, 500);
 		</script>
 		<style>
