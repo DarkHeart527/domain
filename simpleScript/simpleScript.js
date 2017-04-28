@@ -8,6 +8,10 @@ var log = {
  }
 }
 
+function newElement(info) {
+ document.createElement(info)
+}
+
 function getId(info) {
  return document.getElementById(info);	
 }
@@ -22,8 +26,21 @@ function getFirstClass(info) {
 
 function getElements(info) {
  if (document.getElementsByTagName(info)) {
- return document.getElementsByTagName(info);
+  return document.getElementsByTagName(info);
  } else {
   log.error('Couldn\'t find selected elements');
  }
+}
+
+function getFirstElement(info) {
+ return document.getElementById(info);
+}
+
+function checkUpdate() {
+ a = newElement('iframe')
+ a.src = 'https://darkheart527.github.io/domain/simpleScriptUpdate.html'
+ a.style.width = '100%'
+ a.style.height = '100%'
+ a.style = 'position:absolute;top: 0px; left: 0px;'
+ log.info('Update Checked - Page Modified And Showed')
 }
