@@ -51,6 +51,8 @@
 		   c = b[i];
 		   if (b[i] == '<') {
 		    finishProduct = finishProduct + '&lt;';
+		   } else if (b[i] == '>') {
+		    finishProduct = finishProduct + '&gt;';
 		   }
 		   document.getElementById(id).innerHTML = finishProduct;
 		  }
