@@ -4,6 +4,7 @@
 
 var log = {
  error: function(info) {
+  console.error(info)
  }
 }
 
@@ -23,6 +24,6 @@ function getElements(info) {
  if (document.getElementsByTagName(info)) {
  return document.getElementsByTagName(info);
  } else {
-  log.error(	 
+  log.error('Couldn\'t find selected elements');
  }
 }
