@@ -39,6 +39,24 @@
 		  }
 		  document.getElementById(id).id = 'doneJavascript';
 		 }
+		 function htmlCode(id) {
+		  
+		   var a = document.getElementById(id).innerHTML;
+		   var b = a.split(' ');
+		   var c = 0;
+		   var i = 0;
+		   var d;
+		   var finishProduct = '';
+		   for (i = 0;i < b.length;i++) {
+		   c = b[i];
+		   if (b[i] == '<') {
+		    finishProduct = finishProduct + '&lt;';
+		   }
+		   document.getElementById(id).innerHTML = finishProduct;
+		  }
+		  document.getElementById(id).id = 'doneHtml';
+		 }
+		 }
 		</script>
 		<style>
 		* {
