@@ -172,15 +172,17 @@
 			 doc.getElementById('customPlaylists').style = "visibility: hidden;"
 			}
 			function submitNewSong() {
-			 var pPlaylist = doc.getElementById('songPlaylist');
-			 var pTitle = doc.getElementById('songTitle');
-			 var pArtist = doc.getElementById('songArtist');
-			 var pUrl = doc.getElementById('songUrl');
+			 var pPlaylist = doc.getElementById('songPlaylist').value;
+			 var pTitle = doc.getElementById('songTitle').value;
+			 var pArtist = doc.getElementById('songArtist').value;
+			 var pUrl = doc.getElementById('songUrl').value;
 			 if (document.getElementById(pPlaylist)) {
 			  
 			 } else {
 			  doc.getElementById('customPlaylistsDiv').innerHTML +=
-			  '<ul class="Artist" id="' + storage.nextNum + '" infoArtist="' + pArtist.value + '">'
+			  '<ul class="Artist" id="' + pPlaylist + '" infoArtist="' + pPlaylist + '">' +
+			   '<li class="track" infoTitle="' + pTitle + '" url="' + pUrl + '"' + '>' + pTitle + '</li>' +
+			  '</ul>'
 			 }
 			}
 		</script>
