@@ -173,13 +173,15 @@ body {
  left: 0px;
 }
 
-#searchArea {
- 
+.searchArea {
+ background-color: blue;
+ width: 100%;
+ height: auto;
 }
 
 #currentPlaylists {
- width: 50%;
- height: 50%;
+ width: 500px;
+ height: 500px;
  overflow-y: auto;
  background-color: red;
  opacity: 1;
