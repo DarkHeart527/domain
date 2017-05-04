@@ -162,9 +162,14 @@
 			 document.getElementById('searchTab').style = "";
 			}
 			function useCustomPlaylists() {
-			 doc.getElementById('currentPlaylists').style = "";
+			 doc.getElementById('customPlaylists').style = "";
 			 doc.getElementById('customPlaylists').style = "";
 			 doc.getElementById('searchArea').style = "visibility: hidden;"
+			}
+			function useSearch() {
+			 doc.getElementById('searchArea').style = "";
+			 doc.getElementById('searchArea').style = "";
+			 doc.getElementById('customPlaylists').style = "visibility: hidden;"
 			}
 			function submitNewSong() {
 			 var pPlaylist = doc.getElementById('songPlaylist');
@@ -259,7 +264,7 @@
 				<textarea placeHolder="Song Artist" id="songArtist"></textarea>
 				<textarea placeHolder="Song Url" id="songUrl"></textarea>
 				<button onClick="submitNewSong()">Add</button>
-				<div id="currentPlaylists" style="visibility: hidden;">
+				<div id="currentPlaylists">
 				</div>
 			</div>
 		</div>
