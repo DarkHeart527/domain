@@ -1,6 +1,12 @@
 <html>
 	<head>
 		<script>
+		var storage = {
+		 nextNum: 0,
+		 currentNum: 0,
+		 data: '',
+		}
+		var doc = document;
 		var playing = false;
 		var playType = "Default";
 		var songListSearch;
@@ -31,6 +37,12 @@
 			  document.getElementById('playPause').value = "playing";
 			 }
 			},
+		}
+		function saveData() {
+		 localStorage.setItem('248data', storage.data);
+		}
+		function loadData() {
+		 storage.data = localStorage.getItem('248data');
 		}
 		var songListSearch = document.getElementsByClassName("Artist");
 			function startMusic() {
@@ -149,8 +161,26 @@
 			function closeSearch() {
 			 document.getElementById('searchTab').style = "";
 			}
+			function useCustomPlaylists() {
+			 doc.getElementById('currentPlaylists').style = "";
+			 doc.getElementById('customPlaylists').style = "";
+			 doc.getElementById('searchArea').style = "visibility: hidden;"
+			}
+			function submitNewSong() {
+			 var pPlaylist = doc.getElementById('songPlaylist');
+			 var pTitle = doc.getElementById('songTitle');
+			 var pArtist = doc.getElementById('songArtist');
+			 var pUrl = doc.getElementById('songUrl');
+			 if (document.getElementById(pPlaylist)) {
+			  
+			 } else {
+			  doc.getElementById('customPlaylistsDiv').innerHTML +=
+			  '<ul class="Artist" id="' + storage.nextNum + '" infoArtist="' + pArtist.value + '">'
+			 }
+			}
 		</script>
 		<link href="styling/positioning.css" rel="stylesheet" type="text/css" />
+		<link href="styling/simpleStyle.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
 		<img class="preLoad" src="pictures/progress1.png"></img>
@@ -186,6 +216,8 @@
 			</div>
 			<div class="scrollable">
 				<ul class="trackList" style="height: 120px;">
+					<div id="customPlaylistsDiv">
+					</div>
 					<ul class="Artist" infoArtist="Drake" style="visibility: visible;">
 						<li class="track" infoTitle="Energy" url="Energy.mp3"></li>
 						<li class="track" infoTitle="Headlines" url="Headlines.mp3"></li>
@@ -201,26 +233,37 @@
 				</ul>
 			</div>
 		</div>
+		
 		<audio id="audio" onloadedmetadata="songDuration = document.getElementById('audio').duration;" onplay="Sinterval = setInterval(function() { showTime(); })" onended="songEnded();" src="" autoplay>
 		</audio>
+		
 		<div class="linkChangeLogD">
 			<a class="linkChangeLog" href="CHANGE LOG.txt" target="_blank">Change Log</a>
 		</div>
+		
 		<div id="searchTab">
 			<div class="clickable" onclick="closeSearch()">X</div>
 			<span class="clickable" onClick="useSearch()">Search</span>
 			<span class="clickable" onClick="useCustomPlaylists()">Custom Playlists</span>
-			<div class="searchArea">
+			<div id="searchArea" class="searchArea absolute">
 				<textarea></textarea>
 				<button>Search</button>
+				<div id="results">
+					
+				</div>
 			</div>
-			<div id="customPlaylists">
-				<textarea></textarea>
-				<button>Add</button>
-				<div id="currentPlaylists">
+			
+			<div id="customPlaylists" class="absolute" style="visibility: hidden;">
+				<textarea placeHolder="Playlist" id="songPlaylist"></textarea>
+				<textarea placeHolder="Song Title" id="songTitle"></textarea>
+				<textarea placeHolder="Song Artist" id="songArtist"></textarea>
+				<textarea placeHolder="Song Url" id="songUrl"></textarea>
+				<button onClick="submitNewSong()">Add</button>
+				<div id="currentPlaylists" style="visibility: hidden;">
 				</div>
 			</div>
 		</div>
+		
 		<script>
 			for (i = 0;document.getElementsByClassName('track').length > i; i++) {
 			 var a = document.getElementsByClassName('track');
