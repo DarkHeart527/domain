@@ -40,9 +40,9 @@
 		}
 		function saveData() {
 		 storage.data = '';
-		 for (i = 0; i < getClass('CustomArtist').length; i++) {
-		  storage.data = storage.data + getClass('CustomArtist')[i];
-		  if (i == getClass('CustomArtist').length) {
+		 for (i = 0; i < getClasses('CustomArtist').length; i++) {
+		  storage.data = storage.data + getClasses('CustomArtist')[i];
+		  if (i == getClasses('CustomArtist').length) {
 		   localStorage.setItem('248data', storage.data);
 		   alert('Saved')
 		  }
