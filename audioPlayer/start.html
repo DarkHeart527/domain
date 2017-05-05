@@ -39,7 +39,14 @@
 			},
 		}
 		function saveData() {
-		 localStorage.setItem('248data', storage.data);
+		 storage.data = '';
+		 for (i = 0; i < getClass('CustomArtist').length; i++) {
+		  storage.data = storage.data + getClass('CustomArtist')[i];
+		  if (i == getClass('CustomArtist').length) {
+		   localStorage.setItem('248data', storage.data);
+		   alert('Saved')
+		  }
+		 }
 		}
 		function loadData() {
 		 storage.data = localStorage.getItem('248data');
@@ -177,17 +184,20 @@
 			 var pArtist = doc.getElementById('songArtist').value;
 			 var pUrl = doc.getElementById('songUrl').value;
 			 if (document.getElementById(pPlaylist)) {
-			  
+			  doc.getElementById(pPlaylist).innerHTML += '<li class="track" infoTitle="' + pTitle + '" url="' + pUrl + '"' + '>' + pTitle + '</li>'
 			 } else {
 			  doc.getElementById('customPlaylistsDiv').innerHTML +=
 			  '<ul class="Artist" id="' + pPlaylist + '" infoArtist="' + pPlaylist + '">' +
 			   '<li class="track" infoTitle="' + pTitle + '" url="' + pUrl + '"' + '>' + pTitle + '</li>' +
 			  '</ul>'
 			 }
+			 saveData();
 			}
 		</script>
 		<link href="styling/positioning.css" rel="stylesheet" type="text/css" />
 		<link href="styling/simpleStyle.css" rel="stylesheet" type="text/css" />
+		<script src="https://darkheart527.github.io/domain/simpleScript/simpleScript.js" type="text/javascript">
+		</script>
 	</head>
 	<body>
 		<img class="preLoad" src="pictures/progress1.png"></img>
