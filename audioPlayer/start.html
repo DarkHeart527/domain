@@ -40,13 +40,14 @@
 		}
 		function saveData() {
 		 storage.data = '';
-		 for (i = 0; i < getClasses('CustomArtist').length; i++) {
-		  storage.data = storage.data + getClasses('CustomArtist')[i];
-		  if (i == getClasses('CustomArtist').length) {
-		   localStorage.setItem('248data', storage.data);
-		   alert('Saved')
+		  setTimeout( function() {for (i = 0; i < getClasses('CustomArtist').length; i++) {
+		   storage.data = storage.data + getClasses('CustomArtist')[i];
+		   if (i == getClasses('CustomArtist').length) {
+		    localStorage.setItem('248data', storage.data);
+		    alert('Saved')
+		   }
 		  }
-		 }
+		 }, 500);
 		}
 		function loadData() {
 		 storage.data = localStorage.getItem('248data');
