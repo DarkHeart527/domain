@@ -42,10 +42,7 @@
 		 storage.data = '';
 		  setTimeout( function() {for (i = 0; i < getClasses('CustomArtist').length; i++) {
 		   storage.data = storage.data + getClasses('CustomArtist')[i];
-		   if (i == getClasses('CustomArtist').length) {
-		    localStorage.setItem('248data', storage.data);
-		    alert('Saved')
-		   }
+		   localStorage.setItem('248data', storage.data);
 		  }
 		 }, 500);
 		}
