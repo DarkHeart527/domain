@@ -3,6 +3,11 @@ CHANGE LOG:
 - Music Can Be Added And Saved
 - Bug Fixes
 
+4-29-17 2:33 PM
+- Tabs In Search Now Change
+- Storage Is Now Created
+- Adding Music Is Created
+
 4-11-17 12:29 PM
 - Added Search Bar
 
