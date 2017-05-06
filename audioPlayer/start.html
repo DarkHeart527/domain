@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<script>
-		var storage = {
+		var Storage = {
 		 nextNum: 0,
 		 currentNum: 0,
 		 data: '',
@@ -38,16 +38,37 @@
 			 }
 			},
 		}
-		function saveData() {
-		 storage.data = '';
-		  setTimeout( function() {for (i = 0; i < getClasses('CustomArtist').length; i++) {
-		   storage.data = storage.data + getClasses('CustomArtist')[i];
-		   localStorage.setItem('248data', storage.data);
-		  }
-		 }, 500);
+		function saveData(storage) {
+		 localStorage.setItem('248data', doc.getElementById('customPlaylistsDiv').innerHTML);
+		 reloadList();
 		}
 		function loadData() {
-		 storage.data = localStorage.getItem('248data');
+		 doc.getElementById('customPlaylistsDiv').innerHTML = localStorage.getItem('248data');
+		 reloadList();
+		}
+		function clearData() {
+		 localStorage.setItem('248data', '');
+		 doc.getElementById('customPlaylistsDiv').innerHTML = '';
+		 reloadList();
+		}
+		function reloadList() {
+			  songListCurrent = songListMin;
+			  songList = songListSearch[0].getElementsByClassName("track");
+			  songListMax = songList.length - 1; //Maximum Number Of Tracks
+			  songTitle = songList[0].attributes.infoTitle.value;
+			  songArtist = songListSearch[0].attributes.infoArtist.value;
+			  songUrl = songList[0].attributes.url.value;
+			  document.getElementById('title').innerHTML = songTitle;
+			  document.getElementById('artist').innerHTML = songArtist;
+			  document.getElementById('currentArtist').innerHTML = songArtist;
+			  songListSearch[0].style = "visibility: visible;";
+			  document.getElementsByClassName('trackList')[0].style = "height: " + Number((songList.length + 1)* 40) + "px;"
+			 for (i = 0;songListSearch.length > i;i++) {
+			  songListSearch[i].style = '';
+			  if (i == songListSearch.length - 1) {
+			   songListSearch[artistNumber].style = "visibility: visible;";
+			  }
+			 }
 		}
 		var songListSearch = document.getElementsByClassName("Artist");
 			function startMusic() {
@@ -70,7 +91,7 @@
 			  document.getElementById('title').innerHTML = songTitle;
 			  document.getElementById('artist').innerHTML = songArtist;
 			  document.getElementById('currentArtist').innerHTML = songArtist;
-			  document.getElementById('audio').src = 'music/' + songArtist+ "/" + songUrl;
+			  document.getElementById('audio').src = 'music/' + songArtist + "/" + songUrl;
 			 }
 			}
 			
@@ -185,7 +206,7 @@
 			  doc.getElementById(pPlaylist).innerHTML += '<li class="track" infoTitle="' + pTitle + '" url="' + pUrl + '"' + '>' + pTitle + '</li>'
 			 } else {
 			  doc.getElementById('customPlaylistsDiv').innerHTML +=
-			  '<ul class="Artist CustomArtist" id="' + pPlaylist + '" infoArtist="' + pPlaylist + '">' +
+			  '<ul class="Artist" id="' + pPlaylist + '" infoArtist="' + pPlaylist + '">' +
 			   '<li class="track" infoTitle="' + pTitle + '" url="' + pUrl + '"' + '>' + pTitle + '</li>' +
 			  '</ul>'
 			 }
@@ -194,8 +215,6 @@
 		</script>
 		<link href="styling/positioning.css" rel="stylesheet" type="text/css" />
 		<link href="styling/simpleStyle.css" rel="stylesheet" type="text/css" />
-		<script src="https://darkheart527.github.io/domain/simpleScript/simpleScript.js" type="text/javascript">
-		</script>
 	</head>
 	<body>
 		<img class="preLoad" src="pictures/progress1.png"></img>
@@ -208,8 +227,8 @@
 		<div class="holder">
 			<div class="imageHolder">
 				<img src="pictures/none.png" id="image" />
-				<p id="title">Energy</p>
-				<p id="artist">Drake</p>
+				<p id="title"></p>
+				<p id="artist"></p>
 			</div>
 			<div id="progressBarHolder">
 				<div id="progress">
@@ -276,6 +295,7 @@
 				<button onClick="submitNewSong()">Add</button>
 				<div id="currentPlaylists">
 				</div>
+				<button onClick="clearData()">Clear Data</button>
 			</div>
 		</div>
 		
@@ -300,6 +320,7 @@
 			  this.id = '';
 			 }
 			}
+			loadData();
 		</script>
 	</body>
 </html>
