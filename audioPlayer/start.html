@@ -118,6 +118,13 @@
 			  songArtist = songListSearch[artistNumber].attributes.infoArtist.value;
 			  songUrl = songList[songListCurrent].attributes.url.value;
 			  document.getElementById('currentArtist').innerHTML = songArtist;
+			  document.getElementById('image').src = 'pictures/' + songArtist + '/' + songArtist + '.jpg';
+			  setTimeout( function() {
+			   if (document.getElementById('image').networkState === 3) {
+			    setTimeout( function() {console.clear();}, 50);
+			    alert('Error: 404 not found\nTry looking at the extension');
+		       }
+			  }, 250)
 			 }
 			 document.getElementsByClassName('trackList')[0].style = "height: " + Number((songList.length + 1)* 40) + "px;"
 			}
@@ -256,13 +263,16 @@
 						<li class="track" infoTitle="Energy" url="Energy.mp3"></li>
 						<li class="track" infoTitle="Headlines" url="Headlines.mp3"></li>
 					</ul>
+					<ul class="Artist" infoArtist="Disturbed">
+						<li class="track" infoTitle="Down With The Sickness" url="Down With The Sickness.mp3"></li>
+					</ul>
 					<ul class="Artist" infoArtist="Linkin Park">
+						<li class="track" infoTitle="By Myself" url="By Myself.mp3"></li>
 						<li class="track" infoTitle="Cure For The Itch" url="Cure For The Itch.mp3"></li>
-						<li class="track" infoTitle="In The End" url="In The End.mp3"></li>
 						<li class="track" infoTitle="Forgotten" url="Forgotten.mp3"></li>
 						<li class="track" infoTitle="High Voltage" url="High Voltage.mp3"></li>
-						<li class="track" infoTitle="By Myself" url="By Myself.mp3"></li>
 						<li class="track" infoTitle="In Pieces" url="In Pieces.mp3"></li>
+						<li class="track" infoTitle="In The End" url="In The End.mp3"></li>
 					</ul>
 				</ul>
 			</div>
@@ -318,6 +328,7 @@
 			  document.getElementById('audio').src = 'music/' + songArtist + "/" + songUrl;
 			  document.getElementById('playPause').innerHTML = "Pause"
 			  this.id = '';
+			  playing = true;
 			 }
 			}
 			loadData();
