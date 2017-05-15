@@ -34,15 +34,15 @@ function checkMusic() {
   document.getElementById('currentTime').innerHTML = ''
  } else if (trackNumber == 1) {
   document.getElementById('audioFile').src = link + 'Right Now.mp3';
-  trackSrc = document.getElementById('audioFile').src
+  trackSrc = link + 'Right Now.mp3'
   title = "Right Now";
  } else if (trackNumber == 2) {
   document.getElementById('audioFile').src = link + 'Alright.mp3';
-  trackSrc = document.getElementById('audioFile').src
+  trackSrc = link + 'Alright.mp3'
   title = "Alright";
  } else if (trackNumber == 3) {
   document.getElementById('audioFile').src = link + 'Like Me.mp3';
-  trackSrc = document.getElementById('audioFile').src
+  trackSrc = link + 'Like Me.mp3'
   title = "Like Me";
  } else {
   trackNumber = savedNumber;
