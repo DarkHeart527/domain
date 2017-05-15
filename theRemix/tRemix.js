@@ -8,7 +8,7 @@ var endtimeH = 0;
 var checkEndv;
 var checkEndM;
 var colonQH;
-
+var trackSrc;
 
 function nextTrack() {
  trackNumber = Number(trackNumber + 1);
@@ -34,12 +34,15 @@ function checkMusic() {
   document.getElementById('currentTime').innerHTML = ''
  } else if (trackNumber == 1) {
   document.getElementById('audioFile').src = link + 'Right Now.mp3';
+  trackSrc = document.getElementById('audioFile').src
   title = "Right Now";
  } else if (trackNumber == 2) {
   document.getElementById('audioFile').src = link + 'Alright.mp3';
+  trackSrc = document.getElementById('audioFile').src
   title = "Alright";
  } else if (trackNumber == 3) {
   document.getElementById('audioFile').src = link + 'Like Me.mp3';
+  trackSrc = document.getElementById('audioFile').src
   title = "Like Me";
  } else {
   trackNumber = savedNumber;
@@ -106,6 +109,7 @@ function speedUpdater() {
 
 function updateStuff() {
  document.getElementById('trackNum').innerHTML = trackNumber;
+ document.getElementById('downloadTrack').src = trackSrc;
  }
 
 function updateCurrent() {
