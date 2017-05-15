@@ -109,7 +109,7 @@ function speedUpdater() {
 
 function updateStuff() {
  document.getElementById('trackNum').innerHTML = trackNumber;
- document.getElementById('downloadTrack').src = trackSrc;
+ document.getElementById('downloadTrack').href = trackSrc;
  }
 
 function updateCurrent() {
