@@ -25,7 +25,6 @@ function previousTrack() {
 }
 
 function checkMusic() {
- document.getElementById('downloadTrack').href = trackSrc;
  if (trackNumber == 0) {
   document.getElementById('audioFile').src = '';
   title = 'No Song Selected';
@@ -49,6 +48,7 @@ function checkMusic() {
   trackNumber = savedNumber;
   updateStuff();
  }
+ document.getElementById('downloadTrack').href = trackSrc;
 	document.getElementById('audioFile').onloadeddata = function() {
 	endTimev = 0;
 	endtimeH = 0;
