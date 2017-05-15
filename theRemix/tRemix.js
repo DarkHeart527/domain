@@ -25,6 +25,7 @@ function previousTrack() {
 }
 
 function checkMusic() {
+ document.getElementById('downloadTrack').href = trackSrc;
  if (trackNumber == 0) {
   document.getElementById('audioFile').src = '';
   title = 'No Song Selected';
@@ -109,7 +110,6 @@ function speedUpdater() {
 
 function updateStuff() {
  document.getElementById('trackNum').innerHTML = trackNumber;
- document.getElementById('downloadTrack').href = trackSrc;
  }
 
 function updateCurrent() {
