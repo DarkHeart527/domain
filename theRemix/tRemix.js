@@ -4,7 +4,7 @@ var theRemix = {
 	 setInterval( function(){document.body.style.fontSize=window.innerWidth+"px"}, 10)
 	 document.getElementsByClassName('header')[0].innerHTML = 
 	 '<span class="header2">The Remix<span class="headerSub2">Better Than Fire</span></span>' + //The Name
-	 '<a href="home.html">Home</a>' + //Home Page
+	 '<a href="start.html">Home</a>' + //Home Page
 	 '<a href="musicPage.html">Music</a>' + //Music Page
 	 '<a href="settingsPage.html">Settings</a>' //Settings Page
 	 if (a == 2) {
