@@ -1,18 +1,19 @@
-
 var theRemix = {
 	load: function(a) {
 	 setInterval( function(){document.body.style.fontSize=window.innerWidth+"px"}, 10)
 	 document.getElementsByClassName('header')[0].innerHTML = 
 	 '<span class="header2">The Remix<span class="headerSub2">Better Than Fire</span></span>' + //The Name
-	 '<a href="start.html">Home</a>' + //Home Page
-	 '<a href="musicPage.html">Music</a>' + //Music Page
-	 '<a href="settingsPage.html">Settings</a>' //Settings Page
-	 if (a == 2) {
+	 '<span class="headLink" onclick="theRemix.openPage(\'homePage\')">Home</span>' + //Home Page
+	 '<span class="headLink" onclick="theRemix.openPage(\'musicPage\')">Music</span>' + //Music Page
+	 '<span class="headLink" onclick="theRemix.openPage(\'settingsPage\')">Settings</span>' //Settings Page
 	 document.getElementById('pausePlay').onclick = function() {
 	  if (this.attributes.paused.value == 'true') { // If the player is paused (not playing)
+	    if (document.getElementById('audio').src == 'file:///C:/Users/darkh/Desktop/theRemix/start.html') {
+		 document.getElementById('audio').src = 'music/Right Now.mp3';
+		}
+	    document.getElementById('audio').play();
 	    this.attributes.paused.value = 'false';
 		this.src = 'images/stop.png';
-	    document.getElementById('audio').play();
 	   } else { //If the player is not paused (playing)
 	    this.attributes.paused.value = 'true';
 		this.src = 'images/play.png';
@@ -28,6 +29,16 @@ var theRemix = {
 	   }
 	   document.getElementById('trackNumber').innerHTML = i + 1;
 	  }
+	},
+	openPage: function(page) {
+	 for (i = 0; i < document.getElementsByClassName('pages').length; i++) {
+	  document.getElementsByClassName('pages')[i].style = "visibility: hidden;"
 	 }
+	 if (page == 'musicPage') {
+      document.body.style = "overflow-x: hidden"
+	 } else {
+	  document.body.style = "overflow: hidden"
+	 }
+	 document.getElementById(page).style = "visibility: visible";
 	},
 }
