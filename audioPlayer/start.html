@@ -129,7 +129,7 @@
 			  }, 250)
 			 }
 			 document.getElementsByClassName('trackList')[0].style = "height: " + Number((songList.length + 1)* 40) + "px;"
-			 if (songList.length > 12) {
+			 if (songList.length < 12) {
 			  document.getElementsByTagName('body')[0].style = "overflow-y: hidden;"
 			 } else {
 			  document.getElementsByTagName('body')[0].style = "overflow-y: visible;"
