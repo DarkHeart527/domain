@@ -1,8 +1,8 @@
 <html>
 	<head>
-		<script type="text/javascript" src="//d3aq14vri881or.cloudfront.net/kiip.js"></script>
+		<!--<script type="text/javascript" src="//d3aq14vri881or.cloudfront.net/kiip.js"></script>-->
 		<script>
-		var kiipInstance = new Kiip('39f6ccd83145aaede5dfa5391d75980d');
+		//var kiipInstance = new Kiip('39f6ccd83145aaede5dfa5391d75980d');
 		var Storage = {
 		 nextNum: 0,
 		 currentNum: 0,
@@ -129,6 +129,11 @@
 			  }, 250)
 			 }
 			 document.getElementsByClassName('trackList')[0].style = "height: " + Number((songList.length + 1)* 40) + "px;"
+			 if (songList.length > 12) {
+			  document.getTagByName('body')[0].style = "overflow-y: hidden;"
+			 } else {
+			  document.getTagByName('body')[0].style = "overflow-y: hidden;"
+			 }
 			}
 			function songEnded() {
 			 if (songListCurrent == songListMax) {
@@ -373,8 +378,8 @@
 				<div id="currentPlaylists">
 				</div>
 				<button onClick="clearData()">Clear Data</button>
-				<button onClick="freeSong('Add')">View An Add For A Free Song To Add!</button>
-				<button onClick="freeSong('Download')">View An Add For A Free Song To Download!</button>
+				<!--<button onClick="freeSong('Add')">View An Add For A Free Song To Add!</button>
+				<button onClick="freeSong('Download')">View An Add For A Free Song To Download!</button>-->
 			</div>
 		</div>
 		
