@@ -1,4 +1,7 @@
 CHANGE LOG:
+6 - 3 - 17 11:56 AM
+- Fixed One Of The Bugs Displayed On The Video
+
 6 - 3 - 17 9:41 PM
 - Fixed A Bug Where Changing The Artist From A Scrollable One To A Non-Scrollable One Froze The Screen
 - Fixed The Click-Playable Song List Buttons That Did Not Change The Song Id
