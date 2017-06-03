@@ -187,3 +187,23 @@ body {
  background-color: red;
  opacity: 1;
 }
+
+.SEARCH {
+ display: none;
+ width: 0px;
+ height: 0px;
+ margin-top: 0px;
+ border-radius: 25px;
+}
+
+#results {
+ width: 50%;
+ height: auto;
+ background-color: grey;
+}
+
+#resultsCenter {
+ display: none;
+ background-color: transparent;
+ padding-bottom: 4px;
+}
