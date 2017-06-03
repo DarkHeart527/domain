@@ -1,4 +1,4 @@
-<html>
+<html id="restartPage">
 	<head>
 		<!--<script type="text/javascript" src="//d3aq14vri881or.cloudfront.net/kiip.js"></script>-->
 		<script>
@@ -49,7 +49,6 @@
 		 reloadList();
 		}
 		function clearData() {
-		 localStorage.setItem('248data', '');
 		 doc.getElementById('customPlaylistsDiv').innerHTML = '';
 		 reloadList();
 		}
@@ -133,8 +132,10 @@
 			 document.getElementsByClassName('trackList')[0].style = "height: " + Number((songList.length + 1)* 40) + "px;"
 			 if (songList.length < 12) {
 			  document.getElementsByTagName('body')[0].style = "overflow-y: hidden;"
+			  document.getElementsByTagName('body')[0].attributes.scroll = 'false'
 			 } else {
 			  document.getElementsByTagName('body')[0].style = "overflow-y: visible;"
+			  document.getElementsByTagName('body')[0].attributes.scroll = 'true'
 			 }
 			}
 			function songEnded() {
@@ -176,6 +177,8 @@
 			  songListCurrent = songListCurrent - 1;
 			 }
 			 startMusic();
+			 document.getElementById('playPause').innerHTML = "Pause"
+			 document.getElementById('playPause').value = "playing"
 			}
 			function next() {
 			 if (songListCurrent == songListMax) {
@@ -184,6 +187,8 @@
 			  songListCurrent = songListCurrent + 1;
 			 }
 			 startMusic();
+			 document.getElementById('playPause').innerHTML = "Pause"
+			 document.getElementById('playPause').value = "playing"
 			}
 			function nextArtist() {
 			if (artistNumber < songListSearch.length - 1) {
@@ -199,10 +204,14 @@
 			 }
 			function openSearch() {
 			 document.getElementById('searchTab').style = "visibility: visible";
+			 document.getElementsByTagName('body')[0].style = "overflow-y: hidden";
 			}
 			function closeSearch() {
 			 resetSearch();
 			 document.getElementById('searchTab').style = "";
+			 if (document.getElementsByTagName('body')[0].attributes.scroll == 'true') {
+			  document.getElementsByTagName('body')[0].style = 'overflow-y: visible';
+			 }
 			}
 			function useCustomPlaylists() {
 			 doc.getElementById('customPlaylists').style = "";
@@ -219,27 +228,20 @@
 			 var pTitle = doc.getElementById('songTitle').value;
 			 var pArtist = doc.getElementById('songArtist').value;
 			 var pUrl = doc.getElementById('songUrl').value;
-			 if (document.getElementById(pPlaylist)) {
-			  doc.getElementById(pPlaylist).innerHTML += '<li class="track" infoTitle="' + pTitle + '" url="' + pUrl + '"' + '>' + pTitle + '</li>'
+			 if (localStorage.getItem("addableSongs") > 0) {
+			  if (document.getElementById(pPlaylist)) {
+			   doc.getElementById(pPlaylist).innerHTML += '<li class="track" infoTitle="' + pTitle + '" url="' + pUrl + '"' + '>' + pTitle + '</li>'
+			  } else {
+			   doc.getElementById('customPlaylistsDiv').innerHTML +=
+			   '<ul class="Artist" id="' + pPlaylist + '" infoArtist="' + pPlaylist + '">' +
+			    '<li class="track" infoTitle="' + pTitle + '" url="' + pUrl + '"' + '>' + pTitle + '</li>' +
+			   '</ul>'
+			  }
+			  localStorage.setItem("addableSongs", Number(localStorage.getItem("addableSongs")) - 1)
 			 } else {
-			  doc.getElementById('customPlaylistsDiv').innerHTML +=
-			  '<ul class="Artist" id="' + pPlaylist + '" infoArtist="' + pPlaylist + '">' +
-			   '<li class="track" infoTitle="' + pTitle + '" url="' + pUrl + '"' + '>' + pTitle + '</li>' +
-			  '</ul>'
+			  alert('Not enough AddSong Credits')
 			 }
 			 saveData();
-			}
-			function freeSong(type) {
-			 //kiipInstance.postMoment('Free Song ' + type);
-			 if (type == 'Download') {
-			  localStorage.downloadAmount += 1;
-			  alert('Free Download Added');
-			 } else if (type == 'Add') {
-			  localStorage.addAmount += 3;
-			  alert('Free Adding Song Added');
-			 } else {
-			  alert('An error occurred :(')
-			 }
 			}
 			function searchArtists() {
 			 var a = document.getElementById('searchFor').value;
@@ -270,11 +272,23 @@
 			 document.getElementById('SearchNoResultsText').innerHTML = '';
 			 document.getElementById('SearchNoResults').style = '';
 			}
+			function freeSongTimer() {
+			 localStorage.setItem("timeBeforeSongDownload", Number(localStorage.getItem("timeBeforeSongDownload")) - 1);
+			 localStorage.setItem("timeBeforeSongAdd", Number(localStorage.getItem("timeBeforeSongAdd")) - 1);
+			 if (localStorage.getItem("timeBeforeSongDownload") == 0 | localStorage.getItem("timeBeforeSongDownload") < 1) {
+			  localStorage.setItem("timeBeforeSongDownload", 120);
+			  localStorage.setItem("downloadableSongs", Number(localStorage.getItem("downloadableSongs")) + 1);
+			 }
+			 if (localStorage.getItem("timeBeforeSongAdd") == 0 | localStorage.getItem("timeBeforeSongAdd") < 1) {
+			  localStorage.setItem("timeBeforeSongAdd", 90);
+			  localStorage.setItem("addableSongs", Number(localStorage.getItem("addableSongs")) + 1);
+			 }
+			}
 		</script>
 		<link href="styling/positioning.css" rel="stylesheet" type="text/css" />
 		<link href="styling/simpleStyle.css" rel="stylesheet" type="text/css" />
 	</head>
-	<body style="overflow-y: hidden;">
+	<body scroll='false' style="overflow-y: hidden;">
 		<img class="preLoad" src="pictures/progress1.png"></img>
 		<img class="preLoad" src="pictures/progress2.png"></img>
 		<img class="preLoad" src="pictures/progress3.png"></img>
@@ -297,9 +311,9 @@
 				</div>
 			</div>
 			<div class="center">
-				<span id="leftABtn" onclick="prevArtist()">&#8666;</span>
+				<a href="#restartPage" id="leftABtn" onclick="prevArtist()">&#8666;</a>
 				<span id="currentArtist" class="clickable" onClick="openSearch()">Drake</span>
-				<span id="nextABtn" onclick="nextArtist()">&#8667;</span>
+				<a href="#restartPage" id="nextABtn" onclick="nextArtist()">&#8667;</a>
 			</div>
 			<div>
 				<button id="" onclick="previous();">Previous</button>
@@ -461,7 +475,7 @@
 				<button onClick="submitNewSong()">Add</button>
 				<div id="currentPlaylists">
 				</div>
-				<button onClick="clearData()">Clear Data</button>
+				<!--<button onClick="clearData()">Clear Data</button>-->
 				<!--<button onClick="freeSong('Add')">View An Ad For A Free Song To Add!</button>
 				<button onClick="freeSong('Download')">View An Ad For A Free Song To Download!</button>-->
 			</div>
@@ -487,6 +501,11 @@
 			  document.getElementById('playPause').innerHTML = "Pause"
 			  this.id = '';
 			  playing = true;
+			  for (i = 0; songList.length > i; i++) {
+			   if (songList[i].attributes.infoTitle == this.attributes.infoTitle) {
+			    songListCurrent = i;
+			   }
+			  }
 			 }
 			}
 			for (i = 0; document.getElementsByClassName('findSearch').length > i; i++) {
@@ -502,6 +521,28 @@
 			 }
 			}
 			loadData();
+			
+			//Check If Data Is Empty Or NEVER Used
+			if (localStorage.getItem("timeBeforeSongDownload") == null | localStorage.getItem("timeBeforeSongDownload") == "null") {
+			 localStorage.setItem("timeBeforeSongDownload", 60)
+			} else {
+			}
+			
+			if (localStorage.getItem("timeBeforeSongAdd") == null | localStorage.getItem("timeBeforeSongAdd") == "null") {
+			 localStorage.setItem("timeBeforeSongAdd", 30)
+			} else {
+			}
+			
+			if (localStorage.getItem("addableSongs") == null | localStorage.getItem("addableSongs") == "null") {
+			 localStorage.setItem("addableSongs", 10)
+			} else {
+			}
+			
+			if (localStorage.getItem("downloadableSongs") == null | localStorage.getItem("downloadableSongs") == "null") {
+			 localStorage.setItem("downloadableSongs", 5)
+			} else {
+			}
+			setInterval(freeSongTimer, 1000);
 		</script>
 	</body>
 </html>
