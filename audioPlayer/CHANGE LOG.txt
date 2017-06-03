@@ -1,4 +1,14 @@
 CHANGE LOG:
+6 - 2 - 17 8:40 PM
+- Fixed A Major Bug That Preventing Playing Songs You Added
+
+6 - 2 - 17 7:10 PM
+- Search Is Now Working!
+- Also Fixed A Bug That Developed In The Process
+
+6 - 2 - 17 2:34 PM
+- Added My Own Music (DarkHeart527)
+
 5 - 7 - 17 9:49 PM
 - Added System Of A Down (Band) Containing 51 Songs
 
