@@ -83,8 +83,6 @@
 			  startMusic();
 			 }
 			 if (playType == "Default") {
-			  console.info("All The Music");
-			  console.info(songListSearch);
 			  songList = songListSearch[artistNumber].getElementsByClassName("track");
 			  songListMax = songList.length - 1; //Maximum Number Of Tracks
 			  songTitle = songList[songListCurrent].attributes.infoTitle.value;
@@ -93,7 +91,15 @@
 			  document.getElementById('title').innerHTML = songTitle;
 			  document.getElementById('artist').innerHTML = songArtist;
 			  document.getElementById('currentArtist').innerHTML = songArtist;
-			  document.getElementById('audio').src = 'music/' + songArtist + "/" + songUrl;
+			  var a = songUrl;
+			  if (a[4] == ':' & a[5] == '/' & a[6] == '/' | a[5] == ':' & a[6] == '/' & a[7] == '/') {
+			   document.getElementById('audio').src = songUrl;
+			   console.log('URL')
+			   console.log(a[4])
+			  } else {
+			   document.getElementById('audio').src = 'music/' + songArtist + "/" + songUrl;
+			   console.log("Downloaded")
+			  }
 			 }
 			}
 			
@@ -113,7 +119,6 @@
 			  songListCurrent = songListMin;
 			}
 			 if (playType == "Default") {
-			  console.log(songListSearch);
 			  songList = songListSearch[artistNumber].getElementsByClassName("track");
 			  songListMax = songList.length - 1; //Maximum Number Of Tracks
 			  songTitle = songList[songListCurrent].attributes.infoTitle.value;
@@ -199,6 +204,7 @@
 			 document.getElementById('searchTab').style = "visibility: visible";
 			}
 			function closeSearch() {
+			 resetSearch();
 			 document.getElementById('searchTab').style = "";
 			}
 			function useCustomPlaylists() {
@@ -227,7 +233,7 @@
 			 saveData();
 			}
 			function freeSong(type) {
-			 kiipInstance.postMoment('Free Song ' + type);
+			 //kiipInstance.postMoment('Free Song ' + type);
 			 if (type == 'Download') {
 			  localStorage.downloadAmount += 1;
 			  alert('Free Download Added');
@@ -237,6 +243,35 @@
 			 } else {
 			  alert('An error occurred :(')
 			 }
+			}
+			function searchArtists() {
+			 var a = document.getElementById('searchFor').value;
+			 var b = a.toLowerCase();
+			 var c = document.getElementsByClassName(b);
+			 var all = document.getElementsByClassName('SEARCH');
+			  document.getElementById('SearchNoResults').style = "visibility: hidden;width: 0px;height: 0px;"
+			 var found = 0;
+			 d = c.length;
+			 for (i = 0;i < all.length;i++) {
+			  all[i].style = "";
+			 }
+			 for (i = 0;i < d;i++) {
+			  found++;
+			  document.getElementById('SearchTotalFound').innerHTML = "Total results found " + found + " out of " + all.length;
+			  c[i].style = "display: block;width: auto;height: auto;width: 75%;margin-top: 15px;border: solid black 1px;"
+			  document.getElementById('resultsCenter').style = "height: auto;display: block;padding-bottom: 15px;"
+			 }
+			 if (found == 0) {
+			  document.getElementById('SearchNoResults').style = "visibility: visible"
+			  document.getElementById('SearchTotalFound').innerHTML = '';
+			  document.getElementById('SearchNoResultsText').innerHTML = "No results could be found out of the " + all.length + " that exists." 
+			 }
+			}
+			function resetSearch() {
+			 document.getElementById('searchFor').value = '';
+			 searchArtists();
+			 document.getElementById('SearchNoResultsText').innerHTML = '';
+			 document.getElementById('SearchNoResults').style = '';
 			}
 		</script>
 		<link href="styling/positioning.css" rel="stylesheet" type="text/css" />
@@ -367,10 +402,46 @@
 			<span class="clickable" onClick="useSearch()">Search</span>
 			<span class="clickable" onClick="useCustomPlaylists()">Custom Playlists</span>
 			<div id="searchArea" class="searchArea absolute">
-				<textarea></textarea>
-				<button>Search</button>
+				<textarea id="searchFor"></textarea>
+				<button onclick="searchArtists();">Search</button>
 				<div id="results">
-					
+					<div id="SearchNoResults">
+						<p id="SearchNoResultsText"></p>
+					</div>
+					<span id="SearchTotalFound"></span>
+					<center id="resultsCenter">
+						<div class="d da dar dark darkh darkhe darkhea darkhear darkheart darkheart5 darkheart52 darkheart527 heart hreat drak dakr heatr 5 2 7 52 57 527 darj SEARCH">
+							<p>DarkHeart527</p>
+							<p>
+								<button class="findSearch" find="DarkHeart527">Select</button>
+							</p>
+						</div>
+						<div class="d dr dra drak drake draek dreak SEARCH">
+							<p>Drake</p>
+							<p>
+								<button class="findSearch" find="DarkHeart527">Select</button>
+							</p>
+						</div>
+						<div class="d di dis dist distu disturb disturbe disturbed disterbed distirbed disturbd desturbed SEARCH">
+							<p>Disturbed</p>
+							<p>
+								<button class="findSearch" find="Disturbed">Select</button>
+							</p>
+						</div>
+						<div class="l li lin link linki linkin linken p pa par park SEARCH">
+							<p>Linkin Park</p>
+							<p>
+								<button class="findSearch" find="Linkin Park">Select</button>
+							</p>
+						</div>
+						<div class="s sy sys syst syste system o of a d do dow down dwn SEARCH">
+							<p>System Of A Down</p>
+							<p>
+								<button class="findSearch" find="System Of A Down">Select</button>
+							</p>
+						</div>
+						
+					</center>
 				</div>
 			</div>
 			
@@ -383,8 +454,8 @@
 				<div id="currentPlaylists">
 				</div>
 				<button onClick="clearData()">Clear Data</button>
-				<!--<button onClick="freeSong('Add')">View An Add For A Free Song To Add!</button>
-				<button onClick="freeSong('Download')">View An Add For A Free Song To Download!</button>-->
+				<!--<button onClick="freeSong('Add')">View An Ad For A Free Song To Add!</button>
+				<button onClick="freeSong('Download')">View An Ad For A Free Song To Download!</button>-->
 			</div>
 		</div>
 		
@@ -408,6 +479,18 @@
 			  document.getElementById('playPause').innerHTML = "Pause"
 			  this.id = '';
 			  playing = true;
+			 }
+			}
+			for (i = 0; document.getElementsByClassName('findSearch').length > i; i++) {
+			 var b = document.getElementsByClassName('findSearch');
+			 b[i].onclick = function() {
+			   for (i2 = 0; document.getElementsByClassName('artist').length > i2; i2++) {
+			   var artist = document.getElementsByClassName('artist');
+			   if (artist[i2].attributes.infoArtist.value == this.attributes.find.value) {
+				artistNumber = i2;
+			    changedArtist();
+			   }
+			  }
 			 }
 			}
 			loadData();
