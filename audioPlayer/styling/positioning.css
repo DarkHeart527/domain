@@ -114,6 +114,7 @@ body {
 #currentArtist {
  font-size: 25px;
  color: white;
+ text-decoration: none;
 }
 
 #nextABtn {
