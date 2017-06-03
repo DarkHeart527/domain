@@ -94,11 +94,8 @@
 			  var a = songUrl;
 			  if (a[4] == ':' & a[5] == '/' & a[6] == '/' | a[5] == ':' & a[6] == '/' & a[7] == '/') {
 			   document.getElementById('audio').src = songUrl;
-			   console.log('URL')
-			   console.log(a[4])
 			  } else {
 			   document.getElementById('audio').src = 'music/' + songArtist + "/" + songUrl;
-			   console.log("Downloaded")
 			  }
 			 }
 			}
