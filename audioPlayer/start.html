@@ -1,5 +1,6 @@
 <html id="restartPage">
 	<head>
+		<script src="https://darkheart527.github.io/domain/simpleScript/simpleScript.js"></script>
 		<script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -35,31 +36,31 @@
 		var pictureC = 1;
 		var audio = {
 		 pausePlay: function() {
-			 if (document.getElementById('playPause').value == "paused") {
-			  document.getElementById('playPause').innerHTML = "Pause"
-			  document.getElementById('audio').play();
-			  document.getElementById('playPause').value = "playing";
+			 if (getId('playPause').value == "paused") {
+			  getId('playPause').innerHTML = "Pause"
+			  getId('audio').play();
+			  getId('playPause').value = "playing";
 			 } else {
-			  document.getElementById('playPause').innerHTML = "Play"
-			  document.getElementById('audio').pause();
-			  document.getElementById('playPause').value = "paused"
+			  getId('playPause').innerHTML = "Play"
+			  getId('audio').pause();
+			  getId('playPause').value = "paused"
 			 }
 			 if (playing == false) {
 			  startMusic();
-			  document.getElementById('playPause').value = "playing";
+			  getId('playPause').value = "playing";
 			 }
 			},
 		}
 		function saveData(storage) {
-		 localStorage.setItem('248data', doc.getElementById('customPlaylistsDiv').innerHTML);
+		 localStorage.setItem('248data', getId('customPlaylistsDiv').innerHTML);
 		 reloadList();
 		}
 		function loadData() {
-		 doc.getElementById('customPlaylistsDiv').innerHTML = localStorage.getItem('248data');
+		 getId('customPlaylistsDiv').innerHTML = localStorage.getItem('248data');
 		 reloadList();
 		}
 		function clearData() {
-		 doc.getElementById('customPlaylistsDiv').innerHTML = '';
+		 getId('customPlaylistsDiv').innerHTML = '';
 		 reloadList();
 		}
 		function reloadList() {
@@ -69,11 +70,11 @@
 			  songTitle = songList[0].attributes.infoTitle.value;
 			  songArtist = songListSearch[0].attributes.infoArtist.value;
 			  songUrl = songList[0].attributes.url.value;
-			  document.getElementById('title').innerHTML = songTitle;
-			  document.getElementById('artist').innerHTML = songArtist;
-			  document.getElementById('currentArtist').innerHTML = songArtist;
+			  getId('title').innerHTML = songTitle;
+			  getId('artist').innerHTML = songArtist;
+			  getId('currentArtist').innerHTML = songArtist;
 			  songListSearch[0].style = "visibility: visible;";
-			  document.getElementsByClassName('trackList')[0].style = "height: " + Number((songList.length + 1)* 40) + "px;"
+			  getClasses('trackList')[0].style = "height: " + Number((songList.length + 1)* 40) + "px;"
 			 for (i = 0;songListSearch.length > i;i++) {
 			  songListSearch[i].style = '';
 			  if (i == songListSearch.length - 1) {
