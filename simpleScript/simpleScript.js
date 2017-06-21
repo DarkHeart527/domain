@@ -2,11 +2,6 @@
 
 */
 
-var log = {
- error: function(info) {
-  console.error(info)
- }
-}
 
 function newElement(info) {
  document.createElement(info)
