@@ -1,4 +1,9 @@
 CHANGE LOG:
+6 - 21 - 17 12:40 AM
+- Speed Has Been Improved
+  Programmer Updates: 
+    - Added Simple Script To Shorten Programming And Increase Speed
+
 6 - 3 - 17 11:56 AM
 - Fixed One Of The Bugs Displayed On The Video
 
