@@ -28,7 +28,11 @@ function getElements(info) {
 }
 
 function getFirstElement(info) {
- return document.getElementById(info);
+ return document.getElementsByTagName(info)[0];
+}
+
+function getBody(value) {
+ return document.getElementsByTagName('body')[0];
 }
 
 function checkUpdate() {
