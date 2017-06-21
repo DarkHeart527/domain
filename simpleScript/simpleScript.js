@@ -38,7 +38,7 @@ function getFirstElement(info) {
 
 function checkUpdate() {
  a = newElement('iframe')
- a.src = 'https://darkheart527.github.io/domain/simpleScriptUpdate.html'
+ a.src = 'https://darkheart527.github.io/domain/simpleScript/simpleScriptUpdate.html'
  a.style.width = '100%'
  a.style.height = '100%'
  a.style = 'position:absolute;top: 0px; left: 0px;'
