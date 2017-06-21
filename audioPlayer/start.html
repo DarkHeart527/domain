@@ -19,7 +19,6 @@
 		 currentNum: 0,
 		 data: '',
 		}
-		var doc = document;
 		var playing = false;
 		var playType = "Default";
 		var songListSearch;
@@ -74,7 +73,7 @@
 			  getId('artist').innerHTML = songArtist;
 			  getId('currentArtist').innerHTML = songArtist;
 			  songListSearch[0].style = "visibility: visible;";
-			  getClasses('trackList')[0].style = "height: " + Number((songList.length + 1)* 40) + "px;"
+			  getFirstClass('trackList').style = "height: " + Number((songList.length + 1)* 40) + "px;"
 			 for (i = 0;songListSearch.length > i;i++) {
 			  songListSearch[i].style = '';
 			  if (i == songListSearch.length - 1) {
@@ -82,30 +81,30 @@
 			  }
 			 }
 		}
-		var songListSearch = document.getElementsByClassName("Artist");
+		var songListSearch = getClasses("Artist");
 			function startMusic() {
 			 if (playing == true) {
 			 } else {
-			  document.getElementById('playPause').innerHTML = "Pause"
+			  getId('playPause').innerHTML = "Pause"
 			  playing = true;
 			  songListMin = 0; //Minimum Number Of Tracks
 			  songListCurrent = songListMin;
 			  startMusic();
 			 }
 			 if (playType == "Default") {
-			  songList = songListSearch[artistNumber].getElementsByClassName("track");
+			  songList = songListSearch[artistNumber].getClasses("track");
 			  songListMax = songList.length - 1; //Maximum Number Of Tracks
 			  songTitle = songList[songListCurrent].attributes.infoTitle.value;
 			  songArtist = songListSearch[artistNumber].attributes.infoArtist.value;
 			  songUrl = songList[songListCurrent].attributes.url.value;
-			  document.getElementById('title').innerHTML = songTitle;
-			  document.getElementById('artist').innerHTML = songArtist;
-			  document.getElementById('currentArtist').innerHTML = songArtist;
+			  getId('title').innerHTML = songTitle;
+			  getId('artist').innerHTML = songArtist;
+			  getId('currentArtist').innerHTML = songArtist;
 			  var a = songUrl;
 			  if (a[4] == ':' & a[5] == '/' & a[6] == '/' | a[5] == ':' & a[6] == '/' & a[7] == '/') {
-			   document.getElementById('audio').src = songUrl;
+			   getId('audio').src = songUrl;
 			  } else {
-			   document.getElementById('audio').src = 'music/' + songArtist + "/" + songUrl;
+			   getId('audio').src = 'music/' + songArtist + "/" + songUrl;
 			  }
 			 }
 			}
@@ -117,7 +116,7 @@
 			   songListSearch[artistNumber].style = "visibility: visible;";
 			  }
 			 }
-			 document.getElementById('playPause').innerHTML = "Play"
+			getId('playPause').innerHTML = "Play"
 			 playing = false;
 			 songListCurrent = 0;
 			if (playing == true) {
@@ -126,21 +125,21 @@
 			  songListCurrent = songListMin;
 			}
 			 if (playType == "Default") {
-			  songList = songListSearch[artistNumber].getElementsByClassName("track");
+			  songList = songListSearch[artistNumber].getClasses("track");
 			  songListMax = songList.length - 1; //Maximum Number Of Tracks
 			  songTitle = songList[songListCurrent].attributes.infoTitle.value;
 			  songArtist = songListSearch[artistNumber].attributes.infoArtist.value;
 			  songUrl = songList[songListCurrent].attributes.url.value;
-			  document.getElementById('currentArtist').innerHTML = songArtist;
-			  document.getElementById('image').src = 'pictures/' + songArtist + '/' + songArtist + '.jpg';
+			  getId('currentArtist').innerHTML = songArtist;
+			  getId('image').src = 'pictures/' + songArtist + '/' + songArtist + '.jpg';
 			  setTimeout( function() {
-			   if (document.getElementById('image').networkState === 3) {
+			   if (getId('image').networkState === 3) {
 			    setTimeout( function() {console.clear();}, 50);
 			    alert('Error: 404 not found\nTry looking at the extension');
 		       }
 			  }, 250)
 			 }
-			 document.getElementsByClassName('trackList')[0].style = "height: " + Number((songList.length + 1)* 40) + "px;"
+			 getFirstClass('trackList').style = "height: " + Number((songList.length + 1)* 40) + "px;"
 			 if (songList.length < 12) {
 			  document.getElementsByTagName('body')[0].style = "overflow-y: hidden;"
 			  document.getElementsByTagName('body')[0].attributes.scroll = 'false'
@@ -160,26 +159,19 @@
 			 startMusic();
 			}
 			function showTime() {
-			 var currentMath = document.getElementById('audio').currentTime / songDuration;
+			 var currentMath = getId('audio').currentTime / songDuration;
 			 var afterMath = currentMath * 100;
-			 document.getElementById('progress').style = 'width: ' + afterMath + '%';
+			 getId('progress').style = 'width: ' + afterMath + '%';
 			}
 			setTimeout( function() {
 			setInterval( function() {
-			 if (pictureC == 1) {
-			 document.getElementById('animationPicture').style = "background: url('pictures/progress1.png');";
-			 } else if (pictureC == 2) {
-			 document.getElementById('animationPicture').style = "background: url('pictures/progress2.png');";
-			 } else if (pictureC == 3) {
-			 document.getElementById('animationPicture').style = "background: url('pictures/progress3.png');";
-			 } else if (pictureC == 4) {
-			 document.getElementById('animationPicture').style = "background: url('pictures/progress4.png');";
-			 }
-			 pictureC = pictureC + 1;
+			 var picurl = 'pictures/progress' +  + '.png'
+			 getId('animationPicture').style = "background: url('" + picurl + "');";
+			 pictureC++;;
 			 if (pictureC == 4) {
 			  pictureC = 1;
 			 }
-			}, document.getElementById('animationPicture').attributes.animationDelay.value);
+			}, getId('animationPicture').attributes.animationDelay.value);
 			}, 250);
 			function previous() {
 			 if (songListCurrent == songListMin) {
@@ -188,8 +180,8 @@
 			  songListCurrent = songListCurrent - 1;
 			 }
 			 startMusic();
-			 document.getElementById('playPause').innerHTML = "Pause"
-			 document.getElementById('playPause').value = "playing"
+			 getId('playPause').innerHTML = "Pause"
+			 getId('playPause').value = "playing"
 			}
 			function next() {
 			 if (songListCurrent == songListMax) {
@@ -198,8 +190,8 @@
 			  songListCurrent = songListCurrent + 1;
 			 }
 			 startMusic();
-			 document.getElementById('playPause').innerHTML = "Pause"
-			 document.getElementById('playPause').value = "playing"
+			 getId('playPause').innerHTML = "Pause"
+			 getId('playPause').value = "playing"
 			}
 			function nextArtist() {
 			if (artistNumber < songListSearch.length - 1) {
@@ -214,36 +206,36 @@
 			  }
 			 }
 			function openSearch() {
-			 document.getElementById('searchTab').style = "visibility: visible";
-			 document.getElementsByTagName('body')[0].style = "overflow-y: hidden";
+			 getId('searchTab').style = "visibility: visible";
+			 getBody.style = "overflow-y: hidden";
 			}
 			function closeSearch() {
 			 resetSearch();
-			 document.getElementById('searchTab').style = "";
-			 if (document.getElementsByTagName('body')[0].attributes.scroll == 'true') {
-			  document.getElementsByTagName('body')[0].style = 'overflow-y: visible';
+			 getId('searchTab').style = "";
+			 if (getBody().attributes.scroll == 'true') {
+			  getBody().style = 'overflow-y: visible';
 			 }
 			}
 			function useCustomPlaylists() {
-			 doc.getElementById('customPlaylists').style = "";
-			 doc.getElementById('customPlaylists').style = "";
-			 doc.getElementById('searchArea').style = "visibility: hidden;"
+			 getId('customPlaylists').style = "";
+			 getId('customPlaylists').style = "";
+			 getId('searchArea').style = "visibility: hidden;"
 			}
 			function useSearch() {
-			 doc.getElementById('searchArea').style = "";
-			 doc.getElementById('searchArea').style = "";
-			 doc.getElementById('customPlaylists').style = "visibility: hidden;"
+			 getId('searchArea').style = "";
+			 getId('searchArea').style = "";
+			 getId('customPlaylists').style = "visibility: hidden;"
 			}
 			function submitNewSong() {
-			 var pPlaylist = doc.getElementById('songPlaylist').value;
-			 var pTitle = doc.getElementById('songTitle').value;
-			 var pArtist = doc.getElementById('songArtist').value;
-			 var pUrl = doc.getElementById('songUrl').value;
+			 var pPlaylist = getId('songPlaylist').value;
+			 var pTitle = getId('songTitle').value;
+			 var pArtist = getId('songArtist').value;
+			 var pUrl = getId('songUrl').value;
 			 if (localStorage.getItem("addableSongs") > 0) {
-			  if (document.getElementById(pPlaylist)) {
-			   doc.getElementById(pPlaylist).innerHTML += '<li class="track" infoTitle="' + pTitle + '" url="' + pUrl + '"' + '>' + pTitle + '</li>'
+			  if (getId(pPlaylist)) {
+			   getId(pPlaylist).innerHTML += '<li class="track" infoTitle="' + pTitle + '" url="' + pUrl + '"' + '>' + pTitle + '</li>'
 			  } else {
-			   doc.getElementById('customPlaylistsDiv').innerHTML +=
+			   getId('customPlaylistsDiv').innerHTML +=
 			   '<ul class="Artist" id="' + pPlaylist + '" infoArtist="' + pPlaylist + '">' +
 			    '<li class="track" infoTitle="' + pTitle + '" url="' + pUrl + '"' + '>' + pTitle + '</li>' +
 			   '</ul>'
@@ -255,11 +247,11 @@
 			 saveData();
 			}
 			function searchArtists() {
-			 var a = document.getElementById('searchFor').value;
+			 var a = getId('searchFor').value;
 			 var b = a.toLowerCase();
-			 var c = document.getElementsByClassName(b);
-			 var all = document.getElementsByClassName('SEARCH');
-			  document.getElementById('SearchNoResults').style = "visibility: hidden;width: 0px;height: 0px;"
+			 var c = getClasses(b);
+			 var all = getClasses('SEARCH');
+			 getId('SearchNoResults').style = "visibility: hidden;width: 0px;height: 0px;"
 			 var found = 0;
 			 d = c.length;
 			 for (i = 0;i < all.length;i++) {
@@ -267,22 +259,22 @@
 			 }
 			 for (i = 0;i < d;i++) {
 			  found++;
-			  document.getElementById('SearchTotalFound').innerHTML = "Total results found " + found + " out of " + all.length;
+			  getId('SearchTotalFound').innerHTML = "Total results found " + found + " out of " + all.length;
 			  c[i].style = "display: block;width: auto;height: auto;width: 75%;margin-top: 15px;border: solid black 1px;"
-			  document.getElementById('resultsCenter').style = "height: auto;display: block;padding-bottom: 15px;"
+			  getId('resultsCenter').style = "height: auto;display: block;padding-bottom: 15px;"
 			 }
 			 if (found == 0) {
-			  document.getElementById('SearchNoResults').style = "visibility: visible"
-			  document.getElementById('resultsCenter').style = "display: none"
-			  document.getElementById('SearchTotalFound').innerHTML = '';
-			  document.getElementById('SearchNoResultsText').innerHTML = "No results could be found out of the " + all.length + " that exists." 
+			  getId('SearchNoResults').style = "visibility: visible"
+			  getId('resultsCenter').style = "display: none"
+			  getId('SearchTotalFound').innerHTML = '';
+			  getId('SearchNoResultsText').innerHTML = "No results could be found out of the " + all.length + " that exists." 
 			 }
 			}
 			function resetSearch() {
-			 document.getElementById('searchFor').value = '';
+			 getId('searchFor').value = '';
 			 searchArtists();
-			 document.getElementById('SearchNoResultsText').innerHTML = '';
-			 document.getElementById('SearchNoResults').style = '';
+			 getId('SearchNoResultsText').innerHTML = '';
+			 getId('SearchNoResults').style = '';
 			}
 			function freeSongTimer() {
 			 localStorage.setItem("timeBeforeSongDownload", Number(localStorage.getItem("timeBeforeSongDownload")) - 1);
