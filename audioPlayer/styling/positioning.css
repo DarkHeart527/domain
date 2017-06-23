@@ -213,11 +213,11 @@ body {
 
 textarea {
  color: white;
- font-size: 35px;
+ font-size: 20px;
  width: 150px;
- height: auto;
+ height: 25px;
  position: initial;
- background-color: transparent;
+ background-color: grey;
  outline: none;
  border: black 1px ridge;
  border-radius: 25px;
