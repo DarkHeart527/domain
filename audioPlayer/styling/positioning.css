@@ -210,3 +210,14 @@ body {
  background-color: transparent;
  padding-bottom: 4px;
 }
+
+textarea {
+ color: white;
+ font-size: 35px;
+ width: 50px;
+ height: auto;
+ position: initial;
+ background-color: transparent;
+ outline: none;
+ border: black 1px ridge;
+}
