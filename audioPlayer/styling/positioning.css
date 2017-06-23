@@ -214,10 +214,11 @@ body {
 textarea {
  color: white;
  font-size: 35px;
- width: 50px;
+ width: 150px;
  height: auto;
  position: initial;
  background-color: transparent;
  outline: none;
  border: black 1px ridge;
+ border-radius: 25px;
 }
