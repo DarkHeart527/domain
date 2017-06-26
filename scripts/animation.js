@@ -154,5 +154,5 @@ function placeholderE() {
  if (i == 279) {
   i = Number(-1)
  }
- setTimeout( function() { placeholderE(); }, 150)
+ setTimeout( function() { placeholderE(); }, 75)
 }
