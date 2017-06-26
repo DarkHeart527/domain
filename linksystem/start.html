@@ -5,6 +5,12 @@
   <body>
   </body>
   <script>
-  
+  var a = location
+  var b = a.href
+  var c = b.split('#');
+  var array = c;
+  if (array[1] == 'visit') {
+   location = 'http://' + array[2] 
+  }
   </script>
 </html>
