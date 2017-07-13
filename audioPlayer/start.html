@@ -130,7 +130,7 @@
 			  songListCurrent = songListMin;
 			}
 			 if (playType == "Default") {
-			  songList = songListSearch[artistNumber].getClasses("track");
+			  songList = songListSearch[artistNumber].getElementsByClassName("track");
 			  songListMax = songList.length - 1; //Maximum Number Of Tracks
 			  songTitle = songList[songListCurrent].attributes.infoTitle.value;
 			  songArtist = songListSearch[artistNumber].attributes.infoArtist.value;
