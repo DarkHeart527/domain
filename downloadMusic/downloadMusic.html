@@ -31,7 +31,10 @@
     function checkArtist() {
       var a = document.getElementById('songs');
       var b = a.getElementsByClassName(document.getElementById('artistSelect').value);
-      var list = b.innerHTML;
+      var list;
+      for (i = 0; i < b.length; i++) {
+       list = list + b[i]; 
+      }
       document.getElementById('songList').innerHTML = list;
     }
   </script>
