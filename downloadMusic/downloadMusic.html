@@ -15,7 +15,7 @@
     <center>
       <p style="font-size: 45px;color: white;text-shadow: 0px px 15px white">Requested Downloadable Songs</p>
     </center>
-    <select>
+    <select id="artistSelect">
       <option value="NONE"></value>
     </select>
     <div id="songs">
@@ -27,6 +27,8 @@
      document.getElementsByTagName('option')[i].innerHTML = document.getElementsByTagName('option')[i].value
     }
     function checkArtist() {
+      var a = document.getElementById('songs');
+      var b = a.getElementsByClassName(document.getElementById('artistSelect').value);
       var list = '';
       document.getElementById('songList').innerHTML = list;
     }
