@@ -1,9 +1,34 @@
 <html>
   <head>
+    <style>
+      #songs {
+       display: none;
+       width: 0px;
+       height: 0px;
+       color: transparent;
+       background-color: transparent;
+        font-size: 0px;
+      }
+    </style>
   </head>
   <body style="background-color: black;">
     <center>
       <p style="font-size: 45px;color: white;text-shadow: 0px px 15px white">Requested Downloadable Songs</p>
     </center>
+    <select>
+      <option value="NONE"></value>
+    </select>
+    <div id="songs">
+      
+    </div>
   </body>
+  <script>
+    for (i = 0; i < document.getElementsByTagName('option').length; i++) {
+     this.innerHTML = this.value
+    }
+    function checkArtist() {
+      var list = '';
+      document.getElementById('songList').innerHTML = list;
+    }
+  </script>
 </html>
