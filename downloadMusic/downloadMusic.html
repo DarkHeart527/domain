@@ -24,7 +24,7 @@
   </body>
   <script>
     for (i = 0; i < document.getElementsByTagName('option').length; i++) {
-     this.innerHTML = this.value
+     document.getElementsByTagName('option')[i].innerHTML = document.getElementsByTagName('option')[i].value
     }
     function checkArtist() {
       var list = '';
