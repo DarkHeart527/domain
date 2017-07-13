@@ -16,10 +16,12 @@
       <p style="font-size: 45px;color: white;text-shadow: 0px px 15px white">Requested Downloadable Songs</p>
     </center>
     <select id="artistSelect">
-      <option value="NONE"></value>
+      <option value="Kendrick Lamar"></value>
+    </select>
+    <select id="songList">
     </select>
     <div id="songs">
-      
+      <option class="Kendrick Lamar" value="Humble."></option>
     </div>
   </body>
   <script>
@@ -29,7 +31,7 @@
     function checkArtist() {
       var a = document.getElementById('songs');
       var b = a.getElementsByClassName(document.getElementById('artistSelect').value);
-      var list = '';
+      var list = b;
       document.getElementById('songList').innerHTML = list;
     }
   </script>
