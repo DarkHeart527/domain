@@ -1,22 +1,13 @@
 <html>
   <head>
     <style>
-      #songs {
-       display: none;
-       width: 0px;
-       height: 0px;
-       color: transparent;
-       background-color: transparent;
-        font-size: 0px;
-      }
     </style>
   </head>
   <body style="background-color: black;">
-    <a href="Hands on Me.mp3" download>Download Hands On Me</a>
     <center>
       <p style="font-size: 45px;color: white;text-shadow: 0px px 15px white">Requested Downloadable Songs</p>
     </center>
-    <div id="songs">
+    <div>
       <div class="artist" artist="Ariana_Grande">
         <a href="Ariana Grande/Hands On Me.mp3" download>Hands On Me</a>
         <a href="Ariana Grande/Best Mistake.mp3" download>Best Mistake</a>
@@ -33,6 +24,9 @@
     c[1] = c[2];
     c[2] = '';
     var find = c[1];
+    for (i = 0; i < document.getElementsByClassName('artist').length) {
+     document.getElementsByClassName('artist')[i].style = 'display: none;' 
+    }
     for (i = 0; i < document.getElementsByClassName('artist').length; i++) {
       if (find == document.getElementsByClassName('artist')[i].attributes.artist.value) {
        document.getElementsByClassName('artist')[i].style = "display: block;"
