@@ -24,12 +24,17 @@
     c[1] = c[2];
     c[2] = '';
     var find = c[1];
+    function displayHome() {
+      
+    }
     for (i = 0; i < document.getElementsByClassName('artist').length; i++) {
      document.getElementsByClassName('artist')[i].style = 'display: none;' 
     }
     for (i = 0; i < document.getElementsByClassName('artist').length; i++) {
       if (find == document.getElementsByClassName('artist')[i].attributes.artist.value) {
        document.getElementsByClassName('artist')[i].style = "display: block;"
+      } else {
+       displayHome(); 
       }
     }
   </script>
