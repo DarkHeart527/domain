@@ -17,7 +17,7 @@
       <p style="font-size: 45px;color: white;text-shadow: 0px px 15px white">Requested Downloadable Songs</p>
     </center>
     <div id="songs">
-      <div id="Ariana Grande">
+      <div class="artist" artist="Ariana_Grande">
         <a href="Ariana Grande/Hands On Me.mp3" download>Hands On Me</a>
         <a href="Ariana Grande/Best Mistake.mp3" download>Best Mistake</a>
         <a href="Ariana Grande/Break Your Heart Right Back.mp3" download>Break Your Heart Right Back</a>
@@ -31,7 +31,12 @@
     var c = b.split('#');
     c[0] = c[1];
     c[1] = c[2];
-    c[2] = '';
-    
+    c[2] = '';'
+    var find = c[1];
+    for (i = 0; i < document.getElementsByClassName('artist').length; i++) {
+      if (find == document.getElementsByClassName('artist')[i].attributes.artist.value) {
+       document.getElementsByClassName('artist')[i].style = "display: block;"
+      }
+    }
   </script>
 </html>
