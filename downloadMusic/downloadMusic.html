@@ -28,6 +28,9 @@
     c[1] = c[2];
     c[2] = '';
     var find = c[1];
+    if (find == undefined | find == null | find == NaN) {
+     find = ''; 
+    }
     function displayHome() {
      document.getElementById('home').style = "display: block"
     }
