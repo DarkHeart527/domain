@@ -9,19 +9,19 @@
   0 - Command
   1 - Link
   2-- Carry Tags
-  
   */
   var a = location
   var b = a.href
   var c = b.split('#');
   var array = c;
+  var fT = '';
   var tags = c;
   tags.splice(0,1);
   for (i = 0; i < tags.length; i++) {
    fT = '#' + tags[i];
   }
   if (array[0] == 'visit') {
-   location = 'http://' + array[1] + fT;
+   location = 'http://' + array[1] + array[2] + fT;
   }
   </script>
 </html>
