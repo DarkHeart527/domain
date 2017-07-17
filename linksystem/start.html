@@ -6,8 +6,8 @@
   </body>
   <script>
   /*
-  0 - Link
-  1 - Command
+  0 - Command
+  1 - Link
   2 - URL
   3-- Carry Tags
   
@@ -21,8 +21,8 @@
   for (i = 0; i < tags.length; i++) {
    fT = '#' + tags[i];
   }
-  if (array[1] == 'visit') {
-   location = 'http://' + array[2];
+  if (array[0] == 'visit') {
+   location = 'http://' + array[2] + fT;
   }
   </script>
 </html>
