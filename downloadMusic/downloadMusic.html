@@ -15,7 +15,7 @@
         <p><a href="Ariana Grande/Be My Baby.mp3" download>Be My Baby</a>
       </div>
     </div>
-    <div id="home">
+    <div id="home" style="display: none;">
       <p style="font-size: 35px; color: grey;">Artists</p>
       <a href="http://linksystem.codark.com/#visit#music.codark.com#artist#ariana_grande">Ariana Grande</a>
     </div>
@@ -29,7 +29,7 @@
     c[2] = '';
     var find = c[1];
     function displayHome() {
-     document.getElementById('home').style = "visibility: visible"
+     document.getElementById('home').style = "display: block"
     }
     for (i = 0; i < document.getElementsByClassName('artist').length; i++) {
      document.getElementsByClassName('artist')[i].style = 'display: none;' 
