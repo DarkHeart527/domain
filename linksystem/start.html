@@ -5,12 +5,24 @@
   <body>
   </body>
   <script>
+  /*
+  0 - Link
+  1 - Command
+  2 - URL
+  3-- Carry Tags
+  
+  */
   var a = location
   var b = a.href
   var c = b.split('#');
   var array = c;
+  var tags = c;
+  tags.splice(0,1);
+  for (i = 0; i < tags.length; i++) {
+   fT = '#' + tags[i];
+  }
   if (array[1] == 'visit') {
-   location = 'http://' + array[2] 
+   location = 'http://' + array[2];
   }
   </script>
 </html>
