@@ -8,11 +8,20 @@
    <body>
      <p>So far I just have the downloading done.</p>
       <div class="beats">
-         <div releaseDate="July 4, 2017"></div>
+         <div releaseDate="July 4, 2017" name="Another"></div>
       </div>
       <script>
+         function createLink(value) {
+          return 'tracks/' + value + '.mp3';
+         }
          function start() {
-          
+          var a = getClasses('beats');
+          a = a.getElementsByClassName('track');
+          for (i = 0; i < a.length; i++) {
+           var b = newElement('a')
+           b.href = createLink(a[i].attributes.name.value);
+           b.innerHTML = 'Download ' + a[i].attributes.name.value + ' - Date Published: ' + a[i].attributes.releaseDate.value;
+          }
          }
          start();
       </script>
