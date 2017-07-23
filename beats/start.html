@@ -19,8 +19,8 @@
          function start() {
           var a = getClasses('beats');
           var b = a[0].getElementsByClassName('track');
-          for (i = 0; i < a.length; i++) {
-           var c = newElement('b')
+          for (i = 0; i < b.length; i++) {
+           var c = newElement('a')
            c.href = createLink(b[i].attributes.name.value);
            c.innerHTML = 'Download ' + b[i].attributes.name.value + ' - Date Published: ' + b[i].attributes.releaseDate.value;
           }
