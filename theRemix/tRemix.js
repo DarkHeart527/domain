@@ -1,122 +1,44 @@
-var trackNumber = 0;
-var savedNumber = 0;
-var link = 'music/';
-var title = '';
-var endTimev = 0;
-var endtimeM = 0;
-var endtimeH = 0;
-var checkEndv;
-var checkEndM;
-var colonQH;
-
-
-function nextTrack() {
- trackNumber = Number(trackNumber + 1);
- updateStuff();
- checkMusic();
- savedNumber = trackNumber;
-}
-
-function previousTrack() {
- trackNumber = Number(trackNumber - 1);
- updateStuff();
- checkMusic();
- savedNumber = trackNumber;
-}
-
-function checkMusic() {
- if (trackNumber == 0) {
-  document.getElementById('audioFile').src = '';
-  title = 'No Song Selected';
-  endTimev = 0;
-  endtimeM = 0;
-  endtimeH = 0;
-  document.getElementById('currentTime').innerHTML = ''
- } else if (trackNumber == 1) {
-  document.getElementById('audioFile').src = link + 'Right Now.mp3';
-  title = "Right Now";
- } else if (trackNumber == 2) {
-  document.getElementById('audioFile').src = link + 'Alright.mp3';
-  title = "Alright";
- } else if (trackNumber == 3) {
-  document.getElementById('audioFile').src = link + 'Like Me.mp3';
-  title = "Like Me";
- } else {
-  trackNumber = savedNumber;
-  updateStuff();
- }
-	document.getElementById('audioFile').onloadeddata = function() {
-	endTimev = 0;
-	endtimeH = 0;
-	endtimeM = 0;
-	endTimev = Math.floor(document.getElementById('audioFile').duration)
-	}
- updateText();
-}
-
-function speedUpdater() {
-	if (endTimev > 59) {
-	 endTimev = endTimev - 60;
-	  endtimeM = endtimeM + 1;
-	}
-	if (endtimeM > 59) {
-	 endtimeM  = endtimeM - 60;
-	 endtimeH = endtimeH + 1;
-	}
-	if (endTimev < 10) {
-	 checkEndv = '0';
-	} else {
-	 checkEndv = '';
-	}
-	if (endtimeM < 10) {
-	 checkEndM = '0';
-	} else {
-	 checkEndM = '';
-	}
-	if (endtimeH < 10) {
-	 checkEndH = '0';
-	} else {
-	 checkEndH = '';
-	}
-	if (endTimev == 0) {
-	 endTimev = '';
-	 checkEndv = '';
-	 document.getElementById('slash').innerHTML = ''
-	} else {
-	 document.getElementById('slash').innerHTML = ' / '
-	}
-	if (endtimeM == 0) {
-	 endtimeM = '';
-	 checkEndM = '';
-	 colonQM = '';
-	} else {
-	 colonQM = ':'
-	}
-	if (endtimeH == 0) {
-	 endtimeH = '';
-	 checkEndH = '';
-	 colonQH = '';
-	} else {
-	  colonQH = ':';
+var theRemix = {
+	load: function(a) {
+	 setInterval( function(){document.body.style.fontSize=window.innerWidth+"px"}, 10)
+	 document.getElementsByClassName('header')[0].innerHTML = 
+	 '<span class="header2">The Remix<span class="headerSub2">Better Than Fire</span></span>' + //The Name
+	 '<span class="headLink" onclick="theRemix.openPage(\'homePage\')">Home</span>' + //Home Page
+	 '<span class="headLink" onclick="theRemix.openPage(\'musicPage\')">Music</span>' + //Music Page
+	 '<span class="headLink" onclick="theRemix.openPage(\'settingsPage\')">Settings</span>' //Settings Page
+	 document.getElementById('pausePlay').onclick = function() {
+	  if (this.attributes.paused.value == 'true') { // If the player is paused (not playing)
+	    if (document.getElementById('audio').src == 'file:///C:/Users/darkh/Desktop/theRemix/start.html') {
+		 document.getElementById('audio').src = 'music/Right Now.mp3';
+		}
+	    document.getElementById('audio').play();
+	    this.attributes.paused.value = 'false';
+		this.src = 'images/stop.png';
+	   } else { //If the player is not paused (playing)
+	    this.attributes.paused.value = 'true';
+		this.src = 'images/play.png';
+	    document.getElementById('audio').pause();
+	   }
+	  }
+	  for (i = 0; i < document.getElementsByClassName('track').length; i++) {
+	   document.getElementsByClassName('track')[i].id = 'track#' + Number(i + 1);
+	   document.getElementsByClassName('track')[i].onclick = function() {
+	    document.getElementById('audio').src = 'music/' + this.attributes.url.value;
+		document.getElementById('pausePlay').src = 'images/stop.png';
+		document.getElementById('pausePlay').attributes.paused.value = 'false';
+	   }
+	   document.getElementById('trackNumber').innerHTML = i + 1;
+	  }
+	},
+	openPage: function(page) {
+	 for (i = 0; i < document.getElementsByClassName('pages').length; i++) {
+	  document.getElementsByClassName('pages')[i].style = "visibility: hidden;"
 	 }
-	 document.getElementById('currentTime').innerHTML = document.getElementById('audioFile').currentTime
-	endTimeFinish = checkEndH + endtimeH + colonQH + checkEndM + endtimeM + colonQM + checkEndv + endTimev;
- document.getElementById('endTime').innerHTML = endTimeFinish
- }
-
-function updateStuff() {
- document.getElementById('trackNum').innerHTML = trackNumber;
- }
-
-function updateCurrent() {
- 
-}
-
-function updateText() {
- document.getElementById('title').innerHTML = title;
-}
-
-function loader() {
-endTimev = 0;
- setInterval( function() {speedUpdater()}, 10);
+	 if (page == 'musicPage') {
+      document.body.style = "overflow-x: hidden"
+	 } else {
+	  document.body.style = "overflow: hidden"
+	 }
+	 document.getElementById(page).style = "visibility: visible";
+	},
 }

@@ -17,26 +17,34 @@
        localStorage.MONEYZZ = Money;
        localStorage.JOINEDZZ = 1;
        localStorage.setItem("payments", document.getElementById('displayArea').innerHTML);
+       localStorage.setItem("goals", document.getElementById('displayAreaGoals').innerHTML);
       }
       function constantReloader() {
-       document.getElementById('display2').innerHTML = "Money In Your Account: " + Number(localStorage.MONEYZZ);
+       document.getElementById('display2').innerHTML = "Money In Your Account: " + "<span id='moneyAmount'>" + Number(localStorage.MONEYZZ) + "</span>";
 	   if (localStorage.MONEYZZ < 0) {
-	    checkNegative = "-";
-	   } else {
-	    checkNegative = '';
+	    document.getElementById('moneyAmount').style = "color: red";   
+	   } else if (localStorage.MONEYZZ < 10 & localStorage.MONEYZZ > (0 - 1)) {
+	    document.getElementById('moneyAmount').style = "color: green";   
+	   } else if (localStorage.MONEYZZ < 25 & localStorage.MONEYZZ > 9) {
+	    document.getElementById('moneyAmount').style = "color: limegreen";   
+	   } else if (localStorage.MONEYZZ < 50 & localStorage.MONEYZZ > 24) {
+	    document.getElementById('moneyAmount').style = "color: blue";   
 	   }
       }
       function load() {
        setInterval( function() { saver(); });
        setInterval( function() { constantReloader(); }, 25);
        document.getElementById('displayArea').innerHTML = localStorage.getItem("payments");
+       document.getElementById('displayAreaGoals').innerHTML = localStorage.getItem("goals");
        Money = Number(localStorage.MONEYZZ);
       }
       function startUp() {
        if (localStorage.JOINEDZZ == null) {
         localStorage.JOINEDZZ = 1;
         localStorage.MONEYZZ = 0;
+        localStorage.idNumGoal = 0;
         localStorage.setItem("payments", "");
+        localStorage.setItem("goals", "");
         alert('Welcome');
 		localStorage.idNum = 0;
        } else if (localStorage.JOINEDZZ == 1) {
@@ -81,8 +89,9 @@
 		document.getElementById('form2').value = '';
 	   }
       }
+        
       function passAdd() {
-        if (document.getElementById('form2').value == '') {
+	    if (document.getElementById('form2').value == '') {
         alert('No Amount Given');
        } else if (document.getElementById('form2').value == 0) {
 	    document.getElementById('form2').value = '';
@@ -116,8 +125,9 @@
 	   Money = 0;
 	   localStorage.JOINEDZZ = null;
 	   document.getElementById('displayArea').innerHTML = '';
+	   document.getElementById('displayAreaGoals').innerHTML = '';
 	   localStorage.idNum = 0;
-	   localStorage.setItem("payments", '');
+	   localStorage.idNumGoal = 0;
 	   document.getElementById('confirm').innerHTML = "";
 	   document.getElementById('resetButton').innerHTML = "<button onClick='reset()'>Reset</button>";
 	  }
@@ -125,4 +135,37 @@
 	  function no() {
 	   document.getElementById('confirm').innerHTML = "";
 	   document.getElementById('resetButton').innerHTML = "<button onClick='reset()'>Reset</button>";
+	  }
+	  
+	  function openSG() {
+	   document.getElementById('formGoal').innerHTML = "<form><input name='setGoal' id='formGoals' placeHolder='Your Goal'></input><input name='costOfGoalItem' id='formGoals2' min='0' max='250' type='number' placeHolder='Cost Of Your Goal'></input></form><button onClick='addGoal();'>Submit</button>"
+	  }
+
+	  function addGoal() {
+       if (document.getElementById('formGoals').value == '') {
+        alert('No Name Given');
+       } else if (document.getElementById('formGoals2').value > -1) {
+        passGoal(); 
+       } else {
+	    alert('Negatives Are NOT Allowed');
+		document.getElementById('formGoals2').value = '';
+	   }
+	  }
+	  
+	  function passGoal() {
+        if (document.getElementById('formGoals2').value == '') {
+        alert('No Cost Given');
+       } else if (document.getElementById('formGoals2').value == 0) {
+	    document.getElementById('formGoals2').value = '';
+		alert("You Can't Set A Free Goal");
+	   } else {
+        acceptGoal(); 
+       }
+	  }
+	  
+	  function acceptGoal() {
+	   alert('Success!'); 
+	   localStorage.idNumGoal = Number(localStorage.idNumGoal) + 1;
+	   document.getElementById('displayAreaGoals').innerHTML = "<div " + 'class="goal" id="Goal' + localStorage.idNumGoal + '"' + ">" + document.getElementById('formGoals').value + " | " + document.getElementById('formGoals2').value + "<span class='goalBtn' onclick=" + 'document.getElementById(' + "'Goal" + localStorage.idNumGoal + "'" + ').remove();>' + "Delete This Goal</span></div>" + document.getElementById('displayAreaGoals').innerHTML;
+	   document.getElementById('formGoal').innerHTML = '';
 	  }

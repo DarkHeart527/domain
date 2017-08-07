@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <style>
+    </style>
+  </head>
+  <body style="background-color: black;">
+    <center>
+      <p style="font-size: 45px;color: white;text-shadow: 0px px 15px white">Requested Downloadable Songs</p>
+    </center>
+    <div>
+      <div class="artist" artist="ariana_grande">
+        <p><a href="Ariana Grande/Hands On Me.mp3" download>Hands On Me</a>
+        <p><a href="Ariana Grande/Best Mistake.mp3" download>Best Mistake</a>
+        <p><a href="Ariana Grande/Break Your Heart Right Back.mp3" download>Break Your Heart Right Back</a>
+        <p><a href="Ariana Grande/Be My Baby.mp3" download>Be My Baby</a>
+        <p><a href="Ariana Grande/Piano.mp3" download>Piano</a>
+        <p><a href="Ariana Grande/Lovin' It.mp3" download>Lovin' It</a>
+      </div>
+    </div>
+    <div id="home" style="display: none;">
+      <p style="font-size: 35px; color: grey;">Artists</p>
+      <a href="http://linksystem.codark.com/#visit#music.codark.com#artist#ariana_grande">Ariana Grande</a>
+    </div>
+  </body>
+  <script>
+    var a = location;
+    var b = a.href;
+    var c = b.split('#');
+    c[0] = c[1];
+    c[1] = c[2];
+    c[2] = '';
+    var find = c[1];
+    if (find == undefined | find == null | find == NaN) {
+     find = ''; 
+    } else {
+     find.toLowerCase();
+    }
+    function displayHome() {
+     document.getElementById('home').style = "display: block"
+    }
+    for (i = 0; i < document.getElementsByClassName('artist').length; i++) {
+     document.getElementsByClassName('artist')[i].style = 'display: none;' 
+    }
+    for (i = 0; i < document.getElementsByClassName('artist').length; i++) {
+      if (find.toLowerCase() == document.getElementsByClassName('artist')[i].attributes.artist.value) {
+       document.getElementsByClassName('artist')[i].style = "display: block;"
+      } else {
+       displayHome(); 
+      }
+    }
+  </script>
+</html>

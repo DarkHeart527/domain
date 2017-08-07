@@ -10,18 +10,40 @@
   <body onload="startUp();load();">
     <a href="http://codark.com" class="linkBTC">Back To Codark</a>
     <p class="heading">Allowance Saver</p>
-    <p id="display2"></p>
-    <p>
-      <button onclick="addOne();">Add</button>
-      <button onclick="takeOne();">Take</button>
-    </p>
-	<p><button onclick="deleteAllLogs();">Delete All Logs</button></p>
-	<p id="resetButton"><button onClick="reset()">Reset</button></p>
-	<p id="confirm"></p>
-    <p id="form"></p>
-	<center>
-		<p class="contentHelper">Date</p>
-		<p id="displayArea">Reason | Amount</p>
-	</center>
+    <p class="moneyInAccount" id="display2"></p>
+	<p>
+		<center>
+			<button onclick="document.getElementById('tab1').style = 'visibility: visible';document.getElementById('tab2').style = 'visibility: hidden';" class="headButton">Allowance</button>
+			<button onclick="document.getElementById('tab1').style = 'visibility: hidden';document.getElementById('tab2').style = 'visibility: visible';" class="headButton">Goals</button>
+		</center>
+	</p>
+	<div class="actualDisplay">
+		<div style="visibility: hidden;" id="tab1">
+			<p>
+				<center>
+					<button onclick="addOne();">Add</button>
+					<button onclick="takeOne();">Take</button>
+					<button onclick="deleteAllLogs();">Delete All Logs</button>
+					<span id="resetButton"><button onClick="reset()">Reset</button></span>
+					<span id="confirm"></span>
+				</center>
+			</p>
+			<p id="form"></p>
+			<center>
+				<p class="contentHelper">Date</p>
+				<p id="displayArea">Reason | Amount</p>
+			</center>
+		</div>
+		<div id="tab2" style="visibility: hidden">
+			<center>
+				<button onclick="openSG();">Set Goal</button>
+				<p id="formGoal"></p>
+			</center>
+			<center>
+				<p class="contentHelper">Name</p>
+				<p id="displayAreaGoals">NULL</p>
+			</center>
+		</div>
+	</div>
   </body>
  </html>

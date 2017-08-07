@@ -5,8 +5,8 @@ onLoaded();
 function onLoaded() {
  if (localStorage.New == 1) {
   checkGC = localStorage.getItem("login");
-  setTimeout( function() { askForPermNoAsk() }, 250);
-  signedIn();
+  carryOutGc = localStorage.getItem("login");
+  setTimeout( function() { askForPermNoAsk();signedIn(); }, 250);
  }
 }
 
@@ -17,7 +17,7 @@ function askForPerm() {
  } else {
   var globalCode = prompt("Please Type In Your Seven Digit Global Code To Login... Ex: 1234567\n" + 'If you don' + "'" + 't have a GC then type "Guest"',"");
   if (globalCode == "Guest") {
-   localStorage.setItem("login", "guest");
+   localStorage.setItem("login", "Guest");
    localStorage.permissionLevel = 1;
    checkPermission();
   } else {
@@ -28,8 +28,11 @@ function askForPerm() {
 }
 
 function signedIn() {
- document.getElementById('').style = '';
- document.getElementById('').style = '';
+ if (document.getElementById('whatPage').value == 1) {
+ document.getElementById('signIn').style = 'visibility: hidden';
+ document.getElementById('signOut').style = 'visibility: visible';
+ } else {
+ }
 }
 
 function askForPermNoAsk() {
@@ -48,9 +51,18 @@ function checkCode() {
  if (checkGC == 4278928) {
   localStorage.permissionLevel = 10;
   checkPermission();
+ } else if (checkGC == "Guest") {
  } else {
   error();
  }
+}
+
+function logOut() {
+ localStorage.New = 0;
+ localStorage.setItem("login", "");
+ localStorage.permissionLevel = 1;
+ localStorage.savedGc = "";
+ setTimeout(function() { location = location }, 100);
 }
 
 function error() {
@@ -66,6 +78,11 @@ function error() {
 }
 
 function checkPermission() {
+ if (document.getElementById('whatPage').value == 1) {
+ document.getElementById('signIn').style = 'visibility: hidden';
+ document.getElementById('signOut').style = 'visibility: visible';
+ } else {
+ }
  localStorage.savedGc = checkGC;
  if (localStorage.permissionLevel == 1) {
   if (document.getElementById('whatPage').value == 1) {
@@ -78,9 +95,6 @@ localStorage.New = 1;
 }
 
 function setPageOne() {
- if (document.getElementById('link3')) {
-  document.getElementById('link3').remove()
- }
 }
 
 function setPageTen() {

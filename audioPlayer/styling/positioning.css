@@ -1,0 +1,232 @@
+body {
+ margin: 0px;
+ background-image: url('../pictures/bg.png');
+}
+
+.clickable {
+ cursor: pointer;
+}
+ 
+.holder {
+ width: 40%;
+ margin-left: 30%;
+ margin-right: 30%;
+ margin-top: 5%;
+ border-radius: 15px;
+ background-color: grey;
+}
+
+#image {
+ width: 100%;
+ height: 100%;
+ border-radius: 15px;
+ border-bottom-left-radius: 0px;
+ border-bottom-right-radius: 0px;
+}
+
+.imageHolder {
+ width: 100%;
+ height: 20%;
+ margin-bottom: 20px;
+}
+
+@keyframes turnColor {
+ 0% {color: white;}
+ 50% {color: grey;}
+ 100% {color: white;}
+}
+
+.heading {
+ width: 100%;
+ height: 50px;
+}
+
+#title {
+ font-size: 30px;
+ animation: turnColor 10s infinite;
+ margin-bottom: 0px;
+ margin-top: -60px;
+ margin-left: 10px;
+}
+
+#artist {
+ font-size: 30px;
+ animation: turnColor 10s infinite;
+ margin-bottom: 0px;
+ margin-top: -8px;
+ margin-left: 10px;
+}
+
+.trackList {
+ display: block;
+ overflow-x: visible;
+ overflow-y: visible;
+ width: inherit;
+}
+
+.track {
+ display: inherit;
+ font-size: 35px;
+ cursor: pointer;
+}
+
+#progressBarHolder {
+ width: 80%;
+ height: 2%;
+ background-color: red;
+ margin-left: 10%;
+ border-radius: 20px;
+}
+
+#progress {
+ background-color: blue;
+ height: 100%;
+ width: 0px;
+ border-radius: 20px;
+}
+
+#progressPicOverlay {
+ width: 100%;
+ height: 100%;
+ border-radius: 20px;
+}
+
+#animationPicture {
+ width: 100%;
+ height: 100%;
+ border-radius: 20px;
+}
+
+.preLoad {
+ width: 0px;
+ height: 0px;
+ display: none;
+ background-color: transparent;
+ color: transparent;
+ opacity: 0;
+}
+
+.Artist {
+ position: absolute;
+ visibility: hidden;
+}
+
+#currentArtist {
+ font-size: 25px;
+ color: white;
+ text-decoration: none;
+}
+
+#nextABtn {
+ width: 25px;
+ height: 25px;
+ font-size: 25px;
+ color: white;
+ cursor: pointer;
+ text-decoration: none;
+}
+
+#nextABtn:hover {
+ color: darkgrey;
+ text-shadow: -4px 4px 2px black;
+}
+
+#leftABtn {
+ width: 25px;
+ height: 25px;
+ font-size: 25px;
+ color: white;
+ cursor: pointer;
+ text-decoration: none;
+}
+
+#leftABtn:hover {
+ color: darkgrey;
+ text-shadow: 4px 4px 2px black;
+}
+
+.center {
+ text-align: center;
+}
+
+.linkChangeLog {
+ text-decoration: none;
+ color: white;
+ font-size: 40px;
+}
+
+.linkChangeLogD {
+ top: 10px;
+ text-align: center;
+ position: absolute;
+ height: 1px;
+ width: 100%;
+}
+
+.linkChangeLog:hover {
+ color: blue;
+}
+
+#searchTab {
+ visibility: hidden;
+ background-image: url('../pictures/bg.png');
+ width: 100%;
+ height: 100%;
+ position: absolute;
+ top: 0px;
+ left: 0px;
+}
+
+.searchArea {
+ background-color: blue;
+ width: 100%;
+ height: auto;
+}
+
+#currentPlaylists {
+ width: 500px;
+ height: 500px;
+ overflow-y: auto;
+ background-color: red;
+ opacity: 1;
+}
+
+.SEARCH {
+ display: none;
+ width: 0px;
+ height: 0px;
+ margin-top: 0px;
+ border-radius: 25px;
+}
+
+#results {
+ width: 50%;
+ height: auto;
+ background-color: grey;
+}
+
+#resultsCenter {
+ display: none;
+ background-color: transparent;
+ padding-bottom: 4px;
+}
+
+textarea {
+ color: white;
+ font-size: 20px;
+ width: 250px;
+ height: 50px;
+ position: initial;
+ background-color: grey;
+ outline: none;
+ border: black 1px ridge;
+ border-radius: 25px;
+ resize: none;
+ padding-bottom: 12.5px;
+ padding-top: 12.5px;
+ padding-left: 10px;
+}
+
+#searchTab span {
+ 
+}

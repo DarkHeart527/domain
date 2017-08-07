@@ -1,0 +1,43 @@
+<html lang=en>
+	<head>
+		<meta name="viewport" width="width=device-width, initial-scale=1">
+		<meta name="language" lang="en">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF8">
+		<meta charset='UTF-8'>
+		<link href="css/main.css" rel="stylesheet" />
+		<title id="title">Projects</title>
+		<script src="scripts/animation.js">
+		</script>
+		<script>
+			setTimeout( function() { document.getElementById('title').innerHTML = document.getElementById('head').innerHTML + ' - ' + document.getElementById('title').innerHTML; placeholderE(); }, 500);
+		</script>
+	</head>
+	<body>
+		<!-- Preload Images -->
+		<img src="pictures/background1.jpg" class="preload" />
+		<img src="pictures/background2.jpg" class="preload" />
+		<img src="pictures/background3.jpg" class="preload" />
+		<img src="pictures/background4.jpg" class="preload" />
+		<!-- -->
+		<img class="headerPicture" src="pictures/heading.jpg" />
+		<header>
+			<div class="logo"></div>
+			<span class="head" id="head">No Name Yet</span>
+			<form action="search.php" method="GET" id="search" name="search">
+				<input type="text" id="searchBox" class="searchBar" placeholder="Search..." />
+				<input class="searchSubmit" type="submit" />
+			</form>
+		</header>
+		<nav>
+			<a href="index.html">Home</a>
+			<a href="#Programming">Programming</a>
+			<a href="sources.html">Sources</a>
+			<a href="projects.html"><b>Projects</b></a>
+		</nav>
+		<div class="projectSection">
+			<h1 class="projectH1">Here are a list of my projects</h1>
+			<p><a href="audioPlayer/start.html" class="projectLink">Audio Player</a></p>
+			<p><a href="simpleScript/start.html" class="projectLink">Simple Script</a></p>
+		</div>
+	</body>
+</html>

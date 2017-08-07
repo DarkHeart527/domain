@@ -1,0 +1,122 @@
+<html lang=en>
+	<head>
+		<meta name="viewport" width=device-width>
+		<meta name="language" lang=en>
+		<link href="css/main.css" rel="stylesheet" />
+		<title id="title">Home</title>
+		<script src="scripts/animation.js">
+		</script>
+		<script type="text/javascript" src="//d3aq14vri881or.cloudfront.net/kiip.js"></script>
+		<script>
+			var kiipInstance = new Kiip('39f6ccd83145aaede5dfa5391d75980d');
+			kiipInstance.postMoment('Moment Name');
+			setTimeout( function() {
+			var liveHosting = false;
+			if (liveHosting == false) {
+			 document.getElementById('iFrame').style = "visibility: hidden; width: 0px; height: 0px;"
+			} else {
+			 document.getElementById('iFrameDisabled').style = "visibility: hidden; width: 0px; height: 0px;"
+			}
+			 document.getElementById('title').innerHTML = document.getElementById('head').innerHTML + ' - ' + document.getElementById('title').innerHTML; placeholderE(); }, 500);
+		</script>
+		<style>
+		.SEARCHCLASS {
+		 visibility: hidden;
+		 width: 0px;
+		 height: 0px;
+		}
+		.searchtitle {
+		 position: absolute;
+		 color: blue;
+		 font-size: 25px;
+		}
+		.SEARCHCLASS article {
+		 font-size: 20px;
+		 color: lightgreen;
+		}
+		.foundtitle {
+		 color: blue;
+		 font-size: 25px;
+		 text-decoration: none;
+		}
+		.foundtitle:hover {
+		 text-decoration: underline;
+		 color: lightblue;
+		}
+		#TOTALFOUNDT {
+		 font-size: 15px;
+		 color: green;
+		 
+		}
+		</style>
+	</head>
+	<body>
+		<!-- Preload Images -->
+		<img src="pictures/background1.jpg" class="preload" />
+		<img src="pictures/background2.jpg" class="preload" />
+		<img src="pictures/background3.jpg" class="preload" />
+		<img src="pictures/background4.jpg" class="preload" />
+		<!-- -->
+		<img class="headerPicture" src="pictures/heading.jpg" />
+		<header>
+			<div class="logo"></div>
+			<span class="head" id="head">No Name Yet</span>
+			<form action="search.php" method="GET" id="search" name="search">
+				<input type="text" id="searchBox" class="searchBar" placeholder="Search..." />
+				<input class="searchSubmit" type="submit" />
+			</form>
+		</header>
+		<nav>
+			<a href="index.html"><b>Home</b></a>
+			<a href="#Programming">Programming</a>
+			<a href="sources.html">Sources</a>
+			<a href="projects.html">Projects</a>
+		</nav>
+		<p>Please Note: Search Is <b>IN PROGRESS</b> Please use the styling based search below</p>
+		<a style="color: blue;text-decoration: none;font-size: 35px;" href="https://discord.gg/Ggwnct3" target="_blank">Join My Discord!</a><br />
+		<textarea id="cS" class="cssSearch"></textarea>
+		<span style="color: grey;font-size: 35px;" onclick="cssSearch()">Submit</span>
+		<div class="searchContent">
+			<div id="CSSNONEFOUND">
+				<p style="color: green;font-size: 35px;" id="CSSNONEFOUNDT"></p>
+			</div>
+				<span id="TOTALFOUNDT"></span>
+			<div class="adio plyr playr aio audioplayer  a au aud audio p pl pla play plae player SEARCHCLASS">
+				<a class="foundtitle" href="audioPlayer/start.html">Audio Player</a>
+				<article>The Audio Player is a W.I.P. project at which you have the ability to Customize Playlists, Add Mp3 Files With Urls, or Just Listen To The Already Added Music. You can even suggest one at <a href="https://discord.gg/Ggwnct3"><b>my discord</b></a>. Want the files faster? All you have to do is upload it with the suggestion!</article>
+				<br />
+			</div>
+		</div>
+		<a href="http://darkheart527-minecraft-survival.wikia.com/wiki/DarkHeart527_Minecraft_Survival_Wiki" style="font-size: 50px;">Go To My Survival MC Wiki</a>
+		<script>
+		function cssSearch() {
+		 var a = document.getElementById('cS').value;
+		 var b = a.toLowerCase();
+		 var c = document.getElementsByClassName(b);
+		 var all = document.getElementsByClassName('SEARCHCLASS');
+		  document.getElementById('CSSNONEFOUND').style = "visibility: hidden;width: 0px;height: 0px;"
+		 var found = 0;
+		 d = c.length;
+		 console.log(a);
+		 console.log(b);
+		 console.log(c);
+		 for (i = 0;i < all.length;i++) {
+		  all[i].style = "";
+		 }
+		 for (i = 0;i < d;i++) {
+		  found++;
+		  document.getElementById('TOTALFOUNDT').innerHTML = "Total results found " + found + " out of " + all.length;
+		  console.log(i);
+		  c[i].style = "visibility: visible;width: auto;height: auto;"
+		 }
+		 if (found == 0) {
+		  document.getElementById('CSSNONEFOUND').style = "visibility: visible"
+		  document.getElementById('TOTALFOUNDT').innerHTML = '';
+		  document.getElementById('CSSNONEFOUNDT').innerHTML = "No results could be found out of the " + all.length + " that exists." 
+		 }
+		}
+		</script>
+		<p id="iFrame"><iframe src="https://player.twitch.tv/?channel=darkheart527" width="100%" height="100%" style="border: none; outline: none" allowfullscreen></iframe></p>
+		<p id="iFrameDisabled">Live Hosting Is Currently Turned Off</p>
+	</body>
+</html>

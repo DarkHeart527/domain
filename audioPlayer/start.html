@@ -1,0 +1,558 @@
+<html id="restartPage"> 
+	<head>
+		<script src="https://darkheart527.github.io/domain/simpleScript/simpleScript.js"></script>
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-82123274-3', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
+		<!--<script type="text/javascript" src="//d3aq14vri881or.cloudfront.net/kiip.js"></script>-->
+		<script>
+		//var kiipInstance = new Kiip('39f6ccd83145aaede5dfa5391d75980d');
+		function checkUrl() {
+		 var locationo = location.href;
+		 locationo = locationo.split('#');
+		 
+		}
+		var Storage = {
+		 nextNum: 0,
+		 currentNum: 0,
+		 data: '',
+		}
+		var playing = false;
+		var playType = "Default";
+		var songListSearch;
+		var songList;
+		var songListMax; //Maximum Number Of Tracks
+		var songListMin = 0; //Minimum Number Of Tracks
+		var songListCurrent;
+		var songTitle;
+		var artistNumber = 0;
+		var songArtist;
+		var songUrl;
+		var songDuration;
+		var Sinterval;
+		var pictureC = 1;
+		var audio = {
+		 pausePlay: function() {
+			 if (getId('playPause').value == "paused") {
+			  getId('playPause').innerHTML = "Pause"
+			  getId('audio').play();
+			  getId('playPause').value = "playing";
+			 } else {
+			  getId('playPause').innerHTML = "Play"
+			  getId('audio').pause();
+			  getId('playPause').value = "paused"
+			 }
+			 if (playing == false) {
+			  startMusic();
+			  getId('playPause').value = "playing";
+			 }
+			},
+		}
+		function saveData(storage) {
+		 localStorage.setItem('248data', getId('customPlaylistsDiv').innerHTML);
+		 reloadList();
+		}
+		function loadData() {
+		 getId('customPlaylistsDiv').innerHTML = localStorage.getItem('248data');
+		 reloadList();
+		}
+		function clearData() {
+		 getId('customPlaylistsDiv').innerHTML = '';
+		 reloadList();
+		}
+		function reloadList() {
+			  songListCurrent = songListMin;
+			  songList = songListSearch[0].getElementsByClassName("track");
+			  songListMax = songList.length - 1; //Maximum Number Of Tracks
+			  songTitle = songList[0].attributes.infoTitle.value;
+			  songArtist = songListSearch[0].attributes.infoArtist.value;
+			  songUrl = songList[0].attributes.url.value;
+			  getId('title').innerHTML = songTitle;
+			  getId('artist').innerHTML = songArtist;
+			  getId('currentArtist').innerHTML = songArtist;
+			  songListSearch[0].style = "visibility: visible;";
+			  getFirstClass('trackList').style = "height: " + Number((songList.length + 1)* 40) + "px;"
+			 for (i = 0;songListSearch.length > i;i++) {
+			  songListSearch[i].style = '';
+			  if (i == songListSearch.length - 1) {
+			   songListSearch[artistNumber].style = "visibility: visible;";
+			  }
+			 }
+		}
+		var songListSearch = getClasses("Artist");
+			function startMusic() {
+			 if (playing == true) {
+			 } else {
+			  getId('playPause').innerHTML = "Pause"
+			  playing = true;
+			  songListMin = 0; //Minimum Number Of Tracks
+			  songListCurrent = songListMin;
+			  startMusic();
+			 }
+			 if (playType == "Default") {
+			  songList = songListSearch[artistNumber].getElementsByClassName("track");
+			  songListMax = songList.length - 1; //Maximum Number Of Tracks
+			  songTitle = songList[songListCurrent].attributes.infoTitle.value;
+			  songArtist = songListSearch[artistNumber].attributes.infoArtist.value;
+			  songUrl = songList[songListCurrent].attributes.url.value;
+			  getId('title').innerHTML = songTitle;
+			  getId('artist').innerHTML = songArtist;
+			  getId('currentArtist').innerHTML = songArtist;
+			  var a = songUrl;
+			  if (a[4] == ':' & a[5] == '/' & a[6] == '/' | a[5] == ':' & a[6] == '/' & a[7] == '/') {
+			   getId('audio').src = songUrl;
+			  } else {
+			   getId('audio').src = 'music/' + songArtist + "/" + songUrl;
+			  }
+			 }
+			}
+			
+			function changedArtist() {
+			 for (i = 0;songListSearch.length > i;i++) {
+			  songListSearch[i].style = '';
+			  if (i == songListSearch.length - 1) {
+			   songListSearch[artistNumber].style = "visibility: visible;";
+			  }
+			 }
+			getId('playPause').innerHTML = "Play"
+			 playing = false;
+			 songListCurrent = 0;
+			if (playing == true) {
+			} else {
+			  songListMin = 0; //Minimum Number Of Tracks
+			  songListCurrent = songListMin;
+			}
+			 if (playType == "Default") {
+			  songList = songListSearch[artistNumber].getElementsByClassName("track");
+			  songListMax = songList.length - 1; //Maximum Number Of Tracks
+			  songTitle = songList[songListCurrent].attributes.infoTitle.value;
+			  songArtist = songListSearch[artistNumber].attributes.infoArtist.value;
+			  songUrl = songList[songListCurrent].attributes.url.value;
+			  getId('currentArtist').innerHTML = songArtist;
+			  getId('image').src = 'pictures/' + songArtist + '/' + songArtist + '.jpg';
+			  setTimeout( function() {
+			   if (getId('image').networkState === 3) {
+			    setTimeout( function() {console.clear();}, 50);
+			    alert('Error: 404 not found\nTry looking at the extension');
+		       }
+			  }, 250)
+			 }
+			 getFirstClass('trackList').style = "height: " + Number((songList.length + 1)* 40) + "px;"
+			 if (songList.length < 12) {
+			  document.getElementsByTagName('body')[0].style = "overflow-y: hidden;"
+			  document.getElementsByTagName('body')[0].attributes.scroll = 'false'
+			 } else {
+			  document.getElementsByTagName('body')[0].style = "overflow-y: visible;"
+			  document.getElementsByTagName('body')[0].attributes.scroll = 'true'
+			 }
+			}
+			function songEnded() {
+			 if (songListCurrent == songListMax) {
+			  if (playType == "Default") {
+			    songListCurrent = 0;
+			   }
+			 } else {
+			  songListCurrent = songListCurrent + 1;	 
+			 }
+			 startMusic();
+			}
+			function showTime() {
+			 var currentMath = getId('audio').currentTime / songDuration;
+			 var afterMath = currentMath * 100;
+			 getId('progress').style = 'width: ' + afterMath + '%';
+			}
+			setTimeout( function() {
+			setInterval( function() {
+			 var picurl = 'pictures/progress' + pictureC + '.png'
+			 getId('animationPicture').style = "background: url('" + picurl + "');";
+			 pictureC++;;
+			 if (pictureC == 4) {
+			  pictureC = 1;
+			 }
+			}, getId('animationPicture').attributes.animationDelay.value);
+			}, 250);
+			function previous() {
+			 if (songListCurrent == songListMin) {
+			  songListCurrent = songListMax;
+			 } else {
+			  songListCurrent = songListCurrent - 1;
+			 }
+			 startMusic();
+			 getId('playPause').innerHTML = "Pause"
+			 getId('playPause').value = "playing"
+			}
+			function next() {
+			 if (songListCurrent == songListMax) {
+			  songListCurrent = songListMin;
+			 } else {
+			  songListCurrent = songListCurrent + 1;
+			 }
+			 startMusic();
+			 getId('playPause').innerHTML = "Pause"
+			 getId('playPause').value = "playing"
+			}
+			function nextArtist() {
+			if (artistNumber < songListSearch.length - 1) {
+			  artistNumber += 1;
+			  changedArtist();
+			 }
+			}
+			function prevArtist() {
+			if (artistNumber > 0) {
+			   artistNumber -= 1;
+			   changedArtist();
+			  }
+			 }
+			function openSearch() {
+			 getId('searchTab').style = "visibility: visible";
+			 getBody.style = "overflow-y: hidden";
+			}
+			function closeSearch() {
+			 resetSearch();
+			 getId('searchTab').style = "";
+			 if (getBody().attributes.scroll == 'true') {
+			  getBody().style = 'overflow-y: visible';
+			 }
+			}
+			function useCustomPlaylists() {
+			 getId('customPlaylists').style = "";
+			 getId('customPlaylists').style = "";
+			 getId('searchArea').style = "visibility: hidden;"
+			}
+			function useSearch() {
+			 getId('searchArea').style = "";
+			 getId('searchArea').style = "";
+			 getId('customPlaylists').style = "visibility: hidden;"
+			}
+			function submitNewSong() {
+			 var pPlaylist = getId('songPlaylist').value;
+			 var pTitle = getId('songTitle').value;
+			 var pArtist = getId('songArtist').value;
+			 var pUrl = getId('songUrl').value;
+			 if (localStorage.getItem("addableSongs") > 0) {
+			  if (getId(pPlaylist)) {
+			   getId(pPlaylist).innerHTML += '<li class="track" infoTitle="' + pTitle + '" url="' + pUrl + '"' + '>' + pTitle + '</li>'
+			  } else {
+			   getId('customPlaylistsDiv').innerHTML +=
+			   '<ul class="Artist" id="' + pPlaylist + '" infoArtist="' + pPlaylist + '">' +
+			    '<li class="track" infoTitle="' + pTitle + '" url="' + pUrl + '"' + '>' + pTitle + '</li>' +
+			   '</ul>'
+			  }
+			  localStorage.setItem("addableSongs", Number(localStorage.getItem("addableSongs")) - 1)
+			 } else {
+			  alert('Not enough AddSong Credits')
+			 }
+			 saveData();
+			}
+			function searchArtists() {
+			 var a = getId('searchFor').value;
+			 var b = a.toLowerCase();
+			 var c = getClasses(b);
+			 var all = getClasses('SEARCH');
+			 getId('SearchNoResults').style = "visibility: hidden;width: 0px;height: 0px;"
+			 var found = 0;
+			 d = c.length;
+			 for (i = 0;i < all.length;i++) {
+			  all[i].style = "";
+			 }
+			 for (i = 0;i < d;i++) {
+			  found++;
+			  getId('SearchTotalFound').innerHTML = "Total results found " + found + " out of " + all.length;
+			  c[i].style = "display: block;width: auto;height: auto;width: 75%;margin-top: 15px;border: solid black 1px;"
+			  getId('resultsCenter').style = "height: auto;display: block;padding-bottom: 15px;"
+			 }
+			 if (found == 0) {
+			  getId('SearchNoResults').style = "visibility: visible"
+			  getId('resultsCenter').style = "display: none"
+			  getId('SearchTotalFound').innerHTML = '';
+			  getId('SearchNoResultsText').innerHTML = "No results could be found out of the " + all.length + " that exists." 
+			 }
+			}
+			function resetSearch() {
+			 getId('searchFor').value = '';
+			 searchArtists();
+			 getId('SearchNoResultsText').innerHTML = '';
+			 getId('SearchNoResults').style = '';
+			}
+			function freeSongTimer() {
+			 localStorage.setItem("timeBeforeSongDownload", Number(localStorage.getItem("timeBeforeSongDownload")) - 1);
+			 localStorage.setItem("timeBeforeSongAdd", Number(localStorage.getItem("timeBeforeSongAdd")) - 1);
+			 if (localStorage.getItem("timeBeforeSongDownload") == 0 | localStorage.getItem("timeBeforeSongDownload") < 1) {
+			  localStorage.setItem("timeBeforeSongDownload", 120);
+			  localStorage.setItem("downloadableSongs", Number(localStorage.getItem("downloadableSongs")) + 1);
+			 }
+			 if (localStorage.getItem("timeBeforeSongAdd") == 0 | localStorage.getItem("timeBeforeSongAdd") < 1) {
+			  localStorage.setItem("timeBeforeSongAdd", 90);
+			  localStorage.setItem("addableSongs", Number(localStorage.getItem("addableSongs")) + 1);
+			 }
+			}
+		</script>
+		<link href="styling/positioning.css" rel="stylesheet" type="text/css" />
+		<link href="styling/simpleStyle.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body scroll='false' style="overflow-y: hidden;">
+		<img class="preLoad" src="pictures/progress1.png"></img>
+		<img class="preLoad" src="pictures/progress2.png"></img>
+		<img class="preLoad" src="pictures/progress3.png"></img>
+		<img class="preLoad" src="pictures/progress4.png"></img>
+		<img class="preLoad" src="pictures/progress11.png"></img>
+		<img class="preLoad" src="pictures/progress12.png"></img>
+		<img class="preLoad" src="pictures/progress13.png"></img>
+		<div class="holder">
+			<div class="imageHolder">
+				<img src="pictures/none.png" id="image" />
+				<p id="title"></p>
+				<p id="artist"></p>
+			</div>
+			<div id="progressBarHolder">
+				<div id="progress">
+					<div id="progressPicOverlay">
+						<div id="animationPicture" animationDelay="250">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="center">
+				<a href="#restartPage" id="leftABtn" onclick="prevArtist()">&#8666;</a>
+				<a href="#restartPage" id="currentArtist" class="clickable" onClick="openSearch()">Drake</a>
+				<a href="#restartPage" id="nextABtn" onclick="nextArtist()">&#8667;</a>
+			</div>
+			<div>
+				<button id="" onclick="previous();">Previous</button>
+				<button id="playPause" onclick="audio.pausePlay();">Play</button>
+				<button id="" onclick="next();">Next</button>
+			</div>
+			<div class="scrollable">
+				<ul class="trackList" style="height: 120px;">
+					<div id="customPlaylistsDiv">
+					</div>
+					<ul class="Artist" infoArtist="DarkHeart527" style="visibility: visible;">
+						<li class="track" infoTitle="Dark Death" url="Dark Death.mp3"></li>
+						<li class="track" infoTitle="Evil Inside Of Me" url="Evil Inside Of Me.mp3"></li>
+						<li class="track" infoTitle="Some Random Stuff" url="Some Random Stuff.mp3"></li>
+						<li class="track" infoTitle="Quick" url="Quick.mp3"></li>
+					</ul>
+					<ul class="Artist" infoArtist="Drake" style="visibility: visible;">
+						<li class="track" infoTitle="Energy" url="Energy.mp3"></li>
+						<li class="track" infoTitle="Headlines" url="Headlines.mp3"></li>
+					</ul>
+					<ul class="Artist" infoArtist="Disturbed">
+						<li class="track" infoTitle="Down With The Sickness" url="Down With The Sickness.mp3"></li>
+					</ul>
+					<ul class="Artist" infoArtist="Linkin Park">
+						<li class="track" infoTitle="By Myself" url="By Myself.mp3"></li>
+						<li class="track" infoTitle="Cure For The Itch" url="Cure For The Itch.mp3"></li>
+						<li class="track" infoTitle="Forgotten" url="Forgotten.mp3"></li>
+						<li class="track" infoTitle="High Voltage" url="High Voltage.mp3"></li>
+						<li class="track" infoTitle="In Pieces" url="In Pieces.mp3"></li>
+						<li class="track" infoTitle="In The End" url="In The End.mp3"></li>
+					</ul>
+					<ul class="Artist" infoArtist="Logic">
+						<li class="track" infoTitle="Ballin'" url="Ballin'.mp3"></li>
+						<li class="track" infoTitle="Everybody" url="Everybody.mp3"></li>
+						<li class="track" infoTitle="Under Pressure" url="Under Pressure.mp3"></li>
+					</ul>
+					<ul class="Artist" infoArtist="System Of A Down">
+						<li class="track" infoTitle="36" url="36.mp3"></li>
+						<li class="track" infoTitle="A.D.D." url="A D D.mp3"></li>
+						<li class="track" infoTitle="Attack" url="Attack.mp3"></li>
+						<li class="track" infoTitle="B.Y.O.B." url="B Y O B.mp3"></li>
+						<li class="track" infoTitle="BOOM!" url="Boom.mp3"></li>
+						<li class="track" infoTitle="Bubbles" url="Bubbles.mp3"></li>
+						<li class="track" infoTitle="Chick 'N' Stew" url="Chick 'N' Stew.mp3"></li>
+						<li class="track" infoTitle="Cigaro" url="Cigaro.mp3"></li>
+						<li class="track" infoTitle="CUBErt" url="CUBErt.mp3"></li>
+						<li class="track" infoTitle="Darts" url="Darts.mp3"></li>
+						<li class="track" infoTitle="DDevil" url="DDevil.mp3"></li>
+						<li class="track" infoTitle="Dreaming" url="Dreaming.mp3"></li>
+						<li class="track" infoTitle="Ego Brain" url="Ego Brain.mp3"></li>
+						<li class="track" infoTitle="F**k The System" url="Fxxk The System.mp3"></li>
+						<li class="track" infoTitle="Highway Song" url="Highway Song.mp3"></li>
+						<li class="track" infoTitle="Holy Mountains" url="Holy Mountains.mp3"></li>
+						<li class="track" infoTitle="Hypnotize" url="Hypnotize.mp3"></li>
+						<li class="track" infoTitle="I-E-A-I-A-I-O" url=".mp3"></li>
+						<li class="track" infoTitle="Innervision" url="Innervision.mp3"></li>
+						<li class="track" infoTitle="Kill Rock N' Roll" url="Kill Rock 'N Roll.mp3"></li>
+						<li class="track" infoTitle="Know" url="Know.mp3"></li>
+						<li class="track" infoTitle="Lonely Day" url="Lonely Day.mp3"></li>
+						<li class="track" infoTitle="Lost In Hollywood" url="Lost In Hollywood.mp3"></li>
+						<li class="track" infoTitle="Mind" url="Mind.mp3"></li>
+						<li class="track" infoTitle="Mr. Jack" url="Mr. Jack.mp3"></li>
+						<li class="track" infoTitle="Nugguns" url="Nugguns.mp3"></li>
+						<li class="track" infoTitle="Old School Hollywood" url="Old School Hollywood.mp3"></li>
+						<li class="track" infoTitle="P.L.U.C.K." url="P L U C K.mp3"></li>
+						<li class="track" infoTitle="Peephole" url="Peephole.mp3"></li>
+						<li class="track" infoTitle="Pictures" url="Pictures.mp3"></li>
+						<li class="track" infoTitle="Question" url="Question.mp3"></li>
+						<li class="track" infoTitle="Radio Video" url="Radio Video.mp3"></li>
+						<li class="track" infoTitle="Revenga" url="Revenga.mp3"></li>
+						<li class="track" infoTitle="Roulette" url="Roulette.mp3"></li>
+						<li class="track" infoTitle="Sad Statue" url="Sad Statue.mp3"></li>
+						<li class="track" infoTitle="She's Like Heroin" url="She's Like Heroin.mp3"></li>
+						<li class="track" infoTitle="Soil" url="Soil.mp3"></li>
+						<li class="track" infoTitle="Soldier Side Intro" url="Soldier Side Intro.mp3"></li>
+						<li class="track" infoTitle="Soldier Side" url="Soldier Side.mp3"></li>
+						<li class="track" infoTitle="Spiders" url="Spiders.mp3"></li>
+						<li class="track" infoTitle="Stealing Society" url="Stealing Society.mp3"></li>
+						<li class="track" infoTitle="Streamline" url="Streamline.mp3"></li>
+						<li class="track" infoTitle="Sugar" url="Sugar.mp3"></li>
+						<li class="track" infoTitle="Suggestions" url="Suggestions.mp3"></li>
+						<li class="track" infoTitle="Suite Pee" url="Suite Pee.mp3"></li>
+						<li class="track" infoTitle="Tentative" url="Tentative.mp3"></li>
+						<li class="track" infoTitle="Thetawaves" url="Thetawaves.mp3"></li>
+						<li class="track" infoTitle="U-Fig" url="U Fig.mp3"></li>
+						<li class="track" infoTitle="Vicinity Of Obscenity" url="Vicinity Of Obscenity.mp3"></li>
+						<li class="track" infoTitle="Violent Pornography" url="Violent Pornography.mp3"></li>
+						<li class="track" infoTitle="War?" url="War.mp3"></li>
+					</ul>
+				</ul>
+			</div>
+		</div>
+		
+		<audio id="audio" onloadedmetadata="songDuration = document.getElementById('audio').duration;" onplay="Sinterval = setInterval(function() { showTime(); })" onended="songEnded();" src="" autoplay>
+		</audio>
+		
+		<div class="linkChangeLogD">
+			<a class="linkChangeLog" href="CHANGE LOG.txt" target="_blank">Change Log</a>
+		</div>
+		
+		<div id="searchTab">
+			<div class="clickable" onclick="closeSearch()">X</div>
+			<span class="clickable" onClick="useSearch()">Search</span>
+			<span class="clickable" onClick="useCustomPlaylists()">Custom Playlists</span>
+			<div id="searchArea" class="searchArea absolute">
+				<textarea id="searchFor"></textarea>
+				<button onclick="searchArtists();">Search</button>
+				<div id="results">
+					<div id="SearchNoResults">
+						<p id="SearchNoResultsText"></p>
+					</div>
+					<span id="SearchTotalFound"></span>
+					<center id="resultsCenter">
+						<div class="d da dar dark darkh darkhe darkhea darkhear darkheart darkheart5 darkheart52 darkheart527 heart hreat drak dakr heatr 5 2 7 52 57 527 darj SEARCH">
+							<p>DarkHeart527</p>
+							<p>
+								<button class="findSearch" find="DarkHeart527">Select</button>
+							</p>
+						</div>
+						<div class="d dr dra drak drake draek dreak SEARCH">
+							<p>Drake</p>
+							<p>
+								<button class="findSearch" find="Drake">Select</button>
+							</p>
+						</div>
+						<div class="d di dis dist distu disturb disturbe disturbed disterbed distirbed disturbd desturbed SEARCH">
+							<p>Disturbed</p>
+							<p>
+								<button class="findSearch" find="Disturbed">Select</button>
+							</p>
+						</div>
+						<div class="l li lin link linki linkin linken p pa par park SEARCH">
+							<p>Linkin Park</p>
+							<p>
+								<button class="findSearch" find="Linkin Park">Select</button>
+							</p>
+						</div>
+						<div class="l lo log logi logic logik logick SEARCH">
+							<p>Logic</p>
+							<p>
+								<button class="findSearch" find="Logic">Select</button>
+							</p>
+						</div>
+						<div class="s sy sys syst syste system o of a d do dow down dwn SEARCH">
+							<p>System Of A Down</p>
+							<p>
+								<button class="findSearch" find="System Of A Down">Select</button>
+							</p>
+						</div>
+						
+					</center>
+				</div>
+			</div>
+			
+			<div id="customPlaylists" class="absolute" style="visibility: hidden;">
+				<textarea placeHolder="Playlist" id="songPlaylist"></textarea>
+				<textarea placeHolder="Song Title" id="songTitle"></textarea>
+				<textarea placeHolder="Song Artist" id="songArtist"></textarea>
+				<textarea placeHolder="Song Url" id="songUrl"></textarea>
+				<button onClick="submitNewSong()">Add</button>
+				<div id="currentPlaylists">
+				</div>
+				<!--<button onClick="clearData()">Clear Data</button>-->
+				<!--<button onClick="freeSong('Add')">View An Ad For A Free Song To Add!</button>
+				<button onClick="freeSong('Download')">View An Ad For A Free Song To Download!</button>-->
+			</div>
+		</div>
+		
+		<script>
+			for (i = 0;document.getElementsByClassName('track').length > i; i++) {
+			 var a = document.getElementsByClassName('track');
+			 a[i].innerHTML = a[i].attributes.infoTitle.value;
+			 a[i].value = i;
+			 a[i].onclick = function() {
+			  this.id = "clicked"
+			  var sartist = this.parentElement;
+			  var sartist2 = sartist.parentElement;
+			  var songs = sartist.getElementsByClassName('track');
+			  songTitle = this.attributes.infoTitle.value;
+			  songArtist = sartist.attributes.infoArtist.value;
+			  songUrl = this.attributes.url.value;
+			  document.getElementById('title').innerHTML = songTitle;
+			  document.getElementById('artist').innerHTML = songArtist;
+			  document.getElementById('currentArtist').innerHTML = songArtist;
+			  document.getElementById('audio').src = 'music/' + songArtist + "/" + songUrl;
+			  document.getElementById('playPause').innerHTML = "Pause"
+			  this.id = '';
+			  playing = true;
+			  for (i = 0; songList.length > i; i++) {
+			   if (songList[i].attributes.infoTitle == this.attributes.infoTitle) {
+			    songListCurrent = i;
+			   }
+			  }
+			 }
+			}
+			for (i = 0; document.getElementsByClassName('findSearch').length > i; i++) {
+			 var b = document.getElementsByClassName('findSearch');
+			 b[i].onclick = function() {
+			   for (i2 = 0; document.getElementsByClassName('artist').length > i2; i2++) {
+			   var artist = document.getElementsByClassName('artist');
+			   if (artist[i2].attributes.infoArtist.value == this.attributes.find.value) {
+				artistNumber = i2;
+			    changedArtist();
+			   }
+			  }
+			 }
+			}
+			loadData();
+			
+			//Check If Data Is Empty Or NEVER Used
+			if (localStorage.getItem("timeBeforeSongDownload") == null | localStorage.getItem("timeBeforeSongDownload") == "null") {
+			 localStorage.setItem("timeBeforeSongDownload", 60)
+			} else {
+			}
+			
+			if (localStorage.getItem("timeBeforeSongAdd") == null | localStorage.getItem("timeBeforeSongAdd") == "null") {
+			 localStorage.setItem("timeBeforeSongAdd", 30)
+			} else {
+			}
+			
+			if (localStorage.getItem("addableSongs") == null | localStorage.getItem("addableSongs") == "null") {
+			 localStorage.setItem("addableSongs", 10)
+			} else {
+			}
+			
+			if (localStorage.getItem("downloadableSongs") == null | localStorage.getItem("downloadableSongs") == "null") {
+			 localStorage.setItem("downloadableSongs", 5)
+			} else {
+			}
+			setInterval(freeSongTimer, 1000);
+		</script>
+	</body>
+</html>

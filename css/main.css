@@ -1,0 +1,175 @@
+body {
+ margin: 0px;
+ overflow-x: hidden;
+}
+
+textarea:focus, input:focus {
+ outline: 2px red ridge;
+}
+
+@keyframes changingBackground {
+ 0% {background: url('../pictures/background1.jpg')}
+ 25% {background: url('../pictures/background2.jpg')}
+ 50% {background: url('../pictures/background3.jpg')}
+ 75% {background: url('../pictures/background4.jpg')}
+ 100% {background: url('../pictures/background1.jpg')}
+}
+
+.preload {
+ width: 0px;
+ height: 0px;
+ position: absolute;
+ padding: 0px;
+ margin: 0px;
+ background-color: transparent;
+ color: transparent;
+ display: none;
+}
+
+header {
+ padding-left: 5px;
+ padding-top: 5px;
+ margin-bottom: -5px;
+ width: 100%;
+ height: 60px;
+ background-color: transparent;
+}
+
+@font-face {
+ font-family: Polar-Vortex
+ src: url('POLAR-VORTEX.ttf'); 
+}
+
+.headerPicture {
+ position: absolute;
+ width: 100%;
+ height: 60px;
+ z-index: -1;
+ opacity: 1;
+ padding: 0px;
+ margin: 0px;
+ border: none;
+}
+
+.projectH1 {
+ color: green;
+ font-size: 50px;
+}
+
+.searchBar {
+ width: 400px;
+ font-size: 30px;
+ padding-left: 5px;
+ padding-right: 5px;
+ padding-top: 5px;
+ height: 45px;
+ margin-left: -550px;
+ background-color: transparent;
+ border: none;
+ border-bottom: 2px red solid;
+}
+
+.searchSubmit {
+ width: 125px;
+ height: 50px;
+ margin: 0px;
+ font-size: 35px;
+ position: absolute;
+ padding: 0px;
+ color: grey;
+ border: none;
+ padding: 0px;
+ background-color: transparent;
+ opacity: .75;
+}
+
+.logo {
+ width: 50px;
+ height: 50px;
+ position: absolute;
+ border-radius: 100%;
+ background: url('../pictures/logo.jpg');
+ transition: 1s background, 1s transform;
+}
+
+.logo:hover {
+ transform: rotate(360deg);
+ background: url('../pictures/logo2.jpg');
+}
+
+.head {
+ color: white;
+ font-size: 40px;
+ margin-left: 60px;
+ position: absolute;
+ margin-top: 10px;
+}
+
+#search {
+ right: 100px;
+ top: 5px;
+ position: absolute;
+}
+
+nav {
+ background-color: lightgreen;
+ opacity: 1;
+ width: 100%;
+ height: 45px;
+ padding-top: 5px;
+ text-align: center;
+}
+
+nav a {
+ text-decoration: none;
+ padding-top: 5px;
+ padding-bottom: 5px;
+ color: white;
+ padding-right: 50px;
+ padding-left: 50px;
+ font-size: 35px;
+}
+
+nav a:hover {
+ color: red;
+ background-color: lightgreen;
+ outline: 1px solid black;
+}
+
+.navPicture {
+ width: 100%;
+ height: 30px;
+ position: absolute;
+ z-index: -1;
+}
+
+.projectSection {
+ width: 100%;
+ height: auto;
+ background-color: grey;
+ padding-left: 5px;
+ padding-right: 5px;
+}
+
+.projectSection, .projectLink {
+ font-size: 25px;
+ color: lightgreen;
+ text-decoration: none;
+}
+
+.projectSection, .projectLink:hover {
+ color: white;
+}
+
+.cssSearch {
+ resize: none;
+}
+
+.searchContent {
+ width: 80%;
+ margin-left: 8%;
+ padding-left: 2%;
+ padding-right: 2%;
+ background-color: grey;
+ border-radius: 25px;
+}
