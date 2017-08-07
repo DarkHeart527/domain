@@ -146,11 +146,11 @@
 			 }
 			 getFirstClass('trackList').style = "height: " + Number((songList.length + 1)* 40) + "px;"
 			 if (songList.length < 12) {
-			  document.getElementsByTagName('body')[0].style = "overflow-y: hidden;"
-			  document.getElementsByTagName('body')[0].attributes.scroll = 'false'
+			  getBody().style = "overflow-y: hidden;"
+			  getBody().attributes.scroll = 'false'
 			 } else {
-			  document.getElementsByTagName('body')[0].style = "overflow-y: visible;"
-			  document.getElementsByTagName('body')[0].attributes.scroll = 'true'
+			  getBody().style = "overflow-y: visible;"
+			  getBody().attributes.scroll = 'true'
 			 }
 			}
 			function songEnded() {
@@ -212,7 +212,7 @@
 			 }
 			function openSearch() {
 			 getId('searchTab').style = "visibility: visible";
-			 getBody.style = "overflow-y: hidden";
+			 getBody().style = "overflow-y: hidden";
 			}
 			function closeSearch() {
 			 resetSearch();
@@ -245,7 +245,8 @@
 			    '<li class="track" infoTitle="' + pTitle + '" url="' + pUrl + '"' + '>' + pTitle + '</li>' +
 			   '</ul>'
 			  }
-			  localStorage.setItem("addableSongs", Number(localStorage.getItem("addableSongs")) - 1)
+			  localStorage.setItem("addableSongs", Number(localStorage.getItem("addableSongs")) - 1);
+			  clickPlay();
 			 } else {
 			  alert('Not enough AddSong Credits')
 			 }
@@ -416,7 +417,7 @@
 			</div>
 		</div>
 		
-		<audio id="audio" onloadedmetadata="songDuration = document.getElementById('audio').duration;" onplay="Sinterval = setInterval(function() { showTime(); })" onended="songEnded();" src="" autoplay>
+		<audio id="audio" onloadedmetadata="songDuration = getId('audio').duration;" onplay="Sinterval = setInterval(function() { showTime(); })" onended="songEnded();" src="" autoplay>
 		</audio>
 		
 		<div class="linkChangeLogD">
@@ -492,8 +493,9 @@
 		</div>
 		
 		<script>
-			for (i = 0;document.getElementsByClassName('track').length > i; i++) {
-			 var a = document.getElementsByClassName('track');
+			function clickPlay() {
+			for (i = 0;getClasses('track').length > i; i++) {
+			 var a = getClasses('track');
 			 a[i].innerHTML = a[i].attributes.infoTitle.value;
 			 a[i].value = i;
 			 a[i].onclick = function() {
@@ -504,11 +506,11 @@
 			  songTitle = this.attributes.infoTitle.value;
 			  songArtist = sartist.attributes.infoArtist.value;
 			  songUrl = this.attributes.url.value;
-			  document.getElementById('title').innerHTML = songTitle;
-			  document.getElementById('artist').innerHTML = songArtist;
-			  document.getElementById('currentArtist').innerHTML = songArtist;
-			  document.getElementById('audio').src = 'music/' + songArtist + "/" + songUrl;
-			  document.getElementById('playPause').innerHTML = "Pause"
+			  getId('title').innerHTML = songTitle;
+			  getId('artist').innerHTML = songArtist;
+			  getId('currentArtist').innerHTML = songArtist;
+			  getId('audio').src = 'music/' + songArtist + "/" + songUrl;
+			  getId('playPause').innerHTML = "Pause"
 			  this.id = '';
 			  playing = true;
 			  for (i = 0; songList.length > i; i++) {
@@ -518,11 +520,13 @@
 			  }
 			 }
 			}
-			for (i = 0; document.getElementsByClassName('findSearch').length > i; i++) {
-			 var b = document.getElementsByClassName('findSearch');
+			}
+			clickPlay();
+			for (i = 0; getClasses('findSearch').length > i; i++) {
+			 var b = getClasses('findSearch');
 			 b[i].onclick = function() {
-			   for (i2 = 0; document.getElementsByClassName('artist').length > i2; i2++) {
-			   var artist = document.getElementsByClassName('artist');
+			   for (i2 = 0; getClasses('artist').length > i2; i2++) {
+			   var artist = getClasses('artist');
 			   if (artist[i2].attributes.infoArtist.value == this.attributes.find.value) {
 				artistNumber = i2;
 			    changedArtist();
@@ -531,6 +535,7 @@
 			 }
 			}
 			loadData();
+			clickPlay();
 			
 			//Check If Data Is Empty Or NEVER Used
 			if (localStorage.getItem("timeBeforeSongDownload") == null | localStorage.getItem("timeBeforeSongDownload") == "null") {
