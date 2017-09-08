@@ -7,5 +7,5 @@ function mpCutI() {
 }
 
 function uUrl() {
- document.getElementById('urlA').href = document.getElementById('urlT').value;
+ document.getElementById('urlA').href = document.getElementById('url').value;
 }
