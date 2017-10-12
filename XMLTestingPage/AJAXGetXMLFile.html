@@ -22,7 +22,10 @@
 			  for(let i = 0; i < capping.length; i++) {
 				  cappingFinish = cappingFinish + capping[i];
 			  }
-		   finish = cappingFinish;
+		   finish = cappingFinish + '<br />';
+		   for(let i = 0; i < x.getElementsByTagName(tag)[0].childNodes.length; i++) {
+			   display.innerHTML = display.innerHTML + x.getElementsByTagName(tag)[0].childNodes[i].nodeValue;
+		   }
 		   //x.getElementsByTagName(tag)[0].childNodes[0].nodeValue;
 		  }
 		 }
