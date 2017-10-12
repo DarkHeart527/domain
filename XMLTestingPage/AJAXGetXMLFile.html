@@ -9,16 +9,16 @@
 		<div id="display"></div>
 	</body>
 	<script>try {
-		function getPage(tag) {
+		function getPage(id) {
 		 var xhttp = new XMLHttpRequest();
 		 xhttp.onreadystatechange = function() {
 		  if (xhttp.status == 200 && this.readyState == 4) {
 		   var x = xhttp.responseXML;
 		   var display = document.getElementById('display');
 		   display.innerHTML = '';
-		   var tag = x.getElementsByTagName(tag)[0];
+		   var tag = x.getElementsByTagName(id)[0];
 		   var finish;
-		   var capping = tag.split();
+		   var capping = id.split();
 		   capping[0] = capping[0].toUpperCase();
 		   var cappingFinish = '';
 			  for(let i = 0; i < capping.length; i++) {
