@@ -2,14 +2,17 @@
 	<head>
 	</head>
 	<body>
+		<input id="tagToCall" type="text" />
+		<button onclick="getPage(document.getElementById('tagToCall').value)">Submit</button>
+		<div id="display"></div>
 	</body>
 	<script>
-		function getPage() {
+		function getPage(tag) {
 		 var xhttp = new XMLHttpRequest();
 		 xhttp.onreadystatechange = function() {
 		  if (xhttp.status == 200 && this.readyState == 4) {
 		   var x = xhttp.responseXML;
-		   document.getElementsByTagName('body').innerHTML = x.getElementsByTagName("price")
+		   document.getElementById('display').innerHTML = x.getElementsByTagName(tag)[0];
 		  }
 		 }
 		 xhttp.open("GET", "XMLRequest.xml", true);
