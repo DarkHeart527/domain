@@ -8,7 +8,7 @@
 		<button onclick="getPage(document.getElementById('tagToCall').value)">Submit</button>
 		<div id="display"></div>
 	</body>
-	<script>/*
+	<script>
 		function getPage(tag) {
 		 var xhttp = new XMLHttpRequest();
 		 xhttp.onreadystatechange = function() {
@@ -26,36 +26,14 @@
 			  }
 		   finish = cappingFinish + '<br />';
 		   for(let i = 0; i < tag.length; i++) {
-			   display.innerHTML = display.innerHTML + tag[i].childNodes[0].nodeValue;
+			   var grab = tag.children;
+			   display.innerHTML = display.innerHTML + grab[i].textContent;
 		   }
 		   //x.getElementsByTagName(tag)[0].childNodes[0].nodeValue;
 		  }
 		 }
 		 xhttp.open("GET", "XMLRequest.xml", true);
 		 xhttp.send();
-		}*/
-		var xhttp = new XMLHttpRequest();
-		 xhttp.onreadystatechange = function() {
-		  if (xhttp.status == 200 && this.readyState == 4) {
-		   var x = xhttp.responseXML;
-		   var display = document.getElementById('display');
-		   display.innerHTML = '';
-		   var tag = 'apple';//x.getElementsByTagName('apple')[0].childNodes;
-		   var finish;
-		   var capping = tag.split();
-		   capping[0] = capping[0].toUpperCase();
-		   var cappingFinish = '';
-			  for(let i = 0; i < capping.length; i++) {
-				  cappingFinish = cappingFinish + capping[i];
-			  }
-		   finish = cappingFinish + '<br />';
-		   for(let i = 0; i < tag.length; i++) {
-		//	   display.innerHTML = display.innerHTML + tag[i].childNodes[0].nodeValue;
-		   }
-		   //x.getElementsByTagName(tag)[0].childNodes[0].nodeValue;
-		  }
-		 }
-		 xhttp.open("GET", "XMLRequest.xml", true);
-		 xhttp.send();
+		}
 	</script>
 </html>
