@@ -16,9 +16,7 @@
 		   var x = xhttp.responseXML;
 		   var display = document.getElementById('display');
 		   display.innerHTML = '';
-		   console.log(x);
-		   console.log(x.getElementsByTagName('apple')[0]);
-		   var tag = x.getElementsByTagName(tag)[0].childNodes;
+		   var tag = x.getElementsByTagName(tag)[0];
 		   var finish;
 		   var capping = tag.split();
 		   capping[0] = capping[0].toUpperCase();
