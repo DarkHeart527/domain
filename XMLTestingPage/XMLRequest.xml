@@ -1,0 +1,12 @@
+<catalog>
+  <fruit>
+    <apple>
+      <price>$1.00 each</price>
+      <description>An apple a day keeps the doctor away.</description>
+    </apple>
+    <mango>
+      <price>$2.00 each</price>
+      <description>Sweet n Sour mangos.</description>
+    </mango>
+  </fruit>
+</catalog>
