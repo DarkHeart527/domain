@@ -14,7 +14,7 @@
 		 xhttp.onreadystatechange = function() {
 		  if (xhttp.status == 200 && this.readyState == 4) {
 		   var x = xhttp.responseXML;
-		   document.getElementById('display').innerHTML = x[0].getElementsByTagName(tag)[0].childNodes[0].nodeValue;
+		   document.getElementById('display').innerHTML = x.getElementsByTagName(tag)[0].childNodes[0].nodeValue;
 		  }
 		 }
 		 xhttp.open("GET", "XMLRequest.xml", true);
