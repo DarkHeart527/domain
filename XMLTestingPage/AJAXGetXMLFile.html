@@ -13,7 +13,7 @@
 		 var xhttp = new XMLHttpRequest();
 		 xhttp.onreadystatechange = function() {
 		  if (xhttp.status == 200 && this.readyState == 4) {
-		   var x = xhttp.responseText;
+		   var x = xhttp.responseXML;
 		   var display = document.getElementById('display');
 		   var finish;
 		   var capping = tag.split();
