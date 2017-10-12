@@ -8,17 +8,13 @@
 		 var xhttp = new XMLHttpRequest();
 		 xhttp.onreadystatechange = function() {
 		  if (xhttp.status == 200 && this.readyState == 4) {
-		   cFunction(this);
-		  }// else {
-		   //document.getElementsByTagName('body')[0].innerHTML = "An Unexpected Error Occured " + xhttp.statusText;
-		  //}
+		   var x = xhttp.responseXML;
+		   document.getElementsByTagName('body').innerHTML = x.getElementsByTagName("price")
+		  }
 		 }
-		 xhttp.open("GET", url, true);
+		 xhttp.open("GET", "XMLRequest.xml", true);
 		 xhttp.send();
 		}
-		function someFunction(a) {
-		 document.getElementsByTagName('body')[0].innerHTML = a.responseText;
-		}
-		getPage('XMLRequest.xml', someFunction);
+		getPage();
 	</script>
 </html>
