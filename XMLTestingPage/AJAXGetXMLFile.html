@@ -14,7 +14,16 @@
 		 xhttp.onreadystatechange = function() {
 		  if (xhttp.status == 200 && this.readyState == 4) {
 		   var x = xhttp.responseText;
-		   document.getElementById('display').innerHTML = x.getElementsByTagName(tag)[0].childNodes[0].nodeValue;
+		   var display = document.getElementById('display');
+		   var finish;
+		   var capping = tag.split();
+		   capping[0] = capping[0].toUpperCase();
+		   var cappingFinish = '';
+			  for(let i = 0; i < capping.length; i++) {
+				  cappingFinish = cappingFinish + capping[i];
+			  }
+		   finish = cappingFinish;
+		   //x.getElementsByTagName(tag)[0].childNodes[0].nodeValue;
 		  }
 		 }
 		 xhttp.open("GET", "XMLRequest.xml", true);
