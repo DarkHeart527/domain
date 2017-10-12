@@ -28,6 +28,8 @@
 		   console.log(finish);
 		   for(let i = 0; i < tag.length; i++) {
 			   var grab = tag.children;
+			   console.log(grab);
+			   console.log(grab[i].textContent);
 			   display.innerHTML = display.innerHTML + grab[i].textContent + '<br />';
 		   }
 		   //x.getElementsByTagName(tag)[0].childNodes[0].nodeValue;
