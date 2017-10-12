@@ -8,7 +8,7 @@
 		<button onclick="getPage(document.getElementById('tagToCall').value)">Submit</button>
 		<div id="display"></div>
 	</body>
-	<script>
+	<script>try {
 		function getPage(tag) {
 		 var xhttp = new XMLHttpRequest();
 		 xhttp.onreadystatechange = function() {
@@ -37,5 +37,10 @@
 		 xhttp.open("GET", "XMLRequest.xml", true);
 		 xhttp.send();
 		}
+	}
+	
+	catch(err) {
+	 alert(err);
+	}
 	</script>
 </html>
