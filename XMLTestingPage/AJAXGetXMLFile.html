@@ -2,7 +2,7 @@
 	<head>
 	</head>
 	<body>
-		<iframe src="XMLRequest.xml"></iframe>
+		<iframe src="XMLRequest.xml" type="text"></iframe>
 		<p>^ The XML File ^</p>
 		<input id="tagToCall" type="text" />
 		<button onclick="getPage(document.getElementById('tagToCall').value)">Submit</button>
@@ -14,7 +14,7 @@
 		 xhttp.onreadystatechange = function() {
 		  if (xhttp.status == 200 && this.readyState == 4) {
 		   var x = xhttp.responseText;
-		   document.getElementById('display').innerHTML = x;//x.getElementsByTagName(tag)[0].childNodes[0].nodeValue;
+		   document.getElementById('display').innerHTML = x.getElementsByTagName(tag)[0].childNodes[0].nodeValue;
 		  }
 		 }
 		 xhttp.open("GET", "XMLRequest.xml", true);
