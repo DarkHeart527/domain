@@ -18,19 +18,13 @@
 		   display.innerHTML = '';
 		   var tag = x.getElementsByTagName(id)[0];
 		   var finish;
-		   var capping = id.split();
-		   capping[0] = capping[0].toUpperCase();
-		   var cappingFinish = '';
-			  for(let i = 0; i < capping.length; i++) {
-				  cappingFinish = cappingFinish + capping[i];
-			  }
-		   finish = cappingFinish + '<br />';
+		   finish = id + '<br />';
 		   console.log(finish);
-		   for(let i = 0; i < tag.length; i++) {
+		   for(let j = 0; j < tag.length; j++) {
 			   var grab = tag.children;
 			   console.log(grab);
-			   console.log(grab[i].textContent);
-			   display.innerHTML = display.innerHTML + grab[i].textContent + '<br />';
+			   console.log(grab[j].textContent);
+			   display.innerHTML = display.innerHTML + grab[j].textContent + '<br />';
 		   }
 		   //x.getElementsByTagName(tag)[0].childNodes[0].nodeValue;
 		  }
