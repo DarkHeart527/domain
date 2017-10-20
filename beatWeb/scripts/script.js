@@ -33,13 +33,24 @@ for (let i = 0; i < document.getElementsByTagName('img').length; i++) {
   }
 }
 
-document.getElementById('playPause').style.cursor = "pointer";
-document.getElementById('playPause').onclick = function() {
-	if (this.attributes.playing == true) {
-		this.attributes.playing = false;
-		this.src = 'pics/play.png';
-	} else {
-		this.attributes.playing = true;
-		this.src = 'pics/stop.png';
+function() {
+	var url = location.href;
+	url = url.split('/');
+	for (i = 0; i < url.length; i++) {
+		if (url[i] == 'beats.html') {
+			var run = true;
+		}
+	}
+	if (run === true) {
+		document.getElementById('playPause').style.cursor = "pointer";
+		document.getElementById('playPause').onclick = function() {
+			if (this.attributes.playing == true) {
+				this.attributes.playing = false;
+				this.src = 'pics/play.png';
+			} else {
+				this.attributes.playing = true;
+				this.src = 'pics/stop.png';
+			}
+		}
 	}
 }
