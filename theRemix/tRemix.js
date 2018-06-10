@@ -10,6 +10,7 @@ var theRemix = {
 	  if (this.attributes.paused.value == 'true') { // If the player is paused (not playing)
 	    if (document.getElementById('audio').src == 'file:///C:/Users/darkh/Desktop/theRemix/start.html') {
 		 document.getElementById('audio').src = 'music/Right Now.mp3';
+		 document.getElementsByTagName('a')[0].href = document.getElementById('audio').src;
 		}
 	    document.getElementById('audio').play();
 	    this.attributes.paused.value = 'false';
@@ -24,6 +25,7 @@ var theRemix = {
 	   document.getElementsByClassName('track')[i].id = 'track#' + Number(i + 1);
 	   document.getElementsByClassName('track')[i].onclick = function() {
 	    document.getElementById('audio').src = 'music/' + this.attributes.url.value;
+	    document.getElementsByTagName('a')[0].href = document.getElementById('audio').src;
 		document.getElementById('pausePlay').src = 'images/stop.png';
 		document.getElementById('pausePlay').attributes.paused.value = 'false';
 	   }
