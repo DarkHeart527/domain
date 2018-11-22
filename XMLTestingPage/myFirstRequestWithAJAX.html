@@ -11,6 +11,7 @@ let readXMLFile = (url) => {
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             document.body.innerHTML += "TestCaseFeature TestCaseName TestCaseSTATUS";
+	    console.log( xhttp.responseXML)
             for (let i = 0; i < xhttp.responseXML.getElementsByTagName('testcase').length; i++) {
                 let el = xhttp.responseXML.getElementsByTagName('testcase')[i];
                 let cname = el.attributes.classname.value;
