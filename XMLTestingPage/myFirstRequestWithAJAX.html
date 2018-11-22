@@ -33,8 +33,6 @@ let readXMLFile = (url) => {
             document.body.innerHTML = "404 Page Not Found";
         } else if (this.readyState == 4) {
             document.body.innerHTML = "An unexpected error occured! Page is loaded but cannot be sent. Contact us for help.";
-        } else {
-            document.body.innerHTML = '404 Page NOT Found or some other error has occured';
         }
     }
     xhttp.open("GET", url, true);
