@@ -26,6 +26,7 @@ let readXMLFile = (url) => {
                 }
                 let newEl = document.createElement('p');
                 newEl.innerHTML = `${cname} ${n} ${pass}`;
+		document.body.appendChild(newEl);
             }
         } else if (this.readyState == 4 && this.status == 404) {
             document.body.innerHTML = "404 Page Not Found";
