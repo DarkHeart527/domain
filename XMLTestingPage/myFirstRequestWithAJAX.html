@@ -35,6 +35,7 @@ let readXMLFile = (url) => {
             document.body.innerHTML = '404 Page NOT Found or some other error has occured';
         }
     }
+    xhttp.open("GET", url, true);
 }
 readXMLFile('XMLRequest.xml');
 	</script>
