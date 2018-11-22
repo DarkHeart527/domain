@@ -6,22 +6,36 @@
 	
 	</body>
 	<script>
-		function testXML() {
-		 var xhttp = new XMLHttpRequest();
-		 xhttp.onreadystatechange = function() {
-		  if (this.readyState == 4 && this.status == 200) {
-		   document.getElementsByTagName('body')[0].innerHTML = this.responseText;
-		  } else if (this.readyState == 4 && this.status == 404) {
-		   document.getElementsByTagName('body')[0].innerHTML = "404 Page Not Found";
-		  } else if (this.readyState == 4) {
-		   document.getElementsByTagName('body')[0].innerHTML = "An unexpected error occured! Page is loaded but cannot be sent. Contact us for help.";
-		  } else {
-		   document.getElementsByTagName('body')[0].innerHTML = '404 Page NOT Found or some other error has occured';
-		  }
-		 };
-		 xhttp.open("GET", "XMLRequest.txt", true);
-		 xhttp.send();
-		}
-		testXML();
+let readXMLFile = (url) => {
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.body.innerHTML += "TestCaseFeature TestCaseName TestCaseSTATUS";
+            for (let i = 0; i < xhttp.responseXML.getElementsByTagName('testcase').length; i++) {
+                let el = xhttp.responseXML.getElementsByTagName('testcase')[i];
+                let cname = el.attributes.classname.value;
+                let n = el.attributes.name.value;
+                let status = el.attributes.status.value;
+                let pass = el.attributes.status.value;
+                if (typeof pass == 'boolean') {
+                    if (pass) {
+                        pass = "Pass";
+                    } else {
+                        pass = "Fail";
+                    }
+                }
+                let newEl = document.createElement('p');
+                newEl.innerHTML = `${cname} ${n} ${pass}`;
+            }
+        } else if (this.readyState == 4 && this.status == 404) {
+            document.body.innerHTML = "404 Page Not Found";
+        } else if (this.readyState == 4) {
+            document.body.innerHTML = "An unexpected error occured! Page is loaded but cannot be sent. Contact us for help.";
+        } else {
+            document.body.innerHTML = '404 Page NOT Found or some other error has occured';
+        }
+    }
+}
+readXMLFile('XMLRequest.xml');
 	</script>
 </html>
