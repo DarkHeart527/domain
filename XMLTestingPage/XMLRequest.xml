@@ -1,5 +1,5 @@
 <testsuite errors="0" failures="1" skipped="1" passed="1" tests="3"> 
-    <testcase classname=postAPI name="Validate POST API" status="tested" pass="true"></testcase>
-    <testcase classname=getAPI name="Validate GET API" status="tested" pass="skip"></testcase>
-    <testcase classname=deleteAPI name="Validate DELETE API" status="untested" pass="false"></testcase> 
+    <testcase classname="postAPI" name="Validate POST API" status="tested" pass="true"></testcase>
+    <testcase classname="getAPI" name="Validate GET API" status="tested" pass="skip"></testcase>
+    <testcase classname="deleteAPI" name="Validate DELETE API" status="untested" pass="false"></testcase> 
 </testsuite>
